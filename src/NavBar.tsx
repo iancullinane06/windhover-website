@@ -1,4 +1,4 @@
-import { AppBar, Box, Typography, Toolbar, Button, Menu, MenuItem } from '@mui/material';
+import { AppBar, Box, Typography, Toolbar, Button, MenuItem, Paper } from '@mui/material';
 import { styled } from '@mui/system';
 import React, { useState } from 'react';
 
@@ -13,6 +13,15 @@ export const FloatingNavbar = styled(AppBar)({
     zIndex: 10,
 });
 
+const FrostedMenu = styled(Paper)({
+    background: 'rgba(255, 255, 255, 0.7)',
+    backdropFilter: 'blur(10px)',
+    borderRadius: '8px',
+    padding: '0.5rem 0',
+    minWidth: '150px',
+    boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
+});
+
 export function LogoWithText() {
     return (
         <Box
@@ -23,7 +32,7 @@ export function LogoWithText() {
                 alignItems: 'center',
                 textDecoration: 'none',
             }}
-            >
+        >
             <Box
                 component="img"
                 src="/GreenLens.png"
@@ -80,30 +89,44 @@ export function Navbar() {
                     >
                         Pricing
                     </Button>
-                    <Button
+                    <Box
                         sx={{
-                            color: 'black',
-                            textShadow: '0px 0px 5px rgba(0, 0, 0, 0.5)',
+                            position: 'relative',
+                            display: 'inline-block',
+                            '&:hover .dropdown-menu': {
+                                display: 'block',
+                            },
                         }}
-                        onClick={handleMenuOpen}
                     >
-                        About Us
-                    </Button>
-                    <Menu
-                        anchorEl={anchorEl}
-                        open={Boolean(anchorEl)}
-                        onClose={handleMenuClose}
-                    >
-                        <MenuItem onClick={handleMenuClose} component="a" href="#about-us">
+                        <Button
+                            sx={{
+                                color: 'black',
+                                textShadow: '0px 0px 5px rgba(0, 0, 0, 0.5)',
+                            }}
+                        >
                             About Us
-                        </MenuItem>
-                        <MenuItem onClick={handleMenuClose} component="a" href="#rnd">
-                            R&D
-                        </MenuItem>
-                        <MenuItem onClick={handleMenuClose} component="a" href="#contact-us">
-                            Contact Us
-                        </MenuItem>
-                    </Menu>
+                        </Button>
+                        <FrostedMenu
+                            className="dropdown-menu"
+                            sx={{
+                                display: 'none',
+                                position: 'absolute',
+                                top: '100%',
+                                left: 0,
+                                zIndex: 20,
+                            }}
+                        >
+                            <MenuItem component="a" href="/about-us">
+                                About Us
+                            </MenuItem>
+                            <MenuItem component="a" href="/rnd">
+                                R&D
+                            </MenuItem>
+                            <MenuItem component="a" href="/contact-us">
+                                Contact Us
+                            </MenuItem>
+                        </FrostedMenu>
+                    </Box>
                 </Box>
             </Toolbar>
         </FloatingNavbar>
