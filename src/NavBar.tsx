@@ -103,6 +103,7 @@ export function Navbar() {
                                 color: 'black',
                                 textShadow: '0px 0px 5px rgba(0, 0, 0, 0.5)',
                             }}
+                            href="/about-us"
                         >
                             About Us
                         </Button>

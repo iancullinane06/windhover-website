@@ -1,9 +1,12 @@
 import { Typography, Box} from '@mui/material';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar } from './NavBar'; // Ensure the path is correct
-import Home from './Home';
-import Pricing from './Pricing';
-import Products from './Products';
+import Home from './pages/Home';
+import Pricing from './pages/Pricing';
+import Products from './pages/Products';
+import AboutUs from './pages/AboutUs';
+import ContactUs from './pages/ContactUs';
+import RnD from './pages/RnD';
 
 function App() {
   return (
@@ -15,6 +18,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/rnd" element={<RnD />} />
+
         </Routes>
       </Router>
 

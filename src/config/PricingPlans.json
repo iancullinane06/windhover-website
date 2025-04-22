@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Community",
+    "description": "Perfect for students individuals.",
+    "price": "Free",
+    "buttonText": "Get Started",
+    "buttonLink": "/signup"
+  },
+  {
+    "title": "Professional",
+    "description": "Ideal for growing teams and businesses.",
+    "price": "$49.99/month",
+    "buttonText": "Choose Plan",
+    "buttonLink": "/signup"
+  },
+  {
+    "title": "Enterprise",
+    "description": "Custom solutions for large organizations.",
+    "price": "Contact Us",
+    "buttonText": "Contact Sales",
+    "buttonLink": "/contact"
+  }
+]
