@@ -1,7 +1,9 @@
 import React from 'react';
-import { Typography, Box, Button } from '@mui/material';
+import { Typography, Box, Button, Container } from '@mui/material';
 import { styled } from '@mui/system';
-import FrostedGlassCard from '../components/Widgets'; // Import the reusable widget
+import FrostedGlassCard from '../components/Widgets';
+import pricingPlans from '../config/PricingPlans.json';
+
 
 const RhodoLensSection = styled(Box)({
   backgroundColor: '#d3d3d3',
@@ -12,11 +14,104 @@ const RhodoLensSection = styled(Box)({
   minHeight: '500px',
 });
 
-const ECO_LYTIX_PRICE = 99.99;
+const StatCard = styled(Box)(({ theme }) => ({
+  position: 'relative',
+  textAlign: 'center',
+  background: '#ffffff',
+  padding: theme.spacing(3),
+  borderRadius: theme.shape.borderRadius,
+  '& .icon': {
+    position: 'absolute',
+    top: '-10px',
+    right: '-10px',
+    backgroundColor: '#000000',
+    color: 'white',
+    borderRadius: '50%',
+    padding: theme.spacing(1),
+    zIndex: 2,
+  },
+}));
 
 function Products() {
   return (
     <div>
+
+      {/* Hero Section */}
+      <Box
+        sx={{
+          backgroundColor: '#000000',
+          color: 'white',
+          padding: '6rem 2rem',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          position: 'relative',
+          overflow: 'hidden',
+          height: '600px',
+        }}
+      >
+        <Box sx={{ zIndex: 3, maxWidth: '50%' }}>
+          <Typography variant="h3" gutterBottom>
+            Products
+          </Typography>
+          <Typography variant="h6" gutterBottom>
+            Our software is designed to help as many people as possible. Your support through donations and priced plans ensures we can keep improving and serving our community.
+          </Typography>
+          <Button variant="contained" color="primary" size="large" href="/pricing">
+            Explore Pricing
+          </Button>
+        </Box>
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            bottom: 0,
+            width: '80%',
+            backgroundImage: 'url(/forest.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            zIndex: 1,
+            '&::before': {
+              content: '""',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              bottom: 0,
+              right: 0,
+              background: 'linear-gradient(to top, #000000, transparent) 80%, linear-gradient(to right, #000000, transparent) 80%',
+              zIndex: 2,
+            },
+          }}
+          role="img"
+          aria-label="Forest background image"
+        ></Box>
+      </Box>
+
+      {/* Our Technology with Stats */}
+      <Box sx={{ backgroundColor: '#e0f7fa', py: 8 }}>
+        <Container>
+          <Typography variant="h5" gutterBottom>Our Technology</Typography>
+          <Typography variant="body1" sx={{ mb: 4 }}>
+            Powered by machine learning and advanced image processing, our platform can identify invasive species from drone and satellite imagery, classify risk zones, and generate vector shapefiles in real time.
+          </Typography>
+          <Box display="grid" gridTemplateColumns={{ xs: '1fr', md: '1fr 1fr 1fr' }} gap={4}>
+            <StatCard>
+              <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#00796b' }}>97%</Typography>
+              <Typography variant="body1">Accuracy detecting Rhododendron</Typography>
+            </StatCard>
+            <StatCard>
+              <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#00796b' }}>12x</Typography>
+              <Typography variant="body1">Faster than manual surveying</Typography>
+            </StatCard>
+            <StatCard>
+              <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#00796b' }}>1.2M+</Typography>
+              <Typography variant="body1">Acres scanned to date</Typography>
+            </StatCard>
+          </Box>
+        </Container>
+      </Box>
+
       {/* RhodoLens Section */}
       <RhodoLensSection>
         <Box sx={{ maxWidth: '45%' }}>
@@ -36,7 +131,7 @@ function Products() {
         <FrostedGlassCard
           title="Buy RhodoLens"
           description="Experience precision-led, cost-effective environmental monitoring."
-          price={`From $${ECO_LYTIX_PRICE.toFixed(2)}`}
+          price={`From $${pricingPlans[1].price}`}
           buttonText="Explore Pricing"
           buttonLink="/pricing"
         />

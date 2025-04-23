@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Box, Button } from '@mui/material';
+import { Container, Typography, Box, Button } from '@mui/material';
 import FrostedGlassCard from '../components/Widgets';
 import pricingPlans from '../config/PricingPlans.json';
 
@@ -65,6 +65,23 @@ function Pricing() {
           ))}
         </Box>
       </Box>
+
+      {/* Our Mission */}
+        <Box sx={{ py: 8, px: 2 }}>
+          <Container>
+            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 4, alignItems: 'center' }}>
+              <Box flex={1}>
+                <img src="/images/mission.jpg" alt="Mission illustration" style={{ width: '100%', borderRadius: '12px' }} />
+              </Box>
+              <Box flex={1}>
+                <Typography variant="h5" gutterBottom>Our Mission</Typography>
+                <Typography variant="body1">
+                  At GreenLens, our mission is to protect ecosystems through precision-driven, AI-powered environmental monitoring. We equip conservationists, landowners, and policymakers with cutting-edge tools to detect and combat invasive species efficiently — saving time, resources, and habitats.
+                </Typography>
+              </Box>
+            </Box>
+          </Container>
+        </Box>
 
       {/* Donations Section */}
       <Box

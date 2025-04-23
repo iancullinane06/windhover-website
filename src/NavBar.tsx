@@ -1,6 +1,5 @@
 import { AppBar, Box, Typography, Toolbar, Button, MenuItem, Paper } from '@mui/material';
 import { styled } from '@mui/system';
-import React, { useState } from 'react';
 
 export const FloatingNavbar = styled(AppBar)({
     backgroundColor: '#d3d3d3',
@@ -47,15 +46,6 @@ export function LogoWithText() {
 }
 
 export function Navbar() {
-    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-
-    const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleMenuClose = () => {
-        setAnchorEl(null);
-    };
 
     return (
         <FloatingNavbar elevation={3}>

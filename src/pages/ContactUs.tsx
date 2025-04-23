@@ -1,7 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Typography, Container, TextField, Button } from '@mui/material';
 
 function ContactUs() {
+    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+            if (response.ok) {
+                alert('Message sent successfully!');
+            } else {
+                alert('Failed to send message.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred.');
+        }
+    };
+
     return (
         <Container sx={{ padding: '4rem 2rem' }}>
             <Typography variant="h3" gutterBottom>
@@ -12,6 +37,7 @@ function ContactUs() {
             </Typography>
             <Box
                 component="form"
+                onSubmit={handleSubmit}
                 sx={{
                     display: 'flex',
                     flexDirection: 'column',
@@ -20,15 +46,34 @@ function ContactUs() {
                     margin: '0 auto',
                 }}
             >
-                <TextField label="Name" variant="outlined" fullWidth required />
-                <TextField label="Email" variant="outlined" fullWidth required />
+                <TextField
+                    label="Name"
+                    name="name"
+                    variant="outlined"
+                    fullWidth
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                />
+                <TextField
+                    label="Email"
+                    name="email"
+                    variant="outlined"
+                    fullWidth
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                />
                 <TextField
                     label="Message"
+                    name="message"
                     variant="outlined"
                     fullWidth
                     multiline
                     rows={4}
                     required
+                    value={formData.message}
+                    onChange={handleChange}
                 />
                 <Button variant="contained" color="primary" type="submit">
                     Submit
