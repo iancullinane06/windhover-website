@@ -6,18 +6,45 @@ import IconWrapper from '../components/IconWrapper';
 
 function RnD() {
   const dragX = useMotionValue(200); // Motion value for tracking x position
-  const clipPath = useTransform(dragX, (x) => `inset(0 0 0 ${x + 494.5}px)`); // Transform x to clipPath
+  const clipPath = useTransform(dragX, (x) => `inset(0 0 0 ${x+20}px)`); // Transform x to clipPath
 
   const imageRef = useRef<HTMLImageElement>(null); // Ref to get the image element
   const [imageWidth, setImageWidth] = useState(0); // State to store the image width
+  const [sliderBoundaries, setSliderBoundaries] = useState({ left: 0, right: 0 }); // State to store slider boundaries
 
   useEffect(() => {
-    if (imageRef.current) {
-      setImageWidth(imageRef.current.offsetWidth); // Get the image width
-    }
-  }, [imageRef]);
+    const updateSliderBoundaries = () => {
+      if (imageRef.current) {
+        const imageElement = imageRef.current;
 
-  const sliderBoundaries = imageWidth / 2; // Calculate boundaries dynamically
+        // Get the image's width
+        const imageWidth = imageElement.offsetWidth;
+
+        // Get the image's offset from the left of the viewport
+        const imageOffsetLeft = imageElement.getBoundingClientRect().left;
+
+        // Set the slider boundaries relative to the image's center
+        setSliderBoundaries({
+          left: imageOffsetLeft - imageWidth, // Start at the left edge of the image
+          right: imageOffsetLeft, // End at the right edge of the image
+        });
+
+        // Update the image width state
+        setImageWidth(imageWidth);
+      }
+    };
+
+    // Initial calculation
+    updateSliderBoundaries();
+
+    // Add resize event listener
+    window.addEventListener('resize', updateSliderBoundaries);
+
+    // Cleanup listener on component unmount
+    return () => {
+      window.removeEventListener('resize', updateSliderBoundaries);
+    };
+  }, [imageRef]);
 
   return (
     <div>
@@ -40,56 +67,72 @@ function RnD() {
       </div>
 
       {/* Technology Section */}
-      <div className="py-8 px-4 bg-gray-100">
+      <div className="py-8 px-4 dark:text-white bg-stone-100 dark:bg-stone-900">
         <div className="container mx-auto">
-          <h2 className="text-2xl font-bold mb-6">Technology</h2>
-          <TimelineItem
-            title="Multispectral Imagery"
-            description={
-              <>
-                <p className="mb-4">
-                  Using advanced multispectral sensors, we capture data beyond the visible spectrum to identify invasive species and monitor ecosystems.
-                </p>
-                <div className="mt-4">
-                  <h3 className="text-lg font-semibold mb-2">Interactive Image Slider</h3>
-                  <div className="relative h-[400px] w-full rounded-lg bg-black ">
-                    {/* First Image */}
-                    <motion.img
-                      ref={imageRef} // Attach ref to the first image
-                      src="/VisibleImage.png"
-                      alt="Visible Spectrum"
-                      className="absolute inset-0 w-full h-full object-cover z-10"
-                    />
-                    {/* Second Image */}
-                    <motion.img
-                      src="/IrImage.png"
-                      alt="Infrared Spectrum"
-                      className="absolute inset-0 w-full h-full object-cover z-20"
-                      style={{
-                        clipPath, // Dynamically update clipPath using motion value
-                      }}
-                    />
-                    {/* Draggable Tab */}
-                    <motion.div
-                      drag="x"
-                      dragConstraints={{ left: -sliderBoundaries, right: sliderBoundaries }} // Use dynamic boundaries
-                      style={{ x: dragX }} // Bind dragX to the draggable tab
-                      whileTap={{ cursor: 'grabbing' }}
-                      className="absolute bottom-[-40px] bg-white/100 rounded-full left-1/2 transform -translate-x-1/2 w-auto h-10 cursor-grab shadow-md flex items-center justify-center z-40"
-                    >
-                      <IconWrapper
-                        icon={<CodeIcon />}
-                        color="text-gray-800"
-                        bgColor="bg-stone-300"
-                      />
-                    </motion.div>
-                  </div>
-                </div>
-              </>
-            }
-          />
+          <h2 className="text-4xl font-bold mb-6 text-center">Technology</h2>
+          <div className="bg-white dark:bg-stone-800 rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center md:items-start">
+            {/* Text Content on the Left */}
+            <div className="w-full md:w-1/2 mt-6 md:mt-0">
+              <TimelineItem
+                title="Multispectral Imagery"
+                description={
+                  <>
+                    <p className="mb-4">
+                      Using advanced multispectral sensors, we capture data beyond the visible spectrum to identify invasive species and monitor ecosystems.
+                    </p>
+                    <div className="mt-4">
+                      <h3 className="text-lg font-semibold mb-2">Interactive Image Slider</h3>
+                    </div>
+                  </>
+                }
+              />
+            </div>
 
-          {/* Machine Learning Section */}
+            {/* Image Slider on the Right */}
+            <div className="w-full md:grow-2 md:w-1/2 pr-0 md:pr-6">
+              <div className="relative h-[400px] w-full rounded-lg bg-black">
+                {/* First Image */}
+                <motion.img
+                  ref={imageRef} // Attach ref to the first image
+                  src="/VisibleImage.png"
+                  alt="Visible Spectrum"
+                  className="absolute inset-0 w-full h-full object-cover z-10"
+                />
+                {/* Second Image */}
+                <motion.img
+                  src="/IrImage.png"
+                  alt="Infrared Spectrum"
+                  className="absolute inset-0 w-full h-full object-cover z-20"
+                  style={{
+                    clipPath, // Dynamically update clipPath using motion value
+                  }}
+                />
+                {/* Draggable Tab */}
+                <motion.div
+                  drag="x"
+                  dragConstraints={{
+                    left: sliderBoundaries.left - imageWidth / 2, // Adjust left boundary relative to the image center
+                    right: sliderBoundaries.right - imageWidth / 2, // Adjust right boundary relative to the image center
+                  }} // Adjusted boundaries
+                  style={{ x: dragX }} // Bind dragX to the draggable tab
+                  whileTap={{ cursor: 'grabbing' }}
+                  className="absolute bottom-[-40px] bg-white/100 rounded-full w-auto h-10 cursor-grab shadow-md flex items-center justify-center z-40"
+                >
+                  <IconWrapper
+                    icon={<CodeIcon />}
+                    color="text-gray-800"
+                    bgColor="bg-stone-300"
+                  />
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Machine Learning Section */}
+      <div className="py-8 px-4 dark:text-white bg-stone-100 dark:bg-stone-900">
+        <div className="container mx-auto">
           <TimelineItem
             title="Machine Learning"
             description={

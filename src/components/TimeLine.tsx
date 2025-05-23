@@ -18,7 +18,7 @@ const TimelineItem = ({
     </div>
     <div>
       <h5 className="text-lg font-bold">{title}</h5>
-      <p className="mt-1 text-base">{description}</p>
+      {description}
       {children && <div className="mt-2">{children}</div>}
     </div>
   </div>

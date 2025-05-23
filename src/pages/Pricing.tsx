@@ -15,10 +15,10 @@ function Pricing() {
       </div>
 
       {/* Pricing Plans Section */}
-      <div className="bg-white py-16 px-4">
+      <div className="bg-stone-100 dark:bg-stone-900 py-16 px-4">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold mb-2">Pricing</h2>
-          <p className="text-gray-700">Explore our competitive pricing plans tailored to your needs.</p>
+          <h2 className="text-3xl font-bold mb-2 dark:text-white">Pricing</h2>
+          <p className="text-stone-700 dark:text-white">Explore our competitive pricing plans tailored to your needs.</p>
         </div>
         <div className="flex flex-wrap justify-center gap-8">
           {pricingPlans.map((plan, index) => (
@@ -36,7 +36,7 @@ function Pricing() {
       </div>
 
       {/* Our Mission */}
-      <div className="py-16 px-4">
+      <div className="py-16 px-4 bg-stone-900">
         <div className="container mx-auto flex flex-col md:flex-row gap-8 items-center">
           <div className="flex-1">
             <img
@@ -46,8 +46,8 @@ function Pricing() {
             />
           </div>
           <div className="flex-1">
-            <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-            <p className="text-gray-700">
+            <h3 className="text-2xl font-bold mb-4 text-white">Our Mission</h3>
+            <p className="text-white">
               At GreenLens, our mission is to protect ecosystems through precision-driven, AI-powered environmental
               monitoring. We equip conservationists, landowners, and policymakers with cutting-edge tools to detect and
               combat invasive species efficiently — saving time, resources, and habitats.
@@ -65,7 +65,7 @@ function Pricing() {
         </p>
         <a
           href="/donate"
-          className="inline-block bg-white text-green-700 py-3 px-6 rounded-lg font-semibold hover:bg-gray-100 transition"
+          className="inline-block bg-white text-green-700 py-3 px-6 rounded-lg font-semibold hover:bg-stone-200 ease-in-out duration-300"
         >
           Donate Now
         </a>
