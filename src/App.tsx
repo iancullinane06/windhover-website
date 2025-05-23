@@ -1,6 +1,6 @@
 import { Typography, Box} from '@mui/material';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Navbar } from './NavBar'; // Ensure the path is correct
+import { Navbar } from './components/NavBar';
 import Home from './pages/Home';
 import Pricing from './pages/Pricing';
 import Products from './pages/Products';

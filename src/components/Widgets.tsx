@@ -2,8 +2,9 @@ import React, { ReactNode } from 'react';
 import { Paper, Typography, Button, Box } from '@mui/material';
 import { styled } from '@mui/system';
 
+
 const FrostedGlass = styled(Paper)({
-  background: 'rgba(255, 255, 255, 0.7)',
+  background: 'bg-frosted-glass',
   backdropFilter: 'blur(10px)',
   borderRadius: '16px',
   padding: '2rem',
@@ -34,7 +35,7 @@ const FrostedGlassCard: React.FC<FrostedGlassCardProps> = ({
       {/* Background Rectangle */}
       <Box
         sx={{
-          background: 'linear-gradient(90deg, rgba(34, 172, 227, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(83, 237, 88, 1) 100%)',
+          background: 'linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%)',
           borderRadius: '16px',
           position: 'absolute',
           top: '20px',

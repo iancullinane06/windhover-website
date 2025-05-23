@@ -1,175 +1,134 @@
-import React from 'react';
-import { Typography, Box, Button, Container } from '@mui/material';
-import { styled } from '@mui/system';
+import { RocketLaunch, Payments, AdjustRounded, Compost } from '@mui/icons-material';
 import FrostedGlassCard from '../components/Widgets';
-import pricingPlans from '../config/PricingPlans.json';
-
-
-const RhodoLensSection = styled(Box)({
-  backgroundColor: '#d3d3d3',
-  padding: '6rem 2rem',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-around',
-  minHeight: '500px',
-});
-
-const StatCard = styled(Box)(({ theme }) => ({
-  position: 'relative',
-  textAlign: 'center',
-  background: '#ffffff',
-  padding: theme.spacing(3),
-  borderRadius: theme.shape.borderRadius,
-  '& .icon': {
-    position: 'absolute',
-    top: '-10px',
-    right: '-10px',
-    backgroundColor: '#000000',
-    color: 'white',
-    borderRadius: '50%',
-    padding: theme.spacing(1),
-    zIndex: 2,
-  },
-}));
 
 function Products() {
   return (
     <div>
-
       {/* Hero Section */}
-      <Box
-        sx={{
-          backgroundColor: '#000000',
-          color: 'white',
-          padding: '6rem 2rem',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          position: 'relative',
-          overflow: 'hidden',
-          height: '600px',
-        }}
-      >
-        <Box sx={{ zIndex: 3, maxWidth: '50%' }}>
-          <Typography variant="h3" gutterBottom>
-            Products
-          </Typography>
-          <Typography variant="h6" gutterBottom>
+      <div className="bg-dark text-white py-24 px-8 flex items-center justify-between relative overflow-hidden h-[600px]">
+        <div className="z-30 max-w-[50%] ml-8">
+          <h1 className="text-4xl font-bold mb-4">Products</h1>
+          <p className="text-lg mb-6">
             Our software is designed to help as many people as possible. Your support through donations and priced plans ensures we can keep improving and serving our community.
-          </Typography>
-          <Button variant="contained" color="primary" size="large" href="/pricing">
+          </p>
+          <a
+            href="/pricing"
+            className="bg-primary text-white py-3 px-6 rounded-lg text-lg"
+          >
             Explore Pricing
-          </Button>
-        </Box>
-        <Box
-          sx={{
-            position: 'absolute',
-            top: 0,
-            right: 0,
-            bottom: 0,
-            width: '80%',
-            backgroundImage: 'url(/forest.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            zIndex: 1,
-            '&::before': {
-              content: '""',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              bottom: 0,
-              right: 0,
-              background: 'linear-gradient(to top, #000000, transparent) 80%, linear-gradient(to right, #000000, transparent) 80%',
-              zIndex: 2,
-            },
+          </a>
+        </div>
+        <div
+          className="absolute top-0 right-0 bottom-0 w-[80%] bg-cover bg-center z-10"
+          style={{
+            backgroundImage: "url(/forest.jpg)",
           }}
           role="img"
           aria-label="Forest background image"
-        ></Box>
-      </Box>
+        >
+          <div className="absolute inset-0 bg-gr-d z-3"></div>
+        </div>
+      </div>
 
       {/* Our Technology with Stats */}
-      <Box sx={{ backgroundColor: '#e0f7fa', py: 8 }}>
-        <Container>
-          <Typography variant="h5" gutterBottom>Our Technology</Typography>
-          <Typography variant="body1" sx={{ mb: 4 }}>
+      <div className="bg-teal-100 py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-bold mb-4">Our Technology</h2>
+          <p className="text-base mb-8">
             Powered by machine learning and advanced image processing, our platform can identify invasive species from drone and satellite imagery, classify risk zones, and generate vector shapefiles in real time.
-          </Typography>
-          <Box display="grid" gridTemplateColumns={{ xs: '1fr', md: '1fr 1fr 1fr' }} gap={4}>
-            <StatCard>
-              <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#00796b' }}>97%</Typography>
-              <Typography variant="body1">Accuracy detecting Rhododendron</Typography>
-            </StatCard>
-            <StatCard>
-              <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#00796b' }}>12x</Typography>
-              <Typography variant="body1">Faster than manual surveying</Typography>
-            </StatCard>
-            <StatCard>
-              <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#00796b' }}>1.2M+</Typography>
-              <Typography variant="body1">Acres scanned to date</Typography>
-            </StatCard>
-          </Box>
-        </Container>
-      </Box>
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-lg text-center shadow-md">
+              <h3 className="text-4xl font-bold text-primary mb-2">97%</h3>
+              <p className="text-base">Accuracy detecting Rhododendron</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg text-center shadow-md">
+              <h3 className="text-4xl font-bold text-primary mb-2">12x</h3>
+              <p className="text-base">Faster than manual surveying</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg text-center shadow-md">
+              <h3 className="text-4xl font-bold text-primary mb-2">1.2M+</h3>
+              <p className="text-base">Acres scanned to date</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* RhodoLens Section */}
-      <RhodoLensSection>
-        <Box sx={{ maxWidth: '45%' }}>
-          <Typography variant="h4" gutterBottom>
-            RhodoLens
-          </Typography>
-          <Typography variant="h6" gutterBottom>
+      <div className="bg-gray-300 py-24 px-8 flex items-center justify-around min-h-[500px]">
+        <div className="max-w-[45%]">
+          <h2 className="text-3xl font-bold mb-4">RhodoLens</h2>
+          <h3 className="text-xl font-semibold mb-4">
             Revolutionising Environmental Intelligence
-          </Typography>
-          <Typography variant="body1">
+          </h3>
+          <p className="text-base mb-4">
             RhodoLens is more than a tool — it's your strategic partner in the battle against invasive species. Designed for precision, speed, and scalability, our software empowers land managers, ecologists, and environmental agencies to make data-driven decisions faster than ever before.
-          </Typography>
-          <Typography variant="body1">
+          </p>
+          <p className="text-base">
             Harness the power of machine learning to reduce operational overheads, optimise site visits, and eliminate guesswork. Whether you're safeguarding biodiversity or ensuring regulatory compliance, RhodoLens delivers measurable results.
-          </Typography>
-        </Box>
+          </p>
+        </div>
         <FrostedGlassCard
           title="Buy RhodoLens"
           description="Experience precision-led, cost-effective environmental monitoring."
-          price={`From $${pricingPlans[1].price}`}
+          price="From $99"
           buttonText="Explore Pricing"
           buttonLink="/pricing"
         />
-      </RhodoLensSection>
+      </div>
 
-      <Box
-        sx={{
-          backgroundColor: '#121212',
-          color: 'white',
-          padding: '6rem 2rem',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          textAlign: 'center',
-        }}
-      >
-        <Typography variant="h4" gutterBottom>
-          Why Choose RhodoLens?
-        </Typography>
-        <Typography variant="h6" gutterBottom>
-          Drive Down Costs. Accelerate Insight. Maximise Impact.
-        </Typography>
-        <Typography variant="body1" sx={{ maxWidth: '800px', marginBottom: '2rem' }}>
-          RhodoLens delivers unparalleled efficiency at every stage of your workflow. With our proprietary AI-driven analysis, you’ll eliminate manual detection delays, drastically reduce time spent in the field, and see measurable reductions in operational expenditure.
-          <br />
-          <br />
-          🚀 <strong>Faster:</strong> Instant analysis at scale. No bottlenecks, no lag.
-          <br />
-          💰 <strong>Cheaper:</strong> Reduce monitoring and labor costs by up to 60%.
-          <br />
-          🎯 <strong>Smarter:</strong> Hyper-precise detection algorithms for pinpoint accuracy.
-          <br />
-          ♻️ <strong>Greener:</strong> Make informed decisions that protect ecosystems and save money.
-        </Typography>
-        <Button variant="outlined" color="primary" size="large">
-          Learn More
-        </Button>
-      </Box>
+      {/* Why Choose RhodoLens */}
+      <div className="bg-stone-900 text-white py-24 px-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Text Content */}
+          <div className="space-y-6">
+            <h2 className="text-4xl font-bold">Why Choose RhodoLens?</h2>
+            <p className="text-lg">
+              RhodoLens is your trusted partner in environmental intelligence. Designed to deliver precision, speed, and cost-effectiveness, it empowers you to make data-driven decisions that protect ecosystems and reduce operational costs.
+            </p>
+            <ul className="space-y-4">
+              <li className="flex items-center">
+                <RocketLaunch className="h-6 w-6 text-primary mr-4" />
+                <span>
+                  <strong>Faster:</strong> Instant analysis at scale with no bottlenecks or lag.
+                </span>
+              </li>
+              <li className="flex items-center">
+                <Payments className="h-6 w-6 text-primary mr-4" />
+                <span>
+                  <strong>Cheaper:</strong> Reduce monitoring and labor costs by up to 60%.
+                </span>
+              </li>
+              <li className="flex items-center">
+                <AdjustRounded className="h-6 w-6 text-primary mr-4" />
+                <span>
+                  <strong>Smarter:</strong> Hyper-precise detection algorithms for pinpoint accuracy.
+                </span>
+              </li>
+              <li className="flex items-center">
+                <Compost className="h-6 w-6 text-primary mr-4" />
+                <span>
+                  <strong>Greener:</strong> Make informed decisions that protect biodiversity.
+                </span>
+              </li>
+            </ul>
+            <a
+              href="/learn-more"
+              className="inline-block bg-primary text-white py-3 px-6 rounded-lg text-lg mt-6"
+            >
+              Learn More
+            </a>
+          </div>
+          {/* Image Content */}
+          <div className="mt-16 lg:mt-0">
+            <img
+              src="/technology.png"
+              alt="Technology illustration"
+              className="w-full rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

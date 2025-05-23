@@ -1,59 +1,28 @@
 import React from 'react';
-import { Container, Typography, Box, Button } from '@mui/material';
-import FrostedGlassCard from '../components/Widgets';
 import pricingPlans from '../config/PricingPlans.json';
+import FrostedGlassCard from '../components/Widgets';
 
 function Pricing() {
   return (
-    <Box>
+    <div>
       {/* Banner Section */}
-      <Box
-        sx={{
-          background: 'black',
-          color: 'white',
-          padding: '4rem 2rem',
-          textAlign: 'center',
-          height: '400px',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          gap: '1rem',
-        }}
-      >
-        <Typography variant="h3" gutterBottom>
-          Pricing Plans
-        </Typography>
-        <Typography variant="h6" sx={{ maxWidth: '800px', margin: '0 auto' }}>
-          Our software is designed to help as many people as possible. Your support through donations and priced plans ensures we can keep improving and serving our community.
-        </Typography>
-      </Box>
+      <div className="bg-black text-white py-16 text-center flex flex-col justify-center items-center gap-4 h-[400px]">
+        <h1 className="text-4xl font-bold">Pricing Plans</h1>
+        <p className="text-lg max-w-3xl">
+          Our software is designed to help as many people as possible. Your support through donations and priced plans
+          ensures we can keep improving and serving our community.
+        </p>
+      </div>
 
       {/* Pricing Plans Section */}
-      <Box sx={{ padding: '2rem', backgroundColor: 'white' }}>
-        <Typography variant="h4" gutterBottom>
-          Pricing
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          Explore our competitive pricing plans tailored to your needs.
-        </Typography>
-        <Box
-          sx={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '2rem',
-            marginTop: '2rem',
-            justifyContent: 'center',
-          }}
-        >
+      <div className="bg-white py-16 px-4">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold mb-2">Pricing</h2>
+          <p className="text-gray-700">Explore our competitive pricing plans tailored to your needs.</p>
+        </div>
+        <div className="flex flex-wrap justify-center gap-8">
           {pricingPlans.map((plan, index) => (
-            <Box
-              key={index}
-              sx={{
-                flex: '1 1 calc(33.333% - 2rem)',
-                minWidth: '300px',
-                maxWidth: '400px',
-              }}
-            >
+            <div key={index} className="flex-1 min-w-[300px] max-w-[400px]">
               <FrostedGlassCard
                 title={plan.title}
                 description={plan.description}
@@ -61,53 +30,47 @@ function Pricing() {
                 buttonText={plan.buttonText}
                 buttonLink={plan.buttonLink}
               />
-            </Box>
+            </div>
           ))}
-        </Box>
-      </Box>
+        </div>
+      </div>
 
       {/* Our Mission */}
-        <Box sx={{ py: 8, px: 2 }}>
-          <Container>
-            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 4, alignItems: 'center' }}>
-              <Box flex={1}>
-                <img src="/images/mission.jpg" alt="Mission illustration" style={{ width: '100%', borderRadius: '12px' }} />
-              </Box>
-              <Box flex={1}>
-                <Typography variant="h5" gutterBottom>Our Mission</Typography>
-                <Typography variant="body1">
-                  At GreenLens, our mission is to protect ecosystems through precision-driven, AI-powered environmental monitoring. We equip conservationists, landowners, and policymakers with cutting-edge tools to detect and combat invasive species efficiently — saving time, resources, and habitats.
-                </Typography>
-              </Box>
-            </Box>
-          </Container>
-        </Box>
+      <div className="py-16 px-4">
+        <div className="container mx-auto flex flex-col md:flex-row gap-8 items-center">
+          <div className="flex-1">
+            <img
+              src="/images/mission.jpg"
+              alt="Mission illustration"
+              className="w-full rounded-lg shadow-lg"
+            />
+          </div>
+          <div className="flex-1">
+            <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
+            <p className="text-gray-700">
+              At GreenLens, our mission is to protect ecosystems through precision-driven, AI-powered environmental
+              monitoring. We equip conservationists, landowners, and policymakers with cutting-edge tools to detect and
+              combat invasive species efficiently — saving time, resources, and habitats.
+            </p>
+          </div>
+        </div>
+      </div>
 
       {/* Donations Section */}
-      <Box
-        sx={{
-          padding: '4rem 2rem',
-          height: '400px',
-          background: 'linear-gradient(0deg,rgba(128, 252, 83, 1) 0%, rgba(20, 143, 84, 1) 100%)',
-          textAlign: 'center',
-        }}
-      >
-        <Typography variant="h4" gutterBottom>
-          Support Us with a Donation
-        </Typography>
-        <Typography variant="body1" sx={{ maxWidth: '800px', margin: '0 auto', marginBottom: '2rem' }}>
-          Your donations help us continue to improve and provide this software to as many people as possible. Every contribution, big or small, makes a difference.
-        </Typography>
-        <Button
-          variant="contained"
-          color="primary"
+      <div className="bg-gradient-to-b from-green-400 to-green-700 text-white py-16 text-center">
+        <h3 className="text-3xl font-bold mb-4">Support Us with a Donation</h3>
+        <p className="text-lg max-w-3xl mx-auto mb-8">
+          Your donations help us continue to improve and provide this software to as many people as possible. Every
+          contribution, big or small, makes a difference.
+        </p>
+        <a
           href="/donate"
-          sx={{ padding: '0.75rem 2rem', fontSize: '1rem' }}
+          className="inline-block bg-white text-green-700 py-3 px-6 rounded-lg font-semibold hover:bg-gray-100 transition"
         >
           Donate Now
-        </Button>
-      </Box>
-    </Box>
+        </a>
+      </div>
+    </div>
   );
 }
 
