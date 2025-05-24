@@ -138,7 +138,7 @@ function AboutUs() {
             ].map((story, index) => (
               <div
                 key={index}
-                className={`relative p-6 rounded-2xl shadow-lg transform transition-transform row-span-2 hover:scale-105 ${
+                className={`relative p-6 rounded-2xl shadow-lg transform transition-transform duration-300 row-span-2 hover:scale-105 ${
                   index % 2 === 0 ? "md:col-start-3" : "md:col-start-1"
                 } md:row-start-${index + 1} ${story.bgColor}`}
               >
@@ -154,10 +154,10 @@ function AboutUs() {
       </div>
 
       {/* Looking Ahead */}
-      <div className="bg-vibrant-bg py-16 px-8 bg-amber-600">
-        <div className="container mx-auto px-4">
+      <div className="bg-stone-900 py-16">
+        <div className="p-6 rounded-2xl shadow-lg container mx-auto px-4 w-3/5 bg-amber-600">
           <h5 className="text-2xl font-semibold mb-4 text-text-light">
-            <IconWrapper icon={<RocketLaunch />} bgColor={'bg-sky-500'} color={'text-stone-100'} /> Looking Ahead
+            <IconWrapper icon={<RocketLaunch />} bgColor={'bg-stone-900'} color={'text-amber-600'} /> Looking Ahead
           </h5>
           <p className="text-base text-text-dark">
             Our vision extends far beyond rhododendrons. From Japanese knotweed to giant hogweed, we’re expanding our capabilities to tackle diverse ecological challenges across the globe.
