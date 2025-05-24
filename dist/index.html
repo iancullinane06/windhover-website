@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="ease-in-out duration-1000">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="/assets/GreenLens-CKDcemGi.ico" />
@@ -10,12 +10,20 @@
       content="Web site created using Vite"
     />
     <link rel="manifest" href="/assets/manifest-1hnd-L2b.json" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css" type="text/css"/>
     <title>GreenLens</title>
-    <script type="module" crossorigin src="/assets/index-BqV1ib7w.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-ColKChzt.css">
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      document.documentElement.classList.toggle(
+        "dark",
+        localStorage.theme === "dark" ||
+          (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      );
+    </script>
+    <script type="module" crossorigin src="/assets/index-DEOhOa5C.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DHdR09D5.css">
   </head>
-  <body style="background-color: #000;">
+  <body style="background-color: #000;" class="font-mono">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
