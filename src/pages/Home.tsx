@@ -9,7 +9,7 @@ function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative flex items-center justify-between bg-black text-white h-[800px] overflow-hidden px-8 py-24">
+      <div className="relative flex items-center justify-between bg-black text-white h-screen overflow-hidden px-8 py-24">
         <div
           className="absolute top-0 right-0 bottom-0 w-4/5 bg-cover bg-center z-2"
           style={{
@@ -21,7 +21,7 @@ function Home() {
           <div className="absolute inset-0 bg-gr-d z-3"></div>
         </div>
         <div className="flex z-30 ml-8 max-w-1/2 flex-row items-center gap-2">
-          <div className="w-1/10">
+          <div className="w-1/10 hidden md:block my-auto">
             <IconWrapper 
               icon={<ShieldIcon />} 
               color="text-white" 
@@ -29,7 +29,7 @@ function Home() {
             />
           </div>
           <div>
-            <h1 className="text-4xl font-bold mb-4">
+            <h1 className="text-4xl font-bold">
               Turning data into defense against invasives
             </h1>
           </div>
@@ -40,7 +40,7 @@ function Home() {
       <div className="bg-gradient-to-t from-stone-200 to-black dark:from-stone-900 py-24 overflow-hidden relative">
       <div className="flex flex-col md:grid md:grid-cols-3 md:grid-rows-3 gap-8 md:gap-4 mx-16 relative">
         {/* Top-left box */}
-        <div className="col-span-2 row-span-1 lg:col-span-1 bg-green-200 text-black p-8 rounded-lg shadow-lg z-30 transform md:translate-x-8 md:-translate-y-8 w-4/5 lg:w-full">
+        <div className="col-span-2 row-span-1 lg:col-span-1 bg-green-200 text-black p-8 rounded-lg shadow-lg z-30 transform md:translate-x-8 md:-translate-y-8 md:w-4/5 lg:w-full">
           <h6 className="text-lg font-semibold mb-2">Models inspired by Google</h6>
           <p className="text-sm">
             Leveraging cutting-edge machine learning techniques to deliver
@@ -49,7 +49,7 @@ function Home() {
         </div>
 
         {/* Center text */}
-        <div className="dark:text-white col-start-2 col-span-1 row-start-2 row-span-1 flex flex-col items-center justify-center z-20">
+        <div className="mix-blend-difference dark:mix-blend-normal text-white col-start-2 col-span-1 row-start-2 row-span-1 flex flex-col items-center justify-center z-20">
           <h4 className="text-3xl font-bold mb-4 text-center">Our Dream</h4>
           <p className="text-base text-center">
             We envision a future where nature thrives - untouched, undisturbed, understood.
@@ -100,10 +100,10 @@ function Home() {
     </div>
 
       {/* RhodoLens Section */}
-      <div className="bg-stone-900 text-white py-24 flex items-center justify-around">
-        <div className="max-w-[45%]">
+      <div className="bg-stone-200 dark:bg-stone-900 dark:text-white p-16 flex items-center justify-around md:flex-row flex-col">
+        <div className="md:max-w-[45%]">
           <h4 className="text-2xl font-bold mb-4">RhodoLens</h4>
-          <h6 className="text-lg font-semibold mb-4">
+          <h6 className="text-lg font-semibold mb-4 text-stone-700 dark:text-sky-500">
             Revolutionising Environmental Intelligence
           </h6>
           <p className="text-base mb-4">

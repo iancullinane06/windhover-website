@@ -1,4 +1,5 @@
-import { RocketLaunch, Payments, AdjustRounded, Compost } from '@mui/icons-material';
+import { RocketLaunch, Timeline, Compost, Payments, AdjustRounded } from '@mui/icons-material';
+import IconWrapper from '../components/IconWrapper';
 import FrostedGlassCard from '../components/Widgets';
 
 function Products() {
@@ -31,34 +32,48 @@ function Products() {
       </div>
 
       {/* Our Technology with Stats */}
-      <div className="bg-teal-100 py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold mb-4">Our Technology</h2>
-          <p className="text-base mb-8">
+      <div className="bg-teal-100 dark:bg-stone-900 py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-2xl font-bold mb-4 dark:text-white">Our Technology</h2>
+          <p className="text-base mb-8 dark:text-white w-3/5 mx-auto">
             Powered by machine learning and advanced image processing, our platform can identify invasive species from drone and satellite imagery, classify risk zones, and generate vector shapefiles in real time.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg text-center shadow-md">
-              <h3 className="text-4xl font-bold text-primary mb-2">97%</h3>
-              <p className="text-base">Accuracy detecting Rhododendron</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg text-center shadow-md">
-              <h3 className="text-4xl font-bold text-primary mb-2">12x</h3>
-              <p className="text-base">Faster than manual surveying</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg text-center shadow-md">
-              <h3 className="text-4xl font-bold text-primary mb-2">1.2M+</h3>
-              <p className="text-base">Acres scanned to date</p>
-            </div>
+            {[
+              {
+                icon: <IconWrapper icon={<Compost />} bgColor="bg-green-100" color="text-green-600" />,
+                stat: '97%',
+                description: 'Accuracy detecting Rhododendron',
+              },
+              {
+                icon: <IconWrapper icon={<Timeline />} bgColor="bg-blue-100" color="text-blue-600" />,
+                stat: '12x',
+                description: 'Faster than manual surveying',
+              },
+              {
+                icon: <IconWrapper icon={<RocketLaunch />} bgColor="bg-yellow-100" color="text-yellow-600" />,
+                stat: '1.2M+',
+                description: 'Acres scanned to date',
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="bg-stone-200 p-6 rounded-lg text-center shadow-md"
+              >
+                <h3 className="text-4xl font-bold text-primary mb-2">{item.stat}</h3>
+                <div className="mb-4 scale-125">{item.icon}</div>
+                <p className="text-base">{item.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
       {/* RhodoLens Section */}
-      <div className="bg-gray-300 py-24 px-8 flex items-center justify-around min-h-[500px]">
-        <div className="max-w-[45%]">
+      <div className="bg-gray-300 dark:bg-stone-900 dark:text-white py-24 px-8 flex items-center justify-around min-h-[500px]">
+        <div className="max-w-[45%] text-justify">
           <h2 className="text-3xl font-bold mb-4">RhodoLens</h2>
-          <h3 className="text-xl font-semibold mb-4">
+          <h3 className="text-xl font-semibold mb-4 text-sky-500">
             Revolutionising Environmental Intelligence
           </h3>
           <p className="text-base mb-4">
@@ -83,32 +98,32 @@ function Products() {
           {/* Text Content */}
           <div className="space-y-6">
             <h2 className="text-4xl font-bold">Why Choose RhodoLens?</h2>
-            <p className="text-lg">
+            <p className="text-lg text-justify">
               RhodoLens is your trusted partner in environmental intelligence. Designed to deliver precision, speed, and cost-effectiveness, it empowers you to make data-driven decisions that protect ecosystems and reduce operational costs.
             </p>
             <ul className="space-y-4">
               <li className="flex items-center">
                 <RocketLaunch className="h-6 w-6 text-primary mr-4" />
                 <span>
-                  <strong>Faster:</strong> Instant analysis at scale with no bottlenecks or lag.
+                  <strong className="text-sky-300">Faster:</strong> Instant analysis at scale with no bottlenecks or lag.
                 </span>
               </li>
               <li className="flex items-center">
                 <Payments className="h-6 w-6 text-primary mr-4" />
                 <span>
-                  <strong>Cheaper:</strong> Reduce monitoring and labor costs by up to 60%.
+                  <strong className="text-sky-400">Cheaper:</strong> Reduce monitoring and labor costs by up to 60%.
                 </span>
               </li>
               <li className="flex items-center">
                 <AdjustRounded className="h-6 w-6 text-primary mr-4" />
                 <span>
-                  <strong>Smarter:</strong> Hyper-precise detection algorithms for pinpoint accuracy.
+                  <strong className="text-sky-500">Smarter:</strong> Hyper-precise detection algorithms for pinpoint accuracy.
                 </span>
               </li>
               <li className="flex items-center">
                 <Compost className="h-6 w-6 text-primary mr-4" />
                 <span>
-                  <strong>Greener:</strong> Make informed decisions that protect biodiversity.
+                  <strong className="text-sky-600">Greener:</strong> Make informed decisions that protect biodiversity.
                 </span>
               </li>
             </ul>

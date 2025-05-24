@@ -35,7 +35,7 @@ const FrostedGlassCard: React.FC<FrostedGlassCardProps> = ({
       {/* Background Rectangle */}
       <Box
         sx={{
-          background: 'linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%)',
+          background: 'linear-gradient(90deg, var(--color-sky-500) 0%, var(--color-secondary) 100%)',
           borderRadius: '16px',
           position: 'absolute',
           top: '20px',

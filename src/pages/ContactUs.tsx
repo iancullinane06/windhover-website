@@ -27,16 +27,16 @@ function ContactUs() {
     };
 
     return (
-        <div className="py-16 px-4">
-            <div className="max-w-4xl mx-auto text-center">
+        <div className="bg-stone-700">
+            <div className="bg-sky-400 text-black w-full py-16 flex flex-col justify-center items-center gap-4 text-center h-[400px]">
                 <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
-                <p className="text-lg text-gray-600 mb-8">
+                <p className="text-lg text-stone-800 mb-8 w-3/5">
                     Have questions or need assistance? We'd love to hear from you! Fill out the form below, and our team will get back to you as soon as possible.
                 </p>
             </div>
             <form
                 onSubmit={handleSubmit}
-                className="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-8 space-y-6"
+                className="max-w-2xl mx-auto my-16 bg-white shadow-lg rounded-lg p-8 space-y-6"
             >
                 <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700">
@@ -49,7 +49,7 @@ function ContactUs() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary focus:border-primary"
+                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary focus:border-primary accent-amber-500 caret-sky-500"
                     />
                 </div>
                 <div>
@@ -63,7 +63,7 @@ function ContactUs() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary focus:border-primary"
+                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary focus:border-primary accent-amber-500 caret-sky-500"
                     />
                 </div>
                 <div>
@@ -77,12 +77,12 @@ function ContactUs() {
                         onChange={handleChange}
                         required
                         rows={4}
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary focus:border-primary"
+                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary focus:border-primary accent-amber-500 caret-sky-500"
                     ></textarea>
                 </div>
                 <button
                     type="submit"
-                    className="w-full bg-primary text-white py-3 px-6 rounded-md font-medium hover:bg-primary-dark transition"
+                    className="w-full text-shadow-lg bg-amber-500 text-white py-3 px-6 rounded-md font-medium hover:bg-amber-700 transition"
                 >
                     Submit
                 </button>
