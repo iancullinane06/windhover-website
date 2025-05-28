@@ -1,29 +1,41 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 function ContactUs() {
-    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
-            });
-            if (response.ok) {
-                alert('Message sent successfully!');
-            } else {
-                alert('Failed to send message.');
+
+        const templateParams = {
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            reply_to: formData.email, // Auto-reply email
+        };
+
+        emailjs.send(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID!,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID!,
+            templateParams,
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY!
+        ).then(
+            (result) => {
+                alert('Message sent successfully! You will receive an auto-reply shortly.');
+            },
+            (error) => {
+                console.error('Error:', error);
+                alert('Failed to send message. Please try again.');
             }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('An error occurred.');
-        }
+        );
     };
 
     return (

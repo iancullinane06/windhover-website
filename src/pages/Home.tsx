@@ -1,7 +1,7 @@
-import {BanknotesIcon, RocketLaunchIcon, CursorArrowRaysIcon, ArrowPathIcon} from '@heroicons/react/24/solid';
 import ShieldIcon from '@mui/icons-material/Shield';
 import FrostedGlassCard from '../components/Widgets';
 import IconWrapper from '../components/IconWrapper'; // Add this import
+import { RocketLaunch, Payments, AdjustRounded, Compost } from '@mui/icons-material';
 
 const ECO_LYTIX_PRICE = 99.99;
 
@@ -48,7 +48,7 @@ function Home() {
           </p>
         </div>
 
-        {/* Center text */}
+        {/* Our Dream box */}
         <div className="mix-blend-difference dark:mix-blend-normal text-white col-start-2 col-span-1 row-start-2 row-span-1 flex flex-col items-center justify-center z-20">
           <h4 className="text-3xl font-bold mb-4 text-center">Our Dream</h4>
           <p className="text-base text-center">
@@ -66,7 +66,7 @@ function Home() {
         </div>
 
         {/* Bottom-left box */}
-        <div className="col-span-2 row-start-3 row-span-1 lg:col-span-1 bg-teal-200 text-black p-8 rounded-lg shadow-lg z-30 transform md:-translate-x-8 md:translate-y-8">
+        <div className="col-span-2 row-start-3 row-span-1 lg:col-span-1 bg-teal-200 text-black p-8 rounded-lg shadow-lg z-30 md:w-4/5 lg:w-full transform md:translate-x-32 md:translate-y-8">
           <h6 className="text-lg font-semibold mb-2">Empowering Communities</h6>
           <p className="text-sm">
             Providing tools and insights to empower local communities in
@@ -129,33 +129,57 @@ function Home() {
         />
       </div>
 
-      <div className="bg-stone-900 text-white py-24 flex flex-col items-center text-center">
-        <h4 className="text-2xl font-bold mb-4">Why Choose RhodoLens?</h4>
-        <h6 className="text-lg font-semibold mb-4">
-          Drive Down Costs. Accelerate Insight. Maximise Impact.
-        </h6>
-        <p className="text-base max-w-3xl mb-8">
-          RhodoLens delivers unparalleled efficiency at every stage of your
-          workflow. With our proprietary AI-driven analysis, you’ll eliminate
-          manual detection delays, drastically reduce time spent in the field,
-          and see measurable reductions in operational expenditure.
-          <br />
-          <br />
-          <RocketLaunchIcon className="inline-block h-5 w-5" /> <strong>Faster:</strong> Instant analysis at scale. No bottlenecks,
-          no lag.
-          <br />
-          <BanknotesIcon className="inline-block h-5 w-5" /> <strong>Cheaper:</strong> Reduce monitoring and labor costs by up
-          to 60%.
-          <br />
-          <CursorArrowRaysIcon className="inline-block h-5 w-5" /> <strong>Smarter:</strong> Hyper-precise detection algorithms for
-          pinpoint accuracy.
-          <br />
-          <ArrowPathIcon className="inline-block h-5 w-5"/> <strong>Greener:</strong> Make informed decisions that protect
-          ecosystems and save money.
-        </p>
-        <button className="bg-green-500 text-white px-8 py-4 rounded-lg text-lg">
-          Learn More
-        </button>
+      {/* Why Choose RhodoLens */}
+      <div className="bg-stone-900 text-white py-24 px-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Text Content */}
+          <div className="space-y-6">
+            <h2 className="text-4xl font-bold">Why Choose RhodoLens?</h2>
+            <p className="text-lg text-justify">
+              RhodoLens is your trusted partner in environmental intelligence. Designed to deliver precision, speed, and cost-effectiveness, it empowers you to make data-driven decisions that protect ecosystems and reduce operational costs.
+            </p>
+            <ul className="space-y-4">
+              <li className="flex items-center">
+                <RocketLaunch className="h-6 w-6 text-primary mr-4" />
+                <span>
+                  <strong className="text-sky-300">Faster:</strong> Instant analysis at scale with no bottlenecks or lag.
+                </span>
+              </li>
+              <li className="flex items-center">
+                <Payments className="h-6 w-6 text-primary mr-4" />
+                <span>
+                  <strong className="text-sky-400">Cheaper:</strong> Reduce monitoring and labor costs by up to 60%.
+                </span>
+              </li>
+              <li className="flex items-center">
+                <AdjustRounded className="h-6 w-6 text-primary mr-4" />
+                <span>
+                  <strong className="text-sky-500">Smarter:</strong> Hyper-precise detection algorithms for pinpoint accuracy.
+                </span>
+              </li>
+              <li className="flex items-center">
+                <Compost className="h-6 w-6 text-primary mr-4" />
+                <span>
+                  <strong className="text-sky-600">Greener:</strong> Make informed decisions that protect biodiversity.
+                </span>
+              </li>
+            </ul>
+            <a
+              href="/rhodolens" // Updated link
+              className="inline-block bg-primary text-white py-3 px-6 rounded-lg text-lg mt-6"
+            >
+              Learn More
+            </a>
+          </div>
+          {/* Image Content */}
+          <div className="mt-16 lg:mt-0">
+            <img
+              src="/technology.png"
+              alt="Technology illustration"
+              className="w-full rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

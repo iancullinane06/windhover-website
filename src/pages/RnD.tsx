@@ -18,15 +18,15 @@ function RnD() {
         const imageElement = imageRef.current;
 
         // Get the image's width
-        const imageWidth = imageElement.offsetWidth;
+        const imageWidth = imageElement.getBoundingClientRect().right - imageElement.getBoundingClientRect().left;
 
         // Get the image's offset from the left of the viewport
         const imageOffsetLeft = imageElement.getBoundingClientRect().left;
 
         // Set the slider boundaries relative to the image's center
         setSliderBoundaries({
-          left: imageOffsetLeft - imageWidth, // Start at the left edge of the image
-          right: imageOffsetLeft, // End at the right edge of the image
+          left: .5*imageWidth-20, // Start at the left edge of the image
+          right: 1.5*imageWidth-20, // End at the right edge of the image
         });
 
         // Update the image width state
@@ -96,13 +96,13 @@ function RnD() {
                   ref={imageRef} // Attach ref to the first image
                   src="/VisibleImage.png"
                   alt="Visible Spectrum"
-                  className="absolute inset-0 w-full h-full object-cover z-10"
+                  className="absolute inset-0 w-full h-full object-cover rounded-lg z-10"
                 />
                 {/* Second Image */}
                 <motion.img
                   src="/IrImage.png"
                   alt="Infrared Spectrum"
-                  className="absolute inset-0 w-full h-full object-cover z-20"
+                  className="absolute inset-0 w-full h-full object-cover rounded-lg z-20"
                   style={{
                     clipPath, // Dynamically update clipPath using motion value
                   }}

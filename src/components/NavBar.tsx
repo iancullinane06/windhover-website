@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 /* Text style variable */
-const textStyle = 'text-text-dark dark:text-white text-shadow-md bg-light bg-opacity-50 backdrop-blur-lg dark:text-shadow-sky-500/50 bg-opacity-90 rounded-md py-2 px-4 hover:bg-stone-200 hover:bg-opacity-90 transition-colors';
+const textStyle = 'text-text-dark dark:text-white text-shadow-md bg-stone-200/20 dark:text-shadow-sky-500/50 bg-opacity-70 rounded-md py-2 px-4 hover:bg-stone-200 hover:bg-opacity-70 transition-colors';
 /* Animation parameters */
 const animationDuration = 'duration-500';
 const animationDelay = 400;
@@ -17,7 +17,7 @@ export function LogoWithText() {
                 alt="GreenLens Logo"
                 className="h-10 mr-2"
             />
-            <span className={`${textStyle} bold bg-transparent`}>GreenLens</span>
+            <span className={`${textStyle} bg-transparent bold`}>GreenLens</span>
         </a>
     );
 }
@@ -49,31 +49,31 @@ export function Navbar() {
                     <a href="/pricing" className={textStyle}>
                         Pricing
                     </a>
-                    <div className="flex items-center space-x-4 group relative transition-all bg-dark bg-opacity-80 backdrop-blur-lg rounded-md">
+                    <div className="flex items-center space-x-4 group relative transition-all bg-dark bg-opacity-80 bg-stone-700/20 rounded-md">
                         <a
                             href="/about-us"
-                            className={`${textStyle} relative z-10 order-last backdrop-blur-none mr-0`}
+                            className={`${textStyle} relative z-10 order-last mr-0`}
                         >
                             About Us
                         </a>
 
                         {/* Sliding inline links */}
-                        <div className="flex overflow-hidden transition-all ${animationDuration} space-x-4 max-w-0 opacity-0 group-hover:max-w-[500px] group-hover:opacity-100 h-10 items-center hover:pr-4">
+                        <div className="flex overflow-hidden transition-all ${animationDuration} space-x-4 max-w-0 opacity-0 group-hover:max-w-[500px] group-hover:opacity-100 h-10 items-center group-hover:pr-4">
                             <a
                                 href="/about-us"
-                                className={`${textStyle} transform translate-x-4 opacity-0 transition ${animationDuration} delay-${animationDelay}ms group-hover:translate-x-0 group-hover:opacity-100 -order-4 backdrop-blur-none`}
+                                className={`${textStyle} transform translate-x-4 opacity-0 transition ${animationDuration} delay-${animationDelay}ms group-hover:translate-x-0 group-hover:opacity-100 -order-4 bg-transparent`}
                             >
                                 About Us
                             </a>
                             <a
                                 href="/rnd"
-                                className={`${textStyle} transform translate-x-4 opacity-0 transition ${animationDuration} delay-${2*animationDelay}ms group-hover:translate-x-0 group-hover:opacity-100 -order-3 backdrop-blur-none`}
+                                className={`${textStyle} transform translate-x-4 opacity-0 transition ${animationDuration} delay-${2*animationDelay}ms group-hover:translate-x-0 group-hover:opacity-100 -order-3 bg-transparent`}
                             >
                                 R&D
                             </a>
                             <a
                                 href="/contact-us"
-                                className={`${textStyle} transform translate-x-4 opacity-0 transition ${animationDuration} delay-[${3*animationDelay}ms] group-hover:translate-x-0 group-hover:opacity-100 -order-2 backdrop-blur-none`}
+                                className={`${textStyle} transform translate-x-4 opacity-0 transition ${animationDuration} delay-[${3*animationDelay}ms] group-hover:translate-x-0 group-hover:opacity-100 -order-2 bg-transparent`}
                             >
                                 Contact Us
                             </a>
