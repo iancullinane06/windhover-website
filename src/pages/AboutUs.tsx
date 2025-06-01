@@ -27,11 +27,11 @@ function AboutUs() {
       {/* Our Values */}
       <div className="bg-stone-300 dark:bg-stone-900 text-black py-16 px-8">
         <div className="container mx-auto px-4">
-          <h5 className="text-7xl font-semibold mb-4 ml-10 text-white">
+          <h5 className="text-7xl font-semibold mb-4 text-black dark:text-white">
             <IconWrapper icon={<LocalFlorist />} bgColor={'bg-sky-500'} color={'text-stone-100'} /> Our Values
           </h5>
-          <p className="text-base mb-8 dark:text-white">
-            Sustainability. Precision. Innovation. Integrity. We believe that technology should serve the planet — not the other way around.
+          <p className="text-base mb-8 ml-20 dark:text-white">
+            Sustainability. Precision. Innovation. Integrity. We believe that technology should serve the planet <br /> not the other way around.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-lime-white">
             {[
@@ -64,10 +64,10 @@ function AboutUs() {
                 key={index}
                 className={`relative text-center ${value.bgColor} text-text-dark p-6 rounded-2xl shadow-lg transform transition-transform hover:scale-105`}
               >
-                <div className="absolute top-[-10px] right-[-10px] bg-dark text-text-light rounded-full p-2">
+                <div className="absolute top-[-10px] right-[-10px] rounded-full p-2">
                   {value.icon}
                 </div>
-                <h4 className="text-xl font-bold text-secondary mb-2">{value.title}</h4>
+                <h4 className="text-xl font-bold text-black mb-2">{value.title}</h4>
                 <p className="text-base">{value.description}</p>
               </div>
             ))}
@@ -86,8 +86,8 @@ function AboutUs() {
             <div className="absolute w-3 md:w-5 bg-gradient-to-b from-sky-500 to-green-500 h-full left-1/2 top-[160px] rounded-t-full transform -translate-x-1/2 row-span-5 row-start-1"></div>
 
             {/* Introductory Text */}
-            <div className="relative p-6 rounded-2xl shadow-lg transform transition-transform col-span-2 m-5 mx-auto w-4/5">
-              <p className="text-base mb-8 text-white">
+            <div className="relative p-6 rounded-2xl transform transition-transform col-span-2 m-5 mx-auto w-4/5">
+              <p className="text-base mb-8 text-stone-700 text-shadow-lg dark:text-white">
                 GreenLens was born out of a passion for the environment and a desire to make a difference. Our journey has been one of discovery, innovation, and a commitment to using technology for good.
               </p>
             </div>
@@ -140,7 +140,7 @@ function AboutUs() {
                 {/* Branching Line */}
                 <div
                   className={clsx(
-                    'absolute h-1 bg-white top-1/2 transform -translate-y-1/2',
+                    'absolute h-1 bg-stone-700 dark:bg-white top-1/2 transform -translate-y-1/2',
                     index % 2 === 0 ? '-left-1/2 w-[calc(50%-1rem)]' : '-right-1/2 w-[calc(50%-1rem)]'
                   )}
                 ></div>
@@ -154,7 +154,7 @@ function AboutUs() {
                     'text-emerald-400': story.bgColor === 'emerald-400',
                   })} />
                 </div>
-                <h4 className="text-xl font-bold text-secondary mb-2">{story.title}</h4>
+                <h4 className="text-xl font-bold text-shadow-black mb-2">{story.title}</h4>
                 <p className="text-base">{story.description}</p>
               </div>
             ))}
@@ -165,7 +165,7 @@ function AboutUs() {
       {/* Looking Ahead */}
       <div className="bg-stone-900 py-16">
         <div className="p-6 rounded-2xl shadow-lg container mx-auto px-4 w-3/5 bg-green-500 z-4">
-          <h5 className="text-2xl font-semibold mb-4 text-text-light">
+          <h5 className="text-2xl font-semibold mb-4 text-black">
             <IconWrapper icon={<RocketLaunch />} bgColor={'bg-stone-900'} color={'text-green-600'} /> Looking Ahead
           </h5>
           <p className="text-base text-text-dark">

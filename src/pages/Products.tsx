@@ -1,6 +1,7 @@
 import { RocketLaunch, Timeline, Compost, Payments, AdjustRounded } from '@mui/icons-material';
 import IconWrapper from '../components/IconWrapper';
 import FrostedGlassCard from '../components/Widgets';
+import Button from '../components/Button';
 
 function Products() {
   return (
@@ -12,12 +13,7 @@ function Products() {
           <p className="text-lg mb-6">
             Our software is designed to help as many people as possible. Your support through donations and priced plans ensures we can keep improving and serving our community.
           </p>
-          <a
-            href="/pricing"
-            className="bg-primary text-white py-3 px-6 rounded-lg text-lg"
-          >
-            Explore Pricing
-          </a>
+          <Button text="Explore Pricing" link="/pricing" /> {/* Use Button component */}
         </div>
         <div
           className="absolute top-0 right-0 bottom-0 w-[80%] bg-cover bg-center z-10"
@@ -31,12 +27,12 @@ function Products() {
         </div>
       </div>
 
-      {/* Our Technology with Stats */}
-      <div className="bg-teal-100 dark:bg-stone-900 py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold mb-4 dark:text-white">Our Technology</h2>
-          <p className="text-base mb-8 dark:text-white w-3/5 mx-auto">
-            Powered by machine learning and advanced image processing, our platform can identify invasive species from drone and satellite imagery, classify risk zones, and generate vector shapefiles in real time.
+      {/* Our Technology Section */}
+      <div className="py-16 px-8 to-bg-stone-200 bg-gradient-to-b from-bg-black dark:to-bg-stone-900 text-black dark:text-white">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-8">Our Technology</h2>
+          <p className="text-base text-center mb-8 max-w-3xl mx-auto">
+            Powered by machine learning and advanced image processing, our platform identifies invasive species, classifies risk zones, and generates actionable insights in real time.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -58,7 +54,7 @@ function Products() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-stone-200 p-6 rounded-lg text-center shadow-md"
+                className="bg-white dark:bg-stone-800 p-6 rounded-lg shadow-lg text-center"
               >
                 <h3 className="text-4xl font-bold text-primary mb-2">{item.stat}</h3>
                 <div className="mb-4 scale-125">{item.icon}</div>
@@ -79,14 +75,15 @@ function Products() {
           <p className="text-base mb-4">
             RhodoLens is more than a tool — it's your strategic partner in the battle against invasive species. Designed for precision, speed, and scalability, our software empowers land managers, ecologists, and environmental agencies to make data-driven decisions faster than ever before.
           </p>
-          <p className="text-base">
+          <p className="text-base mb-4">
             Harness the power of machine learning to reduce operational overheads, optimise site visits, and eliminate guesswork. Whether you're safeguarding biodiversity or ensuring regulatory compliance, RhodoLens delivers measurable results.
           </p>
+          <Button text="Explore Pricing" link="/pricing" /> {/* Use Button component */}
         </div>
         <FrostedGlassCard
           title="Buy RhodoLens"
           description="Experience precision-led, cost-effective environmental monitoring."
-          price="From $99"
+          price="From €99"
           buttonText="Explore Pricing"
           buttonLink="/pricing"
         />
@@ -127,12 +124,7 @@ function Products() {
                 </span>
               </li>
             </ul>
-            <a
-              href="/learn-more"
-              className="inline-block bg-primary text-white py-3 px-6 rounded-lg text-lg mt-6"
-            >
-              Learn More
-            </a>
+            <Button text="Learn More" link="/rhodolens"/>
           </div>
           {/* Image Content */}
           <div className="mt-16 lg:mt-0">

@@ -1,17 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Paper, Typography, Button, Box } from '@mui/material';
-import { styled } from '@mui/system';
-
-
-const FrostedGlass = styled(Paper)({
-  background: 'bg-frosted-glass',
-  backdropFilter: 'blur(10px)',
-  borderRadius: '16px',
-  padding: '2rem',
-  maxWidth: '400px',
-  width: 'auto',
-  zIndex: 1,
-});
+import Button from './Button'; // Import the Button component
 
 interface FrostedGlassCardProps {
   title: string;
@@ -19,7 +7,7 @@ interface FrostedGlassCardProps {
   price: string;
   buttonText: string;
   buttonLink: string;
-  children?: ReactNode; // Add this line to allow nested content
+  children?: ReactNode;
 }
 
 const FrostedGlassCard: React.FC<FrostedGlassCardProps> = ({
@@ -31,37 +19,19 @@ const FrostedGlassCard: React.FC<FrostedGlassCardProps> = ({
   children,
 }) => {
   return (
-    <Box sx={{ position: 'relative', width: 'fit-content', margin: '2rem' }}>
+    <div className="relative w-fit m-8">
       {/* Background Rectangle */}
-      <Box
-        sx={{
-          background: 'linear-gradient(90deg, var(--color-sky-500) 0%, var(--color-secondary) 100%)',
-          borderRadius: '16px',
-          position: 'absolute',
-          top: '20px',
-          bottom: '20px',
-          left: '-1rem',
-          right: '-1rem',
-          zIndex: 0,
-        }}
-      />
+      <div className="absolute inset-0 -top-5 -left-5 -right-5 -bottom-5 bg-gradient-to-r from-sky-400 to-green-400 rounded-lg blur-md mb-6"></div>
+
       {/* Frosted Glass Card */}
-      <FrostedGlass elevation={3}>
-        <Typography variant="h5" gutterBottom>
-          {title}
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          {description}
-        </Typography>
-        <Typography variant="h6" gutterBottom>
-          {price}
-        </Typography>
-        {children && <Box className="card-children">{children}</Box>}
-        <Button variant="contained" color="primary" href={buttonLink}>
-          {buttonText}
-        </Button>
-      </FrostedGlass>
-    </Box>
+      <div className="relative bg-stone-900/50 backdrop-blur-md rounded-lg p-8 shadow-lg max-w-sm text-white text-shadow-lg">
+        <h3 className="text-2xl font-bold mb-4">{title}</h3>
+        <p className="text-base mb-4">{description}</p>
+        <p className="text-lg font-semibold mb-6">{price}</p>
+        {children && <div className="mb-4">{children}</div>}
+        <Button text={buttonText} link={buttonLink} colour="amber"/> {/* Use the Button component */}
+      </div>
+    </div>
   );
 };
 

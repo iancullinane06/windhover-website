@@ -10,16 +10,8 @@
       content="Web site created using Vite"
     />
     <link rel="manifest" href="./public/manifest.json" />
-    <link rel="stylesheet" href="./style.css" type="text/css"/>
+    <link rel="stylesheet" href="./index.css" type="text/css"/>
     <title>GreenLens</title>
-    <script>
-      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-      document.documentElement.classList.toggle(
-        "dark",
-        localStorage.theme === "dark" ||
-          (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
-      );
-    </script>
   </head>
   <body style="background-color: #000;" class="font-mono">
     <noscript>You need to enable JavaScript to run this app.</noscript>

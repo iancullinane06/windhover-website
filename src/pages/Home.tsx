@@ -2,8 +2,10 @@ import ShieldIcon from '@mui/icons-material/Shield';
 import FrostedGlassCard from '../components/Widgets';
 import IconWrapper from '../components/IconWrapper'; // Add this import
 import { RocketLaunch, Payments, AdjustRounded, Compost } from '@mui/icons-material';
+import pricingPlans from '../config/PricingPlans.json';
+import Button from '../components/Button'; 
 
-const ECO_LYTIX_PRICE = 99.99;
+const ECO_LYTIX_PRICE = pricingPlans.find(plan => plan.title === 'Professional')?.price || 0;
 
 function Home() {
   return (
@@ -18,7 +20,7 @@ function Home() {
           role="img"
           aria-label="Forest background image"
         >
-          <div className="absolute inset-0 bg-gr-d z-3"></div>
+          <div className="absolute inset-0 bg-gradient-hero z-3"></div>
         </div>
         <div className="flex z-30 ml-8 max-w-1/2 flex-row items-center gap-2">
           <div className="w-1/10 hidden md:block my-auto">
@@ -123,7 +125,7 @@ function Home() {
         <FrostedGlassCard
           title="Buy RhodoLens"
           description="Experience precision-led, cost-effective environmental monitoring."
-          price={`From $${ECO_LYTIX_PRICE.toFixed(2)}`}
+          price={`From ${ECO_LYTIX_PRICE}`}
           buttonText="Explore Pricing"
           buttonLink="/pricing"
         />
@@ -164,12 +166,7 @@ function Home() {
                 </span>
               </li>
             </ul>
-            <a
-              href="/rhodolens" // Updated link
-              className="inline-block bg-primary text-white py-3 px-6 rounded-lg text-lg mt-6"
-            >
-              Learn More
-            </a>
+            <Button text="Learn more" link="/rhodolens" />
           </div>
           {/* Image Content */}
           <div className="mt-16 lg:mt-0">
