@@ -1,6 +1,9 @@
 import IconWrapper from '../components/IconWrapper';
 import { Compost, Timeline, RocketLaunch, Balance, LocalFlorist } from '@mui/icons-material';
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { TitleBlock, ContentBlock } from '../components/Blocks';
 
 function AboutUs() {
   return (
@@ -21,18 +24,25 @@ function AboutUs() {
         <div className="relative z-10 text-center max-w-3xl">
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">About Us</h1>
           <p className="text-white text-lg md:text-xl">Merging Ecology and AI to Protect Natural Habitats</p>
-        </div>
+        </div>node
       </div>
 
       {/* Our Values */}
       <div className="bg-stone-300 dark:bg-stone-900 text-black py-16 px-8">
         <div className="container mx-auto px-4">
-          <h5 className="text-7xl font-semibold mb-4 text-black dark:text-white">
-            <IconWrapper icon={<LocalFlorist />} bgColor={'bg-sky-500'} color={'text-stone-100'} /> Our Values
-          </h5>
-          <p className="text-base mb-8 ml-20 dark:text-white">
-            Sustainability. Precision. Innovation. Integrity. We believe that technology should serve the planet <br /> not the other way around.
-          </p>
+          <TitleBlock
+            title="Our Values"
+            icon={<LocalFlorist />}
+            iconPosition="start"
+            bgColor="bg-stone-300 dark:bg-stone-900"
+            textColor="text-black dark:text-white"
+          />
+          <ContentBlock
+            title=""
+            content="            Sustainability. Precision. Innovation. Integrity. We believe that technology should serve the planet not the other way around."
+            bgColor="bg-stone-300 dark:bg-stone-900"
+            textColor="text-black dark:text-white"
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-lime-white">
             {[
               {
@@ -62,13 +72,17 @@ function AboutUs() {
             ].map((value, index) => (
               <div
                 key={index}
-                className={`relative text-center ${value.bgColor} text-text-dark p-6 rounded-2xl shadow-lg transform transition-transform hover:scale-105`}
+                className={`relative text-center ${value.bgColor} ${
+                  index === 0 ? 'text-white' : 'text-text-dark'
+                } p-6 rounded-2xl shadow-lg transform transition-transform hover:scale-105`}
               >
                 <div className="absolute top-[-10px] right-[-10px] rounded-full p-2">
                   {value.icon}
                 </div>
-                <h4 className="text-xl font-bold text-black mb-2">{value.title}</h4>
-                <p className="text-base">{value.description}</p>
+                <h4 className={`text-xl font-bold mb-2 ${index === 0 ? 'text-white' : 'text-black'}`}>
+                  {value.title}
+                </h4>
+                <p className={`text-base ${index === 0 ? 'text-white' : ''}`}>{value.description}</p>
               </div>
             ))}
           </div>
@@ -78,15 +92,19 @@ function AboutUs() {
       {/* Our Story */}
       <div className="py-16 bg-stone-300 dark:bg-stone-900 dark:text-white px-8">
         <div className="container mx-auto">
-          <h2 className="text-7xl font-semibold mb-4 dark:text-white">
-            <IconWrapper icon={<Timeline />} bgColor={'bg-sky-500'} color={'text-stone-100'} /> Our Story
-          </h2>
-          <div className="relative flex flex-col md:grid md:grid-cols-3 md:grid-rows-5 gap-8 text-stone-800">
+          <TitleBlock
+            title="Our Story"
+            icon={<Timeline />}
+            iconPosition="start"
+            bgColor="bg-stone-300 dark:bg-stone-900"
+            textColor="text-black dark:text-white"
+          />
+          <div className="relative flex flex-col md:grid md:grid-cols-3 md:grid-rows-5 gap-16 text-stone-800">
             {/* Central Line */}
             <div className="absolute w-3 md:w-5 bg-gradient-to-b from-sky-500 to-green-500 h-full left-1/2 top-[160px] rounded-t-full transform -translate-x-1/2 row-span-5 row-start-1"></div>
 
             {/* Introductory Text */}
-            <div className="relative p-6 rounded-2xl transform transition-transform col-span-2 m-5 mx-auto w-4/5">
+            <div className="relative p-6 rounded-2xl transform transition-transform col-span-2 m-5 mr-auto w-4/5">
               <p className="text-base mb-8 text-stone-700 text-shadow-lg dark:text-white">
                 GreenLens was born out of a passion for the environment and a desire to make a difference. Our journey has been one of discovery, innovation, and a commitment to using technology for good.
               </p>
@@ -122,42 +140,55 @@ function AboutUs() {
                   "What started as a science fair project has now evolved into a full-featured, mission-driven platform. GreenLens uses AI to turn raw multispectral data into actionable insights for conservationists and land managers. Built from scratch, tested in the wild, and validated through accolades — GreenLens is now geared to scale its impact beyond rhododendron to other invasive species threatening biodiversity.",
                 bgColor: "emerald-400",
               },
-            ].map((story, index) => (
-              <div
-                key={index}
-                className={clsx(
-                  'relative p-6 rounded-2xl shadow-lg transform transition-transform duration-300 row-span-2 hover:scale-105',
-                  index % 2 === 0 ? 'md:col-start-3' : 'md:col-start-1',
-                  `md:row-start-${index + 1}`,
-                  {
-                    'bg-sky-100': story.bgColor === 'sky-100',
-                    'bg-cyan-200': story.bgColor === 'cyan-200',
-                    'bg-teal-300': story.bgColor === 'teal-300',
-                    'bg-emerald-400': story.bgColor === 'emerald-400',
-                  }
-                )}
-              >
-                {/* Branching Line */}
-                <div
-                  className={clsx(
-                    'absolute h-1 bg-stone-700 dark:bg-white top-1/2 transform -translate-y-1/2',
-                    index % 2 === 0 ? '-left-1/2 w-[calc(50%-1rem)]' : '-right-1/2 w-[calc(50%-1rem)]'
-                  )}
-                ></div>
+            ].map((story, index) => {
+              const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.5 });
 
-                {/* Content */}
-                <div className="absolute top-[-10px] right-[-10px]">
-                  <IconWrapper icon={story.icon} bgColor={'bg-stone-900'} color={clsx({
-                    'text-sky-100': story.bgColor === 'sky-100',
-                    'text-cyan-200': story.bgColor === 'cyan-200',
-                    'text-teal-300': story.bgColor === 'teal-300',
-                    'text-emerald-400': story.bgColor === 'emerald-400',
-                  })} />
+              return (
+                <div
+                  key={index}
+                  ref={ref}
+                  className={clsx(
+                    'relative p-6 rounded-2xl shadow-lg transform transition-transform duration-300 row-span-2 hover:scale-105',
+                    index % 2 === 0 ? 'md:col-start-3' : 'md:col-start-1',
+                    `md:row-start-${index + 1}`,
+                    {
+                      'bg-sky-100': story.bgColor === 'sky-100',
+                      'bg-cyan-200': story.bgColor === 'cyan-200',
+                      'bg-teal-300': story.bgColor === 'teal-300',
+                      'bg-emerald-400': story.bgColor === 'emerald-400',
+                    }
+                  )}
+                >
+                  {/* Branching Line */}
+                  <motion.div
+                    className={clsx(
+                      'absolute h-1 bg-stone-700 dark:bg-white top-1/2 transform -translate-y-1/2',
+                      index % 2 === 0 ? '-left-1/2 w-[calc(50%-1rem)]' : '-right-1/2 w-[calc(50%-1rem)]'
+                    )}
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: inView ? 1 : 0 }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                    style={{ transformOrigin: index % 2 === 0 ? 'right' : 'left' }}
+                  ></motion.div>
+
+                  {/* Content */}
+                  <div className="absolute top-[-10px] right-[-10px]">
+                    <IconWrapper
+                      icon={story.icon}
+                      bgColor={'bg-stone-900'}
+                      color={clsx({
+                        'text-sky-100': story.bgColor === 'sky-100',
+                        'text-cyan-200': story.bgColor === 'cyan-200',
+                        'text-teal-300': story.bgColor === 'teal-300',
+                        'text-emerald-400': story.bgColor === 'emerald-400',
+                      })}
+                    />
+                  </div>
+                  <h4 className="text-xl font-bold text-shadow-black mb-2">{story.title}</h4>
+                  <p className="text-base">{story.description}</p>
                 </div>
-                <h4 className="text-xl font-bold text-shadow-black mb-2">{story.title}</h4>
-                <p className="text-base">{story.description}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

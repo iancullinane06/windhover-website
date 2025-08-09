@@ -3,6 +3,9 @@ import { motion, useMotionValue, useTransform } from 'framer-motion';
 import CodeIcon from '@mui/icons-material/Code';
 import TimelineItem from '../components/TimeLine';
 import IconWrapper from '../components/IconWrapper';
+import Button from '../components/Button';
+
+const streamlinePoint = 1000;
 
 function RnD() {
   const dragX = useMotionValue(200); // Motion value for tracking x position
@@ -58,11 +61,16 @@ function RnD() {
           role="img"
           aria-label="R&D background image"
         >
-          <div className="absolute inset-0 bg-black bg-opacity-60 z-20"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/30 z-20"></div>
         </div>
         <div className="relative z-30 text-center max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Research & Development</h1>
-          <p className="text-lg md:text-xl">Innovating for a Sustainable Future</p>
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-4 drop-shadow-lg">
+            Research & Development
+          </h1>
+          <p className="text-lg md:text-2xl mb-6">
+            Innovating for a Sustainable Future
+          </p>
+          <Button text="Explore Our Work" link="#technology" />
         </div>
       </div>
 
@@ -133,34 +141,100 @@ function RnD() {
       {/* Machine Learning Section */}
       <div className="py-8 px-4 dark:text-white bg-stone-100 dark:bg-stone-900">
         <div className="container mx-auto">
-          <TimelineItem
-            title="Machine Learning"
-            description={
-              <>
-                <p className="mb-4">
-                  Our AI models are designed for speed and accuracy, processing vast amounts of data in real-time to deliver actionable insights.
-                </p>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5 }}
-                  className="w-full h-[300px] bg-teal-700 rounded-lg flex items-center justify-center text-white text-xl font-bold mt-4"
-                >
-                  Fast & Accurate AI
-                </motion.div>
-              </>
-            }
-          />
+          <h2 className="text-4xl font-bold text-center mb-8">Machine Learning</h2>
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            {/* Text Content */}
+            <div className="w-full md:w-1/2 rounded-2xl dark:bg-stone-400 dark:text-black p-6 md:pr-20 md:-mr-20">
+              <p className="text-lg mb-6">
+                Our AI models are designed for speed and accuracy, processing vast amounts of data in real-time to deliver actionable insights.
+              </p>
+              <ul className="list-disc list-inside space-y-2">
+                <li>97% accuracy in detecting invasive species</li>
+                <li>Real-time data processing</li>
+                <li>Scalable for large ecosystems</li>
+              </ul>
+            </div>
 
-          {/* Drone Section */}
-          <TimelineItem
-            title="Drones"
-            description={
-              <p>
+            {/* Neural Network Graphic */}
+            <div className="relative w-full max-w-[50vw] h-[400px] bg-gradient-to-r from-teal-800 to-teal-800 rounded-lg shadow-lg overflow-hidden">
+              {/* Background Layers */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <svg
+                  viewBox="0 0 1000 500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-full h-full"
+                >
+                  {/* Streamlines */}
+                  <path
+                    d="M 0 50 C 300 100 500 50 700 150 C 850 200 950 200 1000 200 C 1000 200 1000 300 1000 300 C 950 300 850 300 700 350 C 500 450 300 400 0 450 Z"
+                    fill="#4FD1C5"
+                    opacity="0.8"
+                  />
+                  <path
+                    d="M 0 100 C 300 150 500 100 700 175 C 850 225 950 225 1000 225 C 1000 225 1000 325 1000 325 C 950 325 850 325 700 375 C 500 475 300 425 0 475 Z"
+                    fill="#38B2AC"
+                    opacity="0.6"
+                  />
+                  <path
+                    d="M 0 150 C 300 200 500 150 700 200 C 850 250 950 250 1000 250 C 1000 250 1000 350 1000 350 C 950 350 850 350 700 400 C 500 500 300 450 0 500 Z"
+                    fill="#319795"
+                    opacity="0.4"
+                  />
+                </svg>
+              </div>
+
+              {/* Labels */}
+              <div className="absolute top-10 left-10 text-white">
+                <h3 className="text-xl font-bold">Raw Data</h3>
+                <p className="text-sm">Collected from sensors and drones</p>
+              </div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
+                <h3 className="text-xl font-bold">Machine Learning</h3>
+                <p className="text-sm">Processing and analyzing data</p>
+              </div>
+              <div className="absolute bottom-10 right-10 text-white text-right">
+                <h3 className="text-xl font-bold">Actionable Insights</h3>
+                <p className="text-sm">Delivered to conservationists</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Drones Section */}
+      <div className="py-8 px-4 dark:text-white bg-stone-100 dark:bg-stone-900">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-8">Drones</h2>
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            {/* Text Content */}
+            <div className="w-full md:w-1/2">
+              <p className="text-lg mb-6">
                 Leveraging drone technology, we collect high-resolution data from hard-to-reach areas, enabling precise monitoring and analysis.
               </p>
-            }
-          />
+              <ul className="list-disc list-inside space-y-2">
+                <li>High-resolution imaging</li>
+                <li>Access to remote areas</li>
+                <li>Efficient data collection</li>
+              </ul>
+            </div>
+
+            {/* Drone Animation */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="w-full md:w-1/2 h-[300px] bg-gradient-to-r from-blue-500 to-blue-700 rounded-lg flex items-center justify-center text-white text-xl font-bold shadow-lg relative"
+            >
+              <div className="absolute inset-0 flex items-center justify-center">
+                <img
+                  src="/drone-animation.gif"
+                  alt="Drone Scanning Landscape"
+                  className="w-3/4 h-auto"
+                />
+              </div>
+              <p className="absolute bottom-4 text-sm">Precision Monitoring</p>
+            </motion.div>
+          </div>
         </div>
       </div>
     </div>

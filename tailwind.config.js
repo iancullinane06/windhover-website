@@ -29,6 +29,11 @@ export default {
           '100%': { opacity: 1, transform: 'translateY(0)' },
         },
       },
+      fontFamily: {
+        mono: 'var(--font-mono)',
+        serif: 'Source Serif, serif',
+        stencil: 'var(--font-stencil)',
+      },
     },
   },
   plugins: [],

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&family=Offside&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
 
 @theme{
   --color-primary: oklch(0.65 0.15 200);
@@ -13,19 +14,20 @@
   --color-text-dark: oklch(0.12 0.02 95);
   --color-dark: oklch(0.0 0.0 0);
   --color-frosted-glass: oklch(0.95 0.0 0 / 0.7);
-}
 
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  --font-mono: 'Martian Mono', monospace;
+  --font-stencil: 'Offside', sans-serif;
 }
 
 .bg-gradient-hero{
   background: linear-gradient(to top, #000000, transparent) 80%, linear-gradient(to right, #000000, transparent) 80%;
+}
+
+.bottom-blue-glow {
+  border-radius: 24px;
+  box-shadow:
+    0 4px 32px 0 #000a, /* outer shadow for depth */
+    inset -70px -30px 40px 10px var(--color-lime-200),
+    inset -70px -15px 20px -10px var(--color-cyan-600),
+    inset 10px 10px 8px -2px rgba(255, 255, 255, 0.269);
 }

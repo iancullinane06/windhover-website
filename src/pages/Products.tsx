@@ -23,7 +23,7 @@ function Products() {
           role="img"
           aria-label="Forest background image"
         >
-          <div className="absolute inset-0 bg-gr-d z-3"></div>
+          <div className="absolute inset-0 bg-gradient-hero z-3"></div>
         </div>
       </div>
 

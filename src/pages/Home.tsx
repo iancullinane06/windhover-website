@@ -27,11 +27,11 @@ function Home() {
             <IconWrapper 
               icon={<ShieldIcon />} 
               color="text-white" 
-              bgColor="bg-green-500" 
+              bgColor="bg-green-300" 
             />
           </div>
           <div>
-            <h1 className="text-4xl font-bold">
+            <h1 className="text-4xl font-stencil">
               Turning data into defense against invasives
             </h1>
           </div>
@@ -135,7 +135,7 @@ function Home() {
       <div className="bg-stone-900 text-white py-24 px-8">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Text Content */}
-          <div className="space-y-6">
+          <div className="space-y-6 bg-stone-800 p-16 rounded-xl -mr-30 pr-30 bottom-blue-glow">
             <h2 className="text-4xl font-bold">Why Choose RhodoLens?</h2>
             <p className="text-lg text-justify">
               RhodoLens is your trusted partner in environmental intelligence. Designed to deliver precision, speed, and cost-effectiveness, it empowers you to make data-driven decisions that protect ecosystems and reduce operational costs.
