@@ -7,7 +7,7 @@ function Pricing() {
     <div>
       {/* Banner Section */}
       <div className="bg-cyan-400 text-black py-16 text-center flex flex-col justify-center items-center gap-4 h-[400px]">
-        <h1 className="text-4xl font-bold">Pricing Plans</h1>
+        <h1 className="text-4xl font-stencil">Pricing Plans</h1>
         <p className="text-lg max-w-3xl">
           Our software is designed to help as many people as possible. Your support through donations and priced plans
           ensures we can keep improving and serving our community.

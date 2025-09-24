@@ -56,7 +56,7 @@ function RnD() {
         <div
           className="absolute inset-0 bg-cover bg-center z-10"
           style={{
-            backgroundImage: 'url(/rnd-hero.jpg)',
+            backgroundImage: 'url(/coding.jpg)',
           }}
           role="img"
           aria-label="R&D background image"
@@ -64,7 +64,7 @@ function RnD() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/30 z-20"></div>
         </div>
         <div className="relative z-30 text-center max-w-3xl">
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-4 drop-shadow-lg">
+          <h1 className="text-5xl md:text-7xl font-stencil mb-4 drop-shadow-lg">
             Research & Development
           </h1>
           <p className="text-lg md:text-2xl mb-6">

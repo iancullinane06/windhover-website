@@ -5,12 +5,14 @@ function Rhodolens() {
   return (
     <div className="bg-stone-100 dark:bg-stone-900 text-black dark:text-white">
       {/* Hero Section */}
-      <div className="bg-linear-140 from-green-500 to-sky-500 text-white py-16 px-8 h-[500px] flex items-center justify-center relative">
-        <div className="container mx-auto text-center">
-          <h1 className="text-5xl font-bold mb-4">RhodoLens</h1>
-          <p className="text-lg max-w-3xl mx-auto">
-            Revolutionising environmental intelligence with precision, speed, and scalability.
-          </p>
+      <div className="bg-linear-140 from-green-500 to-sky-500 text-white h-screen overflow-hidden">
+        <div className="bg-linear-to-b from-transparent to-stone-900 w-screen h-screen flex items-center justify-center relative">
+          <div className="container mx-auto text-center">
+            <h1 className="text-5xl font-stencil mb-4">RhodoLens</h1>
+            <p className="text-lg max-w-3xl mx-auto">
+              Revolutionising environmental intelligence with precision, speed, and scalability.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -18,7 +20,7 @@ function Rhodolens() {
       <div className="py-16 px-8">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-8">Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 grid-rows-4 gap-8">
             <div className="bg-white dark:bg-stone-800 p-6 rounded-lg shadow-lg text-center">
               <RocketLaunch className="h-12 w-12 text-sky-300 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Faster</h3>
@@ -33,12 +35,17 @@ function Rhodolens() {
                 Reduce monitoring and labor costs by up to 60%.
               </p>
             </div>
-            <div className="bg-white dark:bg-stone-800 p-6 rounded-lg shadow-lg text-center">
+            <div className="flex flex-row">
+              <div className="bg-white dark:bg-stone-800 p-6 rounded-lg shadow-lg text-center">
               <AdjustRounded className="h-12 w-12 text-teal-500 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Smarter</h3>
               <p className="text-sm">
                 Hyper-precise detection algorithms for pinpoint accuracy.
               </p>
+              </div>
+              <div>
+              <img src="/path/to/smarter-image.jpg" alt="Smarter" className="mx-auto mt-4"/>
+              </div>
             </div>
             <div className="bg-white dark:bg-stone-800 p-6 rounded-lg shadow-lg text-center">
               <Compost className="h-12 w-12 text-emerald-500 mx-auto mb-4" />

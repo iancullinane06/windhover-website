@@ -31,7 +31,7 @@ export function TitleBlock({
   textColor = 'text-black',
 }: TitleBlockProps) {
   return (
-    <div className={clsx('flex items-center gap-4 p-4 rounded-lg shadow-lg', bgColor)}>
+    <div className={clsx('flex items-center gap-4 p-4 rounded-lg', bgColor)}>
       {icon && iconPosition === 'start' && (
         <IconWrapper icon={icon} bgColor={'bg-sky-500'} color={'text-stone-100'} />
       )}
@@ -50,7 +50,7 @@ export function ContentBlock({
   textColor = 'text-black',
 }: ContentBlockProps) {
   return (
-    <div className={clsx('p-6 rounded-lg shadow-lg', bgColor)}>
+    <div className={clsx('p-6 rounded-lg', bgColor)}>
       <h3 className={clsx('text-xl font-semibold mb-4', textColor)}>{title}</h3>
       {content && <p className={clsx('text-base', textColor)}>{content}</p>}
     </div>
@@ -63,7 +63,7 @@ export function PureContentBlock({
   textColor = 'text-black',
 }: PureContentBlockProps) {
   return (
-    <div className={clsx('p-6 rounded-lg shadow-lg', bgColor)}>
+    <div className={clsx('p-6 rounded-lg', bgColor)}>
       <p className={clsx('text-base', textColor)}>{content}</p>
     </div>
   );

@@ -3,7 +3,7 @@ import { Compost, Timeline, RocketLaunch, Balance, LocalFlorist } from '@mui/ico
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { TitleBlock, ContentBlock } from '../components/Blocks';
+import { TitleBlock, PureContentBlock } from '../components/Blocks';
 
 function AboutUs() {
   return (
@@ -22,7 +22,7 @@ function AboutUs() {
           <div className="absolute inset-0 bg-opacity-60"></div>
         </div>
         <div className="relative z-10 text-center max-w-3xl">
-          <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">About Us</h1>
+          <h1 className="text-white text-4xl md:text-5xl font-stencil mb-4">About Us</h1>
           <p className="text-white text-lg md:text-xl">Merging Ecology and AI to Protect Natural Habitats</p>
         </div>node
       </div>
@@ -37,9 +37,8 @@ function AboutUs() {
             bgColor="bg-stone-300 dark:bg-stone-900"
             textColor="text-black dark:text-white"
           />
-          <ContentBlock
-            title=""
-            content="            Sustainability. Precision. Innovation. Integrity. We believe that technology should serve the planet not the other way around."
+          <PureContentBlock
+            content="Sustainability. Precision. Innovation. Integrity. We believe that technology should serve the planet not the other way around."
             bgColor="bg-stone-300 dark:bg-stone-900"
             textColor="text-black dark:text-white"
           />

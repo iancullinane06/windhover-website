@@ -1,6 +1,5 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&family=Offside&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Offside&display=swap');
 @theme{
   --color-primary: oklch(0.65 0.15 200);
   --color-primary-light: oklch(0.75 0.15 200);
@@ -15,7 +14,8 @@
   --color-dark: oklch(0.0 0.0 0);
   --color-frosted-glass: oklch(0.95 0.0 0 / 0.7);
 
-  --font-mono: 'Martian Mono', monospace;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-serif: 'Arvo', serif;
   --font-stencil: 'Offside', sans-serif;
 }
 
@@ -23,11 +23,72 @@
   background: linear-gradient(to top, #000000, transparent) 80%, linear-gradient(to right, #000000, transparent) 80%;
 }
 
-.bottom-blue-glow {
-  border-radius: 24px;
-  box-shadow:
-    0 4px 32px 0 #000a, /* outer shadow for depth */
-    inset -70px -30px 40px 10px var(--color-lime-200),
-    inset -70px -15px 20px -10px var(--color-cyan-600),
-    inset 10px 10px 8px -2px rgba(255, 255, 255, 0.269);
+@layer components {
+  /* CSS */
+  .button-86 {
+    all: unset;
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    position: relative;
+    color: #f0f0f0;
+    cursor: pointer;
+    z-index: 1;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  .button-86::after,
+  .button-86::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -99999;
+    transition: all .4s;
+  }
+
+  .button-86::before {
+    transform: translate(0%, 0%);
+    width: 100%;
+    height: 100%;
+    background: #28282d;
+    border-radius: 10px;
+  }
+
+  .button-86::after {
+    transform: translate(10px, 10px);
+    width: 35px;
+    height: 35px;
+    background: #ffffff15;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 50px;
+  }
+
+  .button-86:hover::before {
+    transform: translate(5%, 20%);
+    width: 110%;
+    height: 110%;
+  }
+
+  .button-86:hover::after {
+    border-radius: 10px;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 100%;
+  }
+
+  .button-86:active::after {
+    transition: 0s;
+    transform: translate(0, 5%);
+  }
 }

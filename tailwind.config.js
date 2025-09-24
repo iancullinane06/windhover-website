@@ -31,7 +31,7 @@ export default {
       },
       fontFamily: {
         mono: 'var(--font-mono)',
-        serif: 'Source Serif, serif',
+        serif: 'var(--font-serif)',
         stencil: 'var(--font-stencil)',
       },
     },

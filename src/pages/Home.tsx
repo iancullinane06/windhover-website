@@ -13,26 +13,29 @@ function Home() {
       {/* Hero Section */}
       <div className="relative flex items-center justify-between bg-black text-white h-screen overflow-hidden px-8 py-24">
         <div
-          className="absolute top-0 right-0 bottom-0 w-4/5 bg-cover bg-center z-2"
+          className="absolute top-0 right-0 bottom-0 w-full bg-cover bg-center z-2"
           style={{
-            backgroundImage: "url('/forest.jpg')",
+            backgroundSize: '100% 100%',
+            backgroundPosition: 'center',
+            backgroundImage: "linear-gradient(180deg, #FFF0 0%, var(--color-black) 100%), linear-gradient(135deg, #1CB5E0 0%, #000851 100%)",
           }}
           role="img"
-          aria-label="Forest background image"
+          aria-label="Forest background image with gradients"
         >
-          <div className="absolute inset-0 bg-gradient-hero z-3"></div>
+          <div className="absolute inset-0 z-3"></div>
+          <div
+            className="absolute inset-0 z-4 pointer-events-none"
+            style={{
+              backgroundImage: "url('/grain-texture.jpg')",
+              opacity: 0.2,
+              mixBlendMode: 'overlay',
+            }}
+          ></div>
         </div>
         <div className="flex z-30 ml-8 max-w-1/2 flex-row items-center gap-2">
-          <div className="w-1/10 hidden md:block my-auto">
-            <IconWrapper 
-              icon={<ShieldIcon />} 
-              color="text-white" 
-              bgColor="bg-green-300" 
-            />
-          </div>
           <div>
-            <h1 className="text-4xl font-stencil">
-              Turning data into defense against invasives
+            <h1 className="text-5xl font-serif font-light text-stone-400">
+              Turning data into<br/><span className="font-regular text-white">defense against invasives</span>
             </h1>
           </div>
         </div>
@@ -42,8 +45,8 @@ function Home() {
       <div className="bg-gradient-to-t from-stone-200 to-black dark:from-stone-900 py-24 overflow-hidden relative">
       <div className="flex flex-col md:grid md:grid-cols-3 md:grid-rows-3 gap-8 md:gap-4 mx-16 relative">
         {/* Top-left box */}
-        <div className="col-span-2 row-span-1 lg:col-span-1 bg-green-200 text-black p-8 rounded-lg shadow-lg z-30 transform md:translate-x-8 md:-translate-y-8 md:w-4/5 lg:w-full">
-          <h6 className="text-lg font-semibold mb-2">Models inspired by Google</h6>
+        <div className="col-span-2 row-span-1 lg:col-span-1 from-green-200 bg-gradient-to-b to-green-300/0 pb-15 text-black p-8 rounded-lg shadow-lg z-30 transform md:translate-x-8 md:-translate-y-8 md:w-4/5">
+          <h6 className="text-lg font-semibold mb-2">In House Models</h6>
           <p className="text-sm">
             Leveraging cutting-edge machine learning techniques to deliver
             unparalleled insights and efficiency.
@@ -59,7 +62,7 @@ function Home() {
         </div>
 
         {/* Middle-right box */}
-        <div className="col-start-3 col-span-1 row-span-2 row-start-2 lg:row-span-1 bg-emerald-200 text-black p-8 rounded-lg shadow-lg z-30 transform md:translate-x-8">
+        <div className="col-start-3 col-span-1 row-span-2 row-start-2 lg:row-span-1 from-emerald-200 bg-gradient-to-b to-emerald-300/0 pb-15 text-black p-8 rounded-lg shadow-lg z-30 transform md:translate-x-8 md:w-4/5">
           <h6 className="text-lg font-semibold mb-2">Sustainability at its Core</h6>
           <p className="text-sm">
             Our solutions are designed to minimize environmental impact while
@@ -68,7 +71,7 @@ function Home() {
         </div>
 
         {/* Bottom-left box */}
-        <div className="col-span-2 row-start-3 row-span-1 lg:col-span-1 bg-teal-200 text-black p-8 rounded-lg shadow-lg z-30 md:w-4/5 lg:w-full transform md:translate-x-32 md:translate-y-8">
+        <div className="col-span-2 row-start-3 row-span-1 lg:col-span-1 from-teal-200 bg-gradient-to-b to-teal-300/0 pb-15 text-black p-8 rounded-lg shadow-lg z-30 md:w-4/5 transform md:translate-x-32 md:translate-y-8">
           <h6 className="text-lg font-semibold mb-2">Empowering Communities</h6>
           <p className="text-sm">
             Providing tools and insights to empower local communities in
@@ -135,7 +138,7 @@ function Home() {
       <div className="bg-stone-900 text-white py-24 px-8">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Text Content */}
-          <div className="space-y-6 bg-stone-800 p-16 rounded-xl -mr-30 pr-30 bottom-blue-glow">
+          <div className="space-y-6 bg-stone-800 p-16 rounded-xl -mr-30 pr-30">
             <h2 className="text-4xl font-bold">Why Choose RhodoLens?</h2>
             <p className="text-lg text-justify">
               RhodoLens is your trusted partner in environmental intelligence. Designed to deliver precision, speed, and cost-effectiveness, it empowers you to make data-driven decisions that protect ecosystems and reduce operational costs.

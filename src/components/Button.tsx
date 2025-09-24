@@ -24,3 +24,11 @@ const Button: React.FC<ButtonProps> = ({ text, link, colour = "sky" }) => {
 };
 
 export default Button;
+
+export const ButtonStyled: React.FC<ButtonProps> = ({ text, link }) => {
+  return (
+    <a href={link} className="ButtonStyled" role="button">
+      {text}
+    </a>
+  );
+};

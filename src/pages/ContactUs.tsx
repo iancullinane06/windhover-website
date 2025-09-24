@@ -41,7 +41,7 @@ function ContactUs() {
     return (
         <div className="bg-stone-700">
             <div className="bg-sky-400 text-black w-full py-16 flex flex-col justify-center items-center gap-4 text-center h-[400px]">
-                <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
+                <h1 className="text-3xl font-stencil mb-4">Contact Us</h1>
                 <p className="text-lg text-stone-800 mb-8 w-3/5">
                     Have questions or need assistance? We'd love to hear from you! Fill out the form below, and our team will get back to you as soon as possible.
                 </p>
