@@ -32,10 +32,10 @@ function Home() {
             }}
           ></div>
         </div>
-        <div className="flex z-30 ml-8 max-w-1/2 flex-row items-center gap-2">
+        <div className="flex z-30 ml-8 max-w-2/3 flex-row items-center gap-2">
           <div>
             <h1 className="text-5xl font-serif font-light text-stone-400">
-              Turning data into<br/><span className="font-regular text-white">defense against invasives</span>
+              Turning data into<br/><span className="font-regular text-white">defense against invasive species</span>
             </h1>
           </div>
         </div>
@@ -78,29 +78,6 @@ function Home() {
             preserving their natural habitats.
           </p>
         </div>
-
-        {/* Decorative paths or icons */}
-        <div className="absolute inset-0 pointer-events-none">
-          <svg
-            className="absolute top-0 left-0 w-1/2 h-1/2 opacity-20"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 100 100"
-          >
-            <path
-              d="M10 10 C30 30, 70 30, 90 10"
-              stroke="gray"
-              strokeWidth="2"
-              fill="none"
-            />
-          </svg>
-          <svg
-            className="absolute bottom-0 right-0 w-1/3 h-1/3 opacity-20"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 100 100"
-          >
-            <circle cx="50" cy="50" r="40" stroke="gray" strokeWidth="2" fill="none" />
-          </svg>
-        </div>
       </div>
     </div>
 
@@ -125,6 +102,8 @@ function Home() {
             RhodoLens delivers measurable results.
           </p>
         </div>
+
+        {/* To Go */}
         <FrostedGlassCard
           title="Buy RhodoLens"
           description="Experience precision-led, cost-effective environmental monitoring."
@@ -135,10 +114,10 @@ function Home() {
       </div>
 
       {/* Why Choose RhodoLens */}
-      <div className="bg-stone-900 text-white py-24 px-8">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="bg-stone-900 text-white py-24 -gap-5 px-8">
+        <div className="w-1/2 mx-auto flex items-center flex-col">
           {/* Text Content */}
-          <div className="space-y-6 bg-stone-800 p-16 rounded-xl -mr-30 pr-30">
+          <div className="space-y-6 bg-stone-800 p-16 rounded-xl pr-30">
             <h2 className="text-4xl font-bold">Why Choose RhodoLens?</h2>
             <p className="text-lg text-justify">
               RhodoLens is your trusted partner in environmental intelligence. Designed to deliver precision, speed, and cost-effectiveness, it empowers you to make data-driven decisions that protect ecosystems and reduce operational costs.
@@ -171,13 +150,11 @@ function Home() {
             </ul>
             <Button text="Learn more" link="/rhodolens" />
           </div>
-          {/* Image Content */}
-          <div className="mt-16 lg:mt-0">
-            <img
-              src="/technology.png"
-              alt="Technology illustration"
-              className="w-full rounded-lg shadow-lg"
-            />
+          <div className="bg-black p-5 w-4/5 rounded-xl">
+            <div className="mt-16 lg:mt-0 flex justify-center">
+              <h2 className="text-5xl font-serif">Buy Now</h2><br></br>
+              <h5 className="text-lg">please</h5>
+            </div>
           </div>
         </div>
       </div>

@@ -22,9 +22,9 @@ function AboutUs() {
           <div className="absolute inset-0 bg-opacity-60"></div>
         </div>
         <div className="relative z-10 text-center max-w-3xl">
-          <h1 className="text-white text-4xl md:text-5xl font-stencil mb-4">About Us</h1>
+          <h1 className="text-white text-4xl md:text-5xl font-stencil font-bold mb-4">About Us</h1>
           <p className="text-white text-lg md:text-xl">Merging Ecology and AI to Protect Natural Habitats</p>
-        </div>node
+        </div>
       </div>
 
       {/* Our Values */}

@@ -9,7 +9,7 @@ function Products() {
       {/* Hero Section */}
       <div className="bg-dark text-white py-24 px-8 flex items-center justify-between relative overflow-hidden h-[600px]">
         <div className="z-30 max-w-[50%] ml-8">
-          <h1 className="text-4xl font-stencil mb-4">Products</h1>
+          <h1 className="text-4xl font-stencil font-bold mb-4">Products</h1>
           <p className="text-lg mb-6">
             Our software is designed to help as many people as possible. Your support through donations and priced plans ensures we can keep improving and serving our community.
           </p>
