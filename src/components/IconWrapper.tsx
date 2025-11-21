@@ -9,7 +9,7 @@ interface IconWrapperProps {
 const IconWrapper: React.FC<IconWrapperProps> = ({ icon, color, bgColor }) => {
   return (
     <div
-      className={`inline-flex items-center justify-center rounded-full p-2 w-min h-min my-auto ${bgColor}`}
+      className={`inline-flex items-center justify-center rounded-full p-2 w-12 h-12 my-auto ${bgColor}`}
     >
       {React.cloneElement(icon, { className: 'fill-current ' + color })}
     </div>

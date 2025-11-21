@@ -45,7 +45,7 @@ function Home() {
       <div className="bg-gradient-to-t from-stone-200 to-black dark:from-stone-900 py-24 overflow-hidden relative">
       <div className="flex flex-col md:grid md:grid-cols-3 md:grid-rows-3 gap-8 md:gap-4 mx-16 relative">
         {/* Top-left box */}
-        <div className="col-span-2 row-span-1 lg:col-span-1 from-green-200 bg-gradient-to-b to-green-300/0 pb-15 text-black p-8 rounded-lg shadow-lg z-30 transform md:translate-x-8 md:-translate-y-8 md:w-4/5">
+        <div className="col-span-2 row-span-1 lg:col-span-1 from-cyan-400 dark:from-cyan-300 bg-gradient-to-b to-green-300/0 pb-15 text-white p-8 rounded-lg z-30 transform md:translate-x-8 md:-translate-y-8 md:w-4/5">
           <h6 className="text-lg font-semibold mb-2">In House Models</h6>
           <p className="text-sm">
             Leveraging cutting-edge machine learning techniques to deliver
@@ -54,7 +54,7 @@ function Home() {
         </div>
 
         {/* Our Dream box */}
-        <div className="mix-blend-difference dark:mix-blend-normal text-white col-start-2 col-span-1 row-start-2 row-span-1 flex flex-col items-center justify-center z-20">
+        <div className="text-amber-50 col-start-2 col-span-1 row-start-2 row-span-1 flex flex-col items-center justify-center z-20">
           <h4 className="text-3xl font-bold mb-4 text-center">Our Dream</h4>
           <p className="text-base text-center">
             We envision a future where nature thrives - untouched, undisturbed, understood.
@@ -62,7 +62,7 @@ function Home() {
         </div>
 
         {/* Middle-right box */}
-        <div className="col-start-3 col-span-1 row-span-2 row-start-2 lg:row-span-1 from-emerald-200 bg-gradient-to-b to-emerald-300/0 pb-15 text-black p-8 rounded-lg shadow-lg z-30 transform md:translate-x-8 md:w-4/5">
+        <div className="col-start-3 col-span-1 row-span-2 row-start-2 lg:row-span-1 from-sky-400 dark:from-sky-300 bg-gradient-to-b to-emerald-300/0 pb-15 text-white p-8 rounded-lg z-30 transform md:translate-x-8 md:w-4/5">
           <h6 className="text-lg font-semibold mb-2">Sustainability at its Core</h6>
           <p className="text-sm">
             Our solutions are designed to minimize environmental impact while
@@ -71,7 +71,7 @@ function Home() {
         </div>
 
         {/* Bottom-left box */}
-        <div className="col-span-2 row-start-3 row-span-1 lg:col-span-1 from-teal-200 bg-gradient-to-b to-teal-300/0 pb-15 text-black p-8 rounded-lg shadow-lg z-30 md:w-4/5 transform md:translate-x-32 md:translate-y-8">
+        <div className="col-span-2 row-start-3 row-span-1 lg:col-span-1 from-blue-400 dark:from-blue-300 bg-gradient-to-b to-teal-300/0 pb-15 text-white p-8 rounded-lg z-30 md:w-4/5 transform md:translate-x-32 md:translate-y-8">
           <h6 className="text-lg font-semibold mb-2">Empowering Communities</h6>
           <p className="text-sm">
             Providing tools and insights to empower local communities in

@@ -3,7 +3,7 @@ import { motion, cubicBezier } from 'framer-motion';
 import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 
 /* Text style variable */
-const textStyle = 'shadow-md text-shadow-md bg-stone-700/20 bg-opacity-70 rounded-sm md:rounded-full py-2 px-4 m-0 md:mx-4 transition duration-300 hover:bg-stone-200 text-white md:text-black hover:text-black transition-colors w-full md:w-auto';
+const textStyle = 'shadow-md text-shadow-md bg-stone-700/20 bg-opacity-70 rounded-sm md:rounded-full py-2 px-4 m-0 md:mx-4 transition duration-300 hover:bg-stone-200 text-white md:text-black hover:text-black transition-colors w-full md:w-auto font-mono';
 
 export function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -17,7 +17,7 @@ export function Navbar() {
         },
         visible: (i: number) => ({
             opacity: 1,
-            x: -20, // Move to center
+            x: -14, // Move to center
             transition: {
                 type: "spring" as const, // Use spring animation
                 stiffness: 300, // Adjust stiffness for snappiness
@@ -48,8 +48,8 @@ export function Navbar() {
             <div className="flex flex-col md:flex-row justify-between  items-center">
                 <div className="flex flex-row justify-around md:justify-start w-[80%] md:w-auto bg-stone-300 md:bg-transparent rounded-full">
                     <a href="/" className="flex items-center text-text-dark no-underline">
-                        <img src="/GreenLens.png" alt="GreenLens Logo" className="h-10 mx-2" />
-                        <span className={`${textStyle} bg-transparent font-mono hover:bg-transparent shadow-none bold pl-0`}>GreenLens</span>
+                        <img src="/Windhover.png" alt="Windhover Logo" className="h-10 mx-2" />
+                        <span className={`${textStyle} bg-transparent font-serif hover:bg-transparent shadow-none bold pl-0`}>Windhover</span>
                     </a>
                     <button
                         className="block md:hidden text-bg-dark"

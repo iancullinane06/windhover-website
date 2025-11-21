@@ -23,9 +23,6 @@ function RnD() {
         // Get the image's width
         const imageWidth = imageElement.getBoundingClientRect().right - imageElement.getBoundingClientRect().left;
 
-        // Get the image's offset from the left of the viewport
-        const imageOffsetLeft = imageElement.getBoundingClientRect().left;
-
         // Set the slider boundaries relative to the image's center
         setSliderBoundaries({
           left: .5*imageWidth-20, // Start at the left edge of the image
@@ -78,26 +75,15 @@ function RnD() {
       <div className="py-8 px-4 dark:text-white bg-stone-100 dark:bg-stone-900">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold mb-6 text-center">Technology</h2>
-          <div className="bg-white dark:bg-stone-800 rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center md:items-start">
+          <div className="flex flex-col md:flex-row items-start md:items-center -gap-8">
             {/* Text Content on the Left */}
-            <div className="w-full md:w-1/2 mt-6 md:mt-0">
-              <TimelineItem
-                title="Multispectral Imagery"
-                description={
-                  <>
-                    <p className="mb-4">
-                      Using advanced multispectral sensors, we capture data beyond the visible spectrum to identify invasive species and monitor ecosystems.
-                    </p>
-                    <div className="mt-4">
-                      <h3 className="text-lg font-semibold mb-2">Interactive Image Slider</h3>
-                    </div>
-                  </>
-                }
-              />
+            <div className="w-full md:w-1/2 mt-6 md:mt-0 md:grow-1 bg-white dark:bg-stone-800 rounded-lg shadow-lg p-6">
+              <p className="mb-4">
+                Using advanced multispectral sensors, we capture data beyond the visible spectrum to identify invasive species and monitor ecosystems.
+              </p>
             </div>
-
             {/* Image Slider on the Right */}
-            <div className="w-full md:grow-2 md:w-1/2 pr-0 md:pr-6">
+            <div className="w-full md:grow-2 pr-0 md:pr-6">
               <div className="relative h-[400px] w-full rounded-lg bg-black">
                 {/* First Image */}
                 <motion.img
@@ -160,7 +146,7 @@ function RnD() {
               {/* Background Layers */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <svg
-                  viewBox="0 0 1000 500"
+                  viewBox="0 0 800 500"
                   xmlns="http://www.w3.org/2000/svg"
                   className="w-full h-full"
                 >
@@ -218,22 +204,14 @@ function RnD() {
               </ul>
             </div>
 
-            {/* Drone Animation */}
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="w-full md:w-1/2 h-[300px] bg-gradient-to-r from-blue-500 to-blue-700 rounded-lg flex items-center justify-center text-white text-xl font-bold shadow-lg relative"
-            >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <img
-                  src="/drone-animation.gif"
-                  alt="Drone Scanning Landscape"
-                  className="w-3/4 h-auto"
-                />
-              </div>
-              <p className="absolute bottom-4 text-sm">Precision Monitoring</p>
-            </motion.div>
+            {/* Drone Image */}
+            <div className="w-full md:w-1/2">
+              <img
+                src="/Drone-shot.webp"
+                alt="Drone in action"
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </div>

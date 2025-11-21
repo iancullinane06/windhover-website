@@ -26,6 +26,47 @@ function AboutUs() {
           <p className="text-white text-lg md:text-xl">Merging Ecology and AI to Protect Natural Habitats</p>
         </div>
       </div>
+      {/* Our Name */}
+      <div className="flex justify-center py-16 px-4 bg-stone-300 dark:bg-stone-900">
+        <div className="py-16 bg-stone-700 dark:bg-stone-300 dark:text-white px-8 w-1/2 rounded-2xl relative shadow-lg">
+          {/* Punchcard Holes */}
+          <div className="absolute top-0 left-[-10px] h-full flex flex-col justify-between">
+        {Array.from({ length: 10 }).map((_, i) => (
+          <div key={i} className="w-2 h-2 bg-stone-300 dark:bg-stone-900 rounded-full"></div>
+        ))}
+          </div>
+          <div className="absolute top-0 right-[-10px] h-full flex flex-col justify-between">
+        {Array.from({ length: 10 }).map((_, i) => (
+          <div key={i} className="w-2 h-2 bg-stone-300 dark:bg-stone-900 rounded-full"></div>
+        ))}
+          </div>
+
+            <div className="container mx-auto">
+              <TitleBlock
+              title="Windhover"
+              icon={
+                <img
+                src="/svg/falcon.png"
+                alt="Windhover Falcon"
+                className="w-12 h-12"
+                />
+              }
+              iconPosition="start"
+              bgColor="bg-stone-700 dark:bg-stone-300"
+              textColor="text-white dark:text-black"
+              />
+              <div className="dark:bg-stone-300 text-white dark:text-black">
+              <p className="italic text-lg mb-2">/ˈwɪndˌhʌvər/</p>
+              <p className="text-sm mb-4">
+                <span className="italic">Falco tinnunculus</span>
+              </p>
+              <p>
+                The Windhover, or Common Kestrel, is a bird renowned for its precision and agility in flight. Just as the kestrel hovers effortlessly while scanning the ground for prey, our platform hovers over vast landscapes, utilising cutting-edge AI to detect and manage invasive species with pinpoint accuracy.
+              </p>
+              </div>
+            </div>
+        </div>
+      </div>
 
       {/* Our Values */}
       <div className="bg-stone-300 dark:bg-stone-900 text-black py-16 px-8">
@@ -105,7 +146,7 @@ function AboutUs() {
             {/* Introductory Text */}
             <div className="relative p-6 rounded-2xl transform transition-transform col-span-2 m-5 mr-auto w-4/5">
               <p className="text-base mb-8 text-stone-700 text-shadow-lg dark:text-white">
-                GreenLens was born out of a passion for the environment and a desire to make a difference. Our journey has been one of discovery, innovation, and a commitment to using technology for good.
+                Windhover was born out of a passion for the environment and a desire to make a difference. Our journey has been one of discovery, innovation, and a commitment to using technology for good.
               </p>
             </div>
 
@@ -122,7 +163,7 @@ function AboutUs() {
                 icon: <RocketLaunch />,
                 title: "Hitting the Ground Running",
                 description:
-                  "Over the course of 8 intense months, the GreenLens platform took shape. From data collection and training deep learning models, to mapping real-world environments, every line of code and every field trip brought the project closer to reality. A trip to Killarney National Park — one of Ireland’s most affected regions — helped validate the model in rugged, real-world conditions.",
+                  "Over the course of 8 intense months, the Windhover platform took shape. From data collection and training deep learning models, to mapping real-world environments, every line of code and every field trip brought the project closer to reality. A trip to Killarney National Park — one of Ireland’s most affected regions — helped validate the model in rugged, real-world conditions.",
                 bgColor: "cyan-200",
               },
               {
@@ -136,7 +177,7 @@ function AboutUs() {
                 icon: <LocalFlorist />,
                 title: "From Prototype to Platform",
                 description:
-                  "What started as a science fair project has now evolved into a full-featured, mission-driven platform. GreenLens uses AI to turn raw multispectral data into actionable insights for conservationists and land managers. Built from scratch, tested in the wild, and validated through accolades — GreenLens is now geared to scale its impact beyond rhododendron to other invasive species threatening biodiversity.",
+                  "What started as a science fair project has now evolved into a full-featured, mission-driven platform. Windhover uses AI to turn raw multispectral data into actionable insights for conservationists and land managers. Built from scratch, tested in the wild, and validated through accolades — Windhover is now geared to scale its impact beyond rhododendron to other invasive species threatening biodiversity.",
                 bgColor: "emerald-400",
               },
             ].map((story, index) => {
