@@ -14,7 +14,7 @@ const Button: React.FC<ButtonProps> = ({ text, link, colour = "sky" }) => {
       className={clsx(
         `border font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 focus:ring-4 focus:outline-none`,
         {
-          [`text-${colour}-700 hover:text-white border-${colour}-700 hover:bg-${colour}-800 focus:ring-${colour}-300 dark:border-${colour}-500 dark:text-${colour}-500 dark:hover:text-white dark:hover:bg-${colour}-500 dark:focus:ring-${colour}-800`]: colour,
+          [`text-${colour}-500 hover:text-${colour}-700 border-${colour}-300 hover:bg-${colour}-700 focus:ring-${colour}-800 dark:border-${colour}-700 dark:text-${colour}-700 dark:hover:text-${colour}-300 dark:hover:bg-${colour}-300 dark:focus:ring-${colour}-300`]: colour,
         }
       )}
     >

@@ -8,6 +8,7 @@ import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import RnD from './pages/RnD';
 import Rhodolens from './pages/Rhodolens';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -26,20 +27,8 @@ function App() {
         </Routes>
       </Router>
 
-      <Box
-        component="footer"
-        sx={{
-          backgroundColor: '#282c34',
-          color: 'white',
-          padding: 2,
-          marginTop: 4,
-          textAlign: 'center',
-        }}
-      >
-        <Typography variant="body2">
-          &copy; 2025 GreenLens Software. All rights reserved.
-        </Typography>
-      </Box>
+
+      <Footer />
     </div>
   );
 }

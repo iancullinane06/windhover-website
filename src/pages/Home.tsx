@@ -1,6 +1,6 @@
 import ShieldIcon from '@mui/icons-material/Shield';
 import FrostedGlassCard from '../components/Widgets';
-import IconWrapper from '../components/IconWrapper'; // Add this import
+import IconWrapper from '../components/IconWrapper';
 import { RocketLaunch, Payments, AdjustRounded, Compost } from '@mui/icons-material';
 import pricingPlans from '../config/PricingPlans.json';
 import Button from '../components/Button'; 
@@ -17,7 +17,7 @@ function Home() {
           style={{
             backgroundSize: '100% 100%',
             backgroundPosition: 'center',
-            backgroundImage: "linear-gradient(180deg, #FFF0 0%, var(--color-black) 100%), linear-gradient(135deg, #1CB5E0 0%, #000851 100%)",
+            backgroundImage: "linear-gradient(180deg, #FFF0 0%, var(--color-black) 100%), linear-gradient(135deg, var(--color-green-300) 0%, var(--color-blue-700) 100%)",
           }}
           role="img"
           aria-label="Forest background image with gradients"
@@ -33,8 +33,13 @@ function Home() {
           ></div>
         </div>
         <div className="flex z-30 ml-8 max-w-2/3 flex-row items-center gap-2">
-          <div>
-            <h1 className="text-5xl font-serif font-light text-stone-400">
+          <div className="flex flex-row">
+            <IconWrapper
+              icon={<ShieldIcon />}
+              color="text-white"
+              bgColor="bg-lime-500"
+            />
+            <h1 className="text-5xl ml-4 font-serif font-light text-stone-400">
               Turning data into<br/><span className="font-regular text-white">defense against invasive species</span>
             </h1>
           </div>
@@ -43,43 +48,43 @@ function Home() {
 
       {/* Our Dream Section */}
       <div className="bg-gradient-to-t from-stone-200 to-black dark:from-stone-900 py-24 overflow-hidden relative">
-      <div className="flex flex-col md:grid md:grid-cols-3 md:grid-rows-3 gap-8 md:gap-4 mx-16 relative">
-        {/* Top-left box */}
-        <div className="col-span-2 row-span-1 lg:col-span-1 from-cyan-400 dark:from-cyan-300 bg-gradient-to-b to-green-300/0 pb-15 text-white p-8 rounded-lg z-30 transform md:translate-x-8 md:-translate-y-8 md:w-4/5">
-          <h6 className="text-lg font-semibold mb-2">In House Models</h6>
-          <p className="text-sm">
-            Leveraging cutting-edge machine learning techniques to deliver
-            unparalleled insights and efficiency.
-          </p>
-        </div>
+        <div className="flex flex-col md:grid md:grid-cols-3 md:grid-rows-3 gap-8 md:gap-4 mx-16 relative">
+          {/* Top-left box */}
+          <div className="col-span-2 row-span-1 lg:col-span-1 lg:row-start-1 row-start-2 from-cyan-400 dark:from-cyan-300 bg-gradient-to-b to-green-300 pb-15 text-black p-8 rounded-lg z-30 transform md:translate-x-8 md:-translate-y-8 md:w-4/5">
+            <h6 className="text-lg font-semibold mb-2">In House Models</h6>
+            <p className="text-sm">
+              Leveraging cutting-edge machine learning techniques to deliver
+              unparalleled insights and efficiency.
+            </p>
+          </div>
 
-        {/* Our Dream box */}
-        <div className="text-amber-50 col-start-2 col-span-1 row-start-2 row-span-1 flex flex-col items-center justify-center z-20">
-          <h4 className="text-3xl font-bold mb-4 text-center">Our Dream</h4>
-          <p className="text-base text-center">
-            We envision a future where nature thrives - untouched, undisturbed, understood.
-          </p>
-        </div>
+          {/* Our Dream box */}
+          <div className="text-amber-50 col-start-2 col-span-1 lg:row-start-2 row-start-1 row-span-1 flex flex-col items-center justify-center z-20">
+            <h4 className="text-3xl font-bold mb-4 text-center">Our Dream</h4>
+            <p className="text-base text-center">
+              We envision a future where nature thrives - untouched, undisturbed, understood.
+            </p>
+          </div>
 
-        {/* Middle-right box */}
-        <div className="col-start-3 col-span-1 row-span-2 row-start-2 lg:row-span-1 from-sky-400 dark:from-sky-300 bg-gradient-to-b to-emerald-300/0 pb-15 text-white p-8 rounded-lg z-30 transform md:translate-x-8 md:w-4/5">
-          <h6 className="text-lg font-semibold mb-2">Sustainability at its Core</h6>
-          <p className="text-sm">
-            Our solutions are designed to minimize environmental impact while
-            maximizing efficiency and results.
-          </p>
-        </div>
+          {/* Middle-right box */}
+          <div className="col-start-3 col-span-1 row-span-2 lg:row-start-2 row-start-3 lg:row-span-1 from-sky-400 dark:from-sky-300 bg-gradient-to-b to-emerald-300 pb-15 text-black p-8 rounded-lg z-30 transform md:translate-x-8 md:w-4/5">
+            <h6 className="text-lg font-semibold mb-2">Sustainability at its Core</h6>
+            <p className="text-sm">
+              Our solutions are designed to minimise environmental impact while
+              maximising efficiency and results.
+            </p>
+          </div>
 
-        {/* Bottom-left box */}
-        <div className="col-span-2 row-start-3 row-span-1 lg:col-span-1 from-blue-400 dark:from-blue-300 bg-gradient-to-b to-teal-300/0 pb-15 text-white p-8 rounded-lg z-30 md:w-4/5 transform md:translate-x-32 md:translate-y-8">
-          <h6 className="text-lg font-semibold mb-2">Empowering Communities</h6>
-          <p className="text-sm">
-            Providing tools and insights to empower local communities in
-            preserving their natural habitats.
-          </p>
+          {/* Bottom-left box */}
+          <div className="col-span-2 lg:row-start-3 row-start-4row-span-1 lg:col-span-1 from-blue-400 dark:from-blue-300 bg-gradient-to-b to-teal-300 pb-15 text-black p-8 rounded-lg z-30 md:w-4/5 transform md:translate-x-32 md:translate-y-8">
+            <h6 className="text-lg font-semibold mb-2">Empowering Communities</h6>
+            <p className="text-sm">
+              Providing tools and insights to empower local communities in
+              preserving their natural habitats.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
 
       {/* RhodoLens Section */}
       <div className="bg-stone-200 dark:bg-stone-900 dark:text-white p-16 flex items-center justify-around md:flex-row flex-col">
@@ -117,7 +122,7 @@ function Home() {
       <div className="bg-stone-900 text-white py-24 -gap-5 px-8">
         <div className="w-1/2 mx-auto flex items-center flex-col">
           {/* Text Content */}
-          <div className="space-y-6 bg-stone-800 p-16 rounded-xl pr-30">
+          <div className="space-y-6 bg-stone-800 p-16 rounded-xl pr-30 z-2">
             <h2 className="text-4xl font-bold">Why Choose RhodoLens?</h2>
             <p className="text-lg text-justify">
               RhodoLens is your trusted partner in environmental intelligence. Designed to deliver precision, speed, and cost-effectiveness, it empowers you to make data-driven decisions that protect ecosystems and reduce operational costs.
@@ -150,10 +155,10 @@ function Home() {
             </ul>
             <Button text="Learn more" link="/rhodolens" />
           </div>
-          <div className="bg-black p-5 w-4/5 rounded-xl">
-            <div className="mt-16 lg:mt-0 flex justify-center">
-              <h2 className="text-5xl font-serif">Buy Now</h2><br></br>
-              <h5 className="text-lg">please</h5>
+          <div className="mt-16 lg:-mt-4 bg-black p-8 w-4/5 rounded-xl lg:pt-12">
+            <div className="flex justify-center flex-col items-center gap-4">
+              <h2 className="text-5xl font-serif">Buy Now</h2>
+              <Button text="Explore Pricing" link="/pricing" />
             </div>
           </div>
         </div>

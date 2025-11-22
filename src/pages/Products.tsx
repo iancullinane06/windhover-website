@@ -66,10 +66,10 @@ function Products() {
       </div>
 
       {/* RhodoLens Section */}
-      <div className="bg-gray-300 dark:bg-stone-900 dark:text-white py-24 px-8 flex items-center justify-around min-h-[500px]">
+      <div className="bg-gray-300 dark:bg-stone-900 dark:text-white py-24 px-8 flex items-center justify-around min-h-[500px] flex-col lg:flex-row">
         <div className="max-w-[45%] text-justify">
           <h2 className="text-3xl font-bold mb-4">RhodoLens</h2>
-          <h3 className="text-xl font-semibold mb-4 text-sky-500">
+          <h3 className="text-xl font-semibold mb-4 text-sky-700 dark:text-sky-300">
             Revolutionising Environmental Intelligence
           </h3>
           <p className="text-base mb-4">

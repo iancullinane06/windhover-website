@@ -49,7 +49,7 @@ export function Navbar() {
                 <div className="flex flex-row justify-around md:justify-start w-[80%] md:w-auto bg-stone-300 md:bg-transparent rounded-full">
                     <a href="/" className="flex items-center text-text-dark no-underline">
                         <img src="/Windhover.png" alt="Windhover Logo" className="h-10 mx-2" />
-                        <span className={`${textStyle} bg-transparent font-serif hover:bg-transparent shadow-none bold pl-0`}>Windhover</span>
+                        <span className={`${textStyle} bg-transparent font-serif hover:bg-transparent text-black shadow-none bold pl-0`}>Windhover</span>
                     </a>
                     <button
                         className="block md:hidden text-bg-dark"

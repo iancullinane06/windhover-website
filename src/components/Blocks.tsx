@@ -31,13 +31,33 @@ export function TitleBlock({
   textColor = 'text-black',
 }: TitleBlockProps) {
   return (
-    <div className={clsx('flex items-center gap-4 p-4 rounded-lg', bgColor)}>
-      {icon && iconPosition === 'start' && (
-        <IconWrapper icon={icon} bgColor={'bg-sky-500'} color={'text-stone-100'} />
+    <div
+      className={clsx(
+        'flex flex-col md:flex-row items-center md:items-start gap-4 p-4 rounded-lg',
+        bgColor
       )}
-      <h1 className={clsx('text-4xl font-serif font-light italic', textColor)}>{title}</h1>
+    >
+      {icon && iconPosition === 'start' && (
+        <IconWrapper
+          icon={icon}
+          bgColor={'bg-sky-500'}
+          color={'text-stone-100'}
+        />
+      )}
+      <h1
+        className={clsx(
+          'text-2xl md:text-4xl font-serif font-light italic text-center md:text-left',
+          textColor
+        )}
+      >
+        {title}
+      </h1>
       {icon && iconPosition === 'finish' && (
-        <IconWrapper icon={icon} bgColor={'bg-sky-500'} color={'text-stone-100'} />
+        <IconWrapper
+          icon={icon}
+          bgColor={'bg-sky-500'}
+          color={'text-stone-100'}
+        />
       )}
     </div>
   );

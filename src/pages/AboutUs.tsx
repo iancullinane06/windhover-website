@@ -7,7 +7,7 @@ import { TitleBlock, PureContentBlock } from '../components/Blocks';
 
 function AboutUs() {
   return (
-    <div>
+    <div className="overflow-hidden">
       {/* Hero Section */}
       <div className="relative flex items-center justify-center bg-black text-text-light h-[600px] overflow-hidden">
         <div
@@ -28,7 +28,7 @@ function AboutUs() {
       </div>
       {/* Our Name */}
       <div className="flex justify-center py-16 px-4 bg-stone-300 dark:bg-stone-900">
-        <div className="py-16 bg-stone-700 dark:bg-stone-300 dark:text-white px-8 w-1/2 rounded-2xl relative shadow-lg">
+        <div className="py-16 bg-stone-700 dark:bg-stone-300 dark:text-white px-8 w-5/6 lg:w-1/2 rounded-2xl relative shadow-lg">
           {/* Punchcard Holes */}
           <div className="absolute top-0 left-[-10px] h-full flex flex-col justify-between">
         {Array.from({ length: 10 }).map((_, i) => (
