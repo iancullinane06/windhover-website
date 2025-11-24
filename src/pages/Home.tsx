@@ -33,13 +33,13 @@ function Home() {
           ></div>
         </div>
         <div className="flex z-30 ml-8 max-w-2/3 flex-row items-center gap-2">
-          <div className="flex flex-row">
+          <div className="flex flex-col md:flex-row items-center">
             <IconWrapper
               icon={<ShieldIcon />}
               color="text-white"
               bgColor="bg-lime-500"
             />
-            <h1 className="text-5xl ml-4 font-serif font-light text-stone-400">
+            <h1 className="text-5xl ml-4 font-serif font-light text-stone-400 text-center md:text-left">
               Turning data into<br/><span className="font-regular text-white">defense against invasive species</span>
             </h1>
           </div>
