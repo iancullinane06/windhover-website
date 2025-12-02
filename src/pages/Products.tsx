@@ -29,39 +29,42 @@ function Products() {
 
       {/* Our Technology Section */}
       <div className="py-16 px-8 to-bg-stone-200 bg-gradient-to-b from-bg-black dark:to-bg-stone-900 text-black dark:text-white">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-8">Our Technology</h2>
-          <p className="text-base text-center mb-8 max-w-3xl mx-auto">
-            Powered by machine learning and advanced image processing, our platform identifies invasive species, classifies risk zones, and generates actionable insights in real time.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <IconWrapper icon={<Compost />} bgColor="bg-green-100" color="text-green-600" />,
-                stat: '97%',
-                description: 'Accuracy detecting Rhododendron',
-              },
-              {
-                icon: <IconWrapper icon={<Timeline />} bgColor="bg-blue-100" color="text-blue-600" />,
-                stat: '12x',
-                description: 'Faster than manual surveying',
-              },
-              {
-                icon: <IconWrapper icon={<RocketLaunch />} bgColor="bg-yellow-100" color="text-yellow-600" />,
-                stat: '1.2M+',
-                description: 'Acres scanned to date',
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="bg-white dark:bg-stone-800 p-6 rounded-lg shadow-lg text-center"
-              >
-                <h3 className="text-4xl font-bold text-primary mb-2">{item.stat}</h3>
-                <div className="mb-4 scale-125">{item.icon}</div>
-                <p className="text-base">{item.description}</p>
-              </div>
-            ))}
+        <div className="grid grid-cols-1 md:grid-cols-5 grid-wors-4 md:grid-rows-2 gap-8">
+          <div className="md:col-span-3 md:col-start-3 row-span-1">
+            <h2 className="text-4xl font-bold text-center mb-8">Our Technology</h2>
+            <p className="text-base text-center mb-8 max-w-3xl mx-auto">
+              Powered by machine learning and advanced image processing, our platform identifies invasive species, classifies risk zones, and generates actionable insights in real time.
+            </p>
           </div>
+          {[
+            {
+              icon: <IconWrapper icon={<Compost />} bgColor="bg-green-100" color="text-green-600" />,
+              stat: '97%',
+              description: 'Accuracy detecting Rhododendron',
+              grid: 'md:col-start-1 md:row-start-1',
+            },
+            {
+              icon: <IconWrapper icon={<Timeline />} bgColor="bg-blue-100" color="text-blue-600" />,
+              stat: '12x',
+              description: 'Faster than manual surveying',
+              grid: 'md:col-start-1 md:row-start-2',
+            },
+            {
+              icon: <IconWrapper icon={<RocketLaunch />} bgColor="bg-yellow-100" color="text-yellow-600" />,
+              stat: '1.2M+',
+              description: 'Acres scanned to date',
+              grid: 'md:col-start-3 md:row-start-2',
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className={`bg-white dark:bg-stone-800 p-6 rounded-lg shadow-lg text-center col-span-2 ${item.grid}`}
+            >
+              <h3 className="text-4xl font-bold text-primary mb-2">{item.stat}</h3>
+              <div className="mb-4 scale-125">{item.icon}</div>
+              <p className="text-base">{item.description}</p>
+            </div>
+          ))}
         </div>
       </div>
 
