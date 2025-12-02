@@ -1,10 +1,11 @@
-import { use, useEffect, useRef, useState } from 'react';
-import { motion, cubicBezier } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
-import { Height, Translate } from '@mui/icons-material';
 
 /* Text style variable */
-const textStyle = 'shadow-md text-shadow-md bg-stone-700 md:bg-stone-400 bg-opacity-70 rounded-sm md:rounded-full py-2 px-4 m-0 md:mx-4 transition duration-300 hover:bg-stone-200 text-white md:text-black hover:text-black transition-colors w-full md:w-auto font-mono';
+const textStyle = 'shadow-md text-shadow-md bg-stone-700 xl:bg-stone-400 bg-opacity-70 rounded-sm md:rounded-full py-2 px-4 m-0 md:mx-4 transition duration-300 hover:bg-stone-200 text-white xl:text-black hover:text-black transition-colors w-full md:w-auto font-mono';
+
+const mobileBreakpoint = 768;
 
 export function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -32,11 +33,14 @@ export function Navbar() {
             opacity: 0,
             width: '0px',
             x: '300px',
+            y: '0px',
+            height: 'auto',
             // Start with no width
         },
         visible: {
             opacity: 1,
-            width: window.innerWidth >= 768 ? '330px' : 'auto', // Expand to fit content only when not on mobile
+            y: '0px',
+            width: window.innerWidth >= mobileBreakpoint ? '330px' : 'auto', // Expand to fit content only when not on mobile
             x: 0,
             transition: {
                 type: "spring" as const, // Use spring animation
@@ -48,10 +52,13 @@ export function Navbar() {
 
     const dropdownVariants = {
         hidden: {
-            y: window.innerWidth >= 768 ? '0px' : '-152px',
-            height: window.innerWidth >= 768 ? 'auto' : '0px',
+            opacity: 0,
+            x: 0,
+            y: window.innerWidth >= mobileBreakpoint ? '0px' : '-152px',
+            height: window.innerWidth >= mobileBreakpoint ? 'auto' : '0px',
         },
         visible: {
+            opacity: 1,
             y: '0px',
             height: 'auto',
             transition: {
@@ -121,15 +128,15 @@ export function Navbar() {
 
 
     return (
-        <nav className="bg-light bg-opacity-50 md:bg-stone-300 text-text-dark rounded-full md:shadow-md w-[90vw] mx-auto mt-4 p-1 fixed top-4 left-[5vw] right-[5vw] z-50 md:flex">
-            <div className="flex flex-col md:flex-row justify-between items-center w-full">
-                <div className="flex flex-row justify-around md:justify-start w-[80%] md:w-auto bg-stone-300 md:bg-transparent rounded-full">
+        <nav className="bg-stone-300/20 text-text-dark rounded-full md:shadow-md w-[90vw] mx-auto mt-4 p-1 fixed top-4 left-[5vw] right-[5vw] z-50 md:flex">
+            <div className="flex flex-col xl:flex-row justify-between items-center w-full max-h-10">
+                <div className="flex flex-row justify-between w-full px-4 bg-stone-300 rounded-full">
                     <a href="/" className="flex items-center text-text-dark no-underline">
                         <img src="/Windhover.png" alt="Windhover Logo" className="h-10 mx-2" />
                         <span className={`${textStyle} !bg-transparent font-serif  !text-black shadow-none bold pl-0`}>Windhover</span>
                     </a>
                     <button
-                        className="block md:hidden text-bg-dark"
+                        className="block xl:hidden text-bg-dark"
                         onClick={() => setMenuOpen(!menuOpen)}
                     >
                         ☰
@@ -139,9 +146,9 @@ export function Navbar() {
                     ref={menuRef}
                     className={`${
                         menuOpen ? 'block' : 'hidden'
-                    } md:flex items-center space-x-4 flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 w-full md:w-auto rounded-b-2xl bg-stone-700 md:bg-transparent`}
+                    } xl:flex items-center space-x-4 flex flex-col xl:flex-row xl:space-x-4 space-y-4 xl:space-y-0 w-full xl:w-auto rounded-b-2xl bg-stone-700 xl:bg-transparent`}
                     initial="hidden"
-                    animate={menuOpen || window.innerWidth >= 768 ? 'visible' : 'hidden'}
+                    animate={menuOpen || window.innerWidth >= mobileBreakpoint ? 'visible' : 'hidden'}
                     variants={mobileMenuVariants}
                 >
                     <a href="/" className={textStyle}>
@@ -154,7 +161,7 @@ export function Navbar() {
                         Pricing
                     </a>
                     <div
-                        className="flex flex-col md:flex-row items-center md:space-x-4 space-y-4 md:space-y-0 group relative transition-all bg-opacity-80 md:bg-stone-700/20 md:rounded-full pointer-events-auto z-5 w-full md:w-auto overflow-hidden h-auto"
+                        className="flex flex-col md:flex-row items-center md:space-x-4 space-y-4 md:space-y-0 group relative transition-all bg-opacity-80 bg-stone-700 xl:bg-stone-400 md:rounded-full pointer-events-auto z-5 w-full md:w-auto overflow-hidden h-auto"
                         onMouseEnter={() => setHoverActive(true)} // Activate hover
                         onMouseLeave={() => setHoverActive(false)} // Deactivate hover
                         onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -164,7 +171,7 @@ export function Navbar() {
                             animate={hoverActive || dropdownOpen ? 'visible' : 'hidden'}
                             ref={dropdownRef}
                             className="-md:ml-5"
-                            variants={window.innerWidth >= 768 ? horizontalVariants : dropdownVariants}
+                            variants={window.innerWidth >= mobileBreakpoint ? horizontalVariants : dropdownVariants}
                         >
                             <div
                                 className="flex flex-col md:flex-row items-center md:space-x-4 space-y-4 md:space-y-0 transition-all"
@@ -173,7 +180,7 @@ export function Navbar() {
                                 <motion.a
                                     key={link}
                                     href={`/${link.toLowerCase().replace(/ /g, '-')}`}
-                                    className={`text-stone-200 md:text-black text-shadow-md bg-opacity-70 md:rounded-full py-2 px-4 ${
+                                    className={`text-stone-200 xl:text-black text-shadow-md bg-opacity-70 md:rounded-full py-2 px-4 ${
                                         index === 0 ? 'md:ml-8' : 'ml-0'
                                     } hover:bg-stone-200 hover:bg-opacity-70 text-center hover:text-black transition-colors shadow-none whitespace-nowrap`}
                                     custom={index}
@@ -188,9 +195,9 @@ export function Navbar() {
                         </motion.div>
 
                         <p
-                            className={`${textStyle} !mx-0 relative z-10 order-first md:order-last bg-none w-full md:w-auto`}
+                            className={`${textStyle} !mx-0 relative text-nowrap z-10 order-first md:order-last bg-none w-full`}
                         >
-                            <KeyboardArrowDownRoundedIcon className="group-hover:rotate-90 transition transform duration-1000 ease-[cubic-bezier(0.33,_-0.26,_0.567,_1.311)]" /> About Us
+                            <KeyboardArrowDownRoundedIcon className="group-hover:rotate-90 h-10 transition transform duration-1000 ease-[cubic-bezier(0.33,_-0.26,_0.567,_1.311)]" /> About Us
                         </p>
                     </div>
                 </motion.div>

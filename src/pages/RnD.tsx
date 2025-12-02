@@ -1,11 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import CodeIcon from '@mui/icons-material/Code';
-import TimelineItem from '../components/TimeLine';
 import IconWrapper from '../components/IconWrapper';
 import Button from '../components/Button';
-
-const streamlinePoint = 1000;
 
 function RnD() {
   const dragX = useMotionValue(200); // Motion value for tracking x position

@@ -17,14 +17,17 @@ function Home() {
           style={{
             backgroundSize: '100% 100%',
             backgroundPosition: 'center',
-            backgroundImage: "linear-gradient(180deg, #FFF0 0%, var(--color-black) 100%), linear-gradient(135deg, var(--color-green-300) 0%, var(--color-blue-700) 100%)",
+            backgroundImage: `linear-gradient(180deg, ${
+              window.matchMedia('(prefers-color-scheme: dark)').matches ? '#FFF0 0%, var(--color-black) 100%' : '#FFF0 0%, var(--color-stone-300) 90%'
+            }), linear-gradient(135deg, var(--color-green-300) 0%, var(--color-blue-700) 100%)`,
+            backgroundColor: 'var(--color-stone-200)', // Default to white
           }}
           role="img"
           aria-label="Forest background image with gradients"
         >
           <div className="absolute inset-0 z-3"></div>
           <div
-            className="absolute inset-0 z-4 pointer-events-none"
+            className="absolute inset-0 z-4 pointer-events-none dark:bg-transparent"
             style={{
               backgroundImage: "url('/grain-texture.jpg')",
               opacity: 0.2,
@@ -37,51 +40,65 @@ function Home() {
             <IconWrapper
               icon={<ShieldIcon />}
               color="text-white"
-              bgColor="bg-lime-500"
+              bgColor="bg-amber-500"
             />
-            <h1 className="text-5xl ml-4 font-serif font-light text-stone-400 text-center md:text-left">
-              Turning data into<br/><span className="font-regular text-white">defense against invasive species</span>
+            <h1 className="text-5xl ml-4 font-serif font-light text-stone-700 dark:text-stone-400 text-center md:text-left">
+              Turning data into<br/><span className="font-regular text-pink-500 dark:text-white">defense against invasive species</span>
             </h1>
           </div>
         </div>
       </div>
 
       {/* Our Dream Section */}
-      <div className="bg-gradient-to-t from-stone-200 to-black dark:from-stone-900 py-24 overflow-hidden relative">
-        <div className="flex flex-col md:grid md:grid-cols-3 md:grid-rows-3 gap-8 md:gap-4 mx-16 relative">
-          {/* Top-left box */}
-          <div className="col-span-2 row-span-1 lg:col-span-1 lg:row-start-1 row-start-2 from-cyan-400 dark:from-cyan-300 bg-gradient-to-b to-green-300 pb-15 text-black p-8 rounded-lg z-30 transform md:translate-x-8 md:-translate-y-8 md:w-4/5">
-            <h6 className="text-lg font-semibold mb-2">In House Models</h6>
-            <p className="text-sm">
+      <div className="bg-gradient-to-t from-stone-200 to-stone-300 dark:to-black dark:from-stone-900 p-16 overflow-hidden relative">
+        <div className="flex flex-col lg:flex-row items-center text-center mb-16 px-8 gap-8">
+          <div>
+          <h2 className="text-4xl font-bold mb-4 text-black dark:text-white">Our Dream</h2>
+          <p className="text-lg max-w-3xl text-black dark:text-white">
+            At Windhover, we envision a future where nature thrives - untouched, undisturbed, understood. Our mission is to empower conservation efforts through cutting-edge technology, enabling swift action against invasive species and fostering harmony between humanity and the environment.
+          </p>
+          </div>
+          <div
+            className="flex flex-col md:grid md:grid-cols-2 md:grid-rows-4 gap-8 md:gap-4 mx-4 lg:ml-16 relative text-black dark:text-white"
+            style={{backgroundImage: "url('/TopographicImages/topo-2.png')"
+              , backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center"
+            }}
+          >
+            {/* Top-left box */}
+            <div
+              className="bg-cyan-400 bg-opacity-40 pb-15 p-8 rounded-lg z row-span-2 row-start-2"
+              style={{ backdropFilter: 'blur(10px)', backgroundColor: 'rgba(0, 255, 255, 0.2)' }}
+            >
+              <h6 className="text-lg font-semibold mb-2">In House Models</h6>
+              <p className="text-sm">
               Leveraging cutting-edge machine learning techniques to deliver
               unparalleled insights and efficiency.
-            </p>
-          </div>
+              </p>
+            </div>
 
-          {/* Our Dream box */}
-          <div className="text-amber-50 col-start-2 col-span-1 lg:row-start-2 row-start-1 row-span-1 flex flex-col items-center justify-center z-20">
-            <h4 className="text-3xl font-bold mb-4 text-center">Our Dream</h4>
-            <p className="text-base text-center">
-              We envision a future where nature thrives - untouched, undisturbed, understood.
-            </p>
-          </div>
-
-          {/* Middle-right box */}
-          <div className="col-start-3 col-span-1 row-span-2 lg:row-start-2 row-start-3 lg:row-span-1 from-sky-400 dark:from-sky-300 bg-gradient-to-b to-emerald-300 pb-15 text-black p-8 rounded-lg z-30 transform md:translate-x-8 md:w-4/5">
-            <h6 className="text-lg font-semibold mb-2">Sustainability at its Core</h6>
-            <p className="text-sm">
+            {/* Middle-right box */}
+            <div
+              className="bg-sky-400 bg-opacity-40 pb-15 p-8 rounded-lg col-start-2 row-start-1 row-span-2"
+              style={{ backdropFilter: 'blur(10px)', backgroundColor: 'rgba(135, 206, 235, 0.2)' }}
+            >
+              <h6 className="text-lg font-semibold mb-2">Sustainability at its Core</h6>
+              <p className="text-sm">
               Our solutions are designed to minimise environmental impact while
               maximising efficiency and results.
-            </p>
-          </div>
+              </p>
+            </div>
 
-          {/* Bottom-left box */}
-          <div className="col-span-2 lg:row-start-3 row-start-4row-span-1 lg:col-span-1 from-blue-400 dark:from-blue-300 bg-gradient-to-b to-teal-300 pb-15 text-black p-8 rounded-lg z-30 md:w-4/5 transform md:translate-x-32 md:translate-y-8">
-            <h6 className="text-lg font-semibold mb-2">Empowering Communities</h6>
-            <p className="text-sm">
-              Providing tools and insights to empower local communities in
-              preserving their natural habitats.
-            </p>
+            {/* Bottom-left box */}
+            <div
+              className="bg-blue-400 bg-opacity-80 pb-15 p-8 rounded-lg col-start-2 row-start-3 row-span-2"
+              style={{ backdropFilter: 'blur(10px)', backgroundColor: 'rgba(0, 0, 255, 0.2)' }}
+            >
+              <h6 className="text-lg font-semibold mb-2">Empowering Communities</h6>
+              <p className="text-sm">
+              Harnessing the power of technology to enable communities to
+              protect their local ecosystems.
+              </p>
+            </div>
           </div>
         </div>
       </div>
