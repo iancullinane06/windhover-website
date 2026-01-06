@@ -33,8 +33,8 @@ function Home() {
           ></div>
         </div>
         <div className="flex z-30 max-w-2/3 flex-row items-center gap-2">
-          <div className="flex flex-col pl-16 md:flex-row items-center py-8 pr-12 bg-stone-400 rounded-r-full">
-            <h1 className="text-5xl ml-4 font-serif font-light text-stone-700 text-center md:text-left">
+          <div className="flex flex-col-reverse pl-16 md:flex-row items-center py-8 pr-12 md:bg-stone-400 rounded-r-full">
+            <h1 className="text-5xl ml-4 font-serif font-light md:text-stone-700 dark:md:text-stone-700 text-stone-700 dark:text-stone-200 text-center md:text-left">
               Turning data into<br/><span className="font-regular text-rose-600 mr-8">defense against invasive species.</span>
             </h1>
             <IconWrapper
