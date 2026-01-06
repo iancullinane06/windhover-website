@@ -13,9 +13,14 @@ function SpectrumGraphic({ className = '' }: SpectrumGraphicProps) {
     const y = i * patternSize;
     return Array.from({ length: width / patternSize }, (_, j) => {
       const x = j * patternSize;
-      const radius = maxRadius * Math.abs(1 - ( y / height ) * 1.1 - (Math.random() * 0.15) - ((0.005*(x**4) -10*(x**3) +6100*(x**2) -1100000*x + 7050000)*0.000000002)); // Vary radius based on y position
-    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const fillColor = isDarkMode || document.documentElement.classList.contains('dark')
+      const radius = maxRadius * Math.abs(1 - (y / height) * 1.1 - (Math.random() * 0.15) - ((0.005 * (x ** 4) - 10 * (x ** 3) + 6100 * (x ** 2) - 1100000 * x + 7050000) * 0.000000002)); // Vary radius based on y position
+
+    // Explicit theme detection
+    const userPreference = localStorage.getItem('theme');
+    const systemPreference = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDarkMode = userPreference === 'dark' || (!userPreference && systemPreference);
+
+    const fillColor = isDarkMode
       ? 'var(--color-stone-900)'
       : 'var(--color-stone-300)';
 
@@ -28,8 +33,8 @@ function SpectrumGraphic({ className = '' }: SpectrumGraphicProps) {
         fill={fillColor}
       />
     );
-    });
   });
+}).flat(); // Ensure the nested arrays are flattened
 
   // Generate lines pointing to text boxes
   const lines = [
@@ -87,7 +92,7 @@ function SpectrumGraphic({ className = '' }: SpectrumGraphicProps) {
         fill="url(#curvedGradient)"
       />
 
-      {circles.flat()}
+      {circles}
 
       <path 
         d="M5,390
