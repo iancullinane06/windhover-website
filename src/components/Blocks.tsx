@@ -28,12 +28,12 @@ export function TitleBlock({
   icon,
   iconPosition = 'start',
   bgColor = 'bg-stone-300',
-  textColor = 'text-black',
+  textColor = 'text-black dark:text-white',
 }: TitleBlockProps) {
   return (
     <div
       className={clsx(
-        'flex flex-col md:flex-row items-center md:items-start gap-4 p-4 rounded-lg',
+        'flex flex-col md:flex-row items-center md:items-start justify-items-end flex-end gap-4 rounded-lg',
         bgColor
       )}
     >
@@ -46,7 +46,7 @@ export function TitleBlock({
       )}
       <h1
         className={clsx(
-          'text-2xl md:text-4xl font-serif font-light italic text-center md:text-left',
+          'text-3xl font-serif font-light italic text-center md:text-left pt-2.5',
           textColor
         )}
       >
@@ -67,11 +67,11 @@ export function ContentBlock({
   title,
   content,
   bgColor = 'bg-stone-300',
-  textColor = 'text-black',
+  textColor = 'text-black dark:text-white',
 }: ContentBlockProps) {
   return (
     <div className={clsx('p-6 rounded-lg', bgColor)}>
-      <h3 className={clsx('text-xl font-semibold mb-4', textColor)}>{title}</h3>
+      <h3 className={clsx('text-xl font-semibold mb-2', textColor)}>{title}</h3>
       {content && <p className={clsx('text-base', textColor)}>{content}</p>}
     </div>
   );
@@ -80,10 +80,10 @@ export function ContentBlock({
 export function PureContentBlock({
   content,
   bgColor = 'bg-stone-300',
-  textColor = 'text-black',
+  textColor = 'text-black dark:text-white',
 }: PureContentBlockProps) {
   return (
-    <div className={clsx('p-6 rounded-lg', bgColor)}>
+    <div className={clsx('p-6 rounded-lg text-justify', bgColor)}>
       <p className={clsx('text-base', textColor)}>{content}</p>
     </div>
   );

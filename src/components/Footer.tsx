@@ -1,5 +1,5 @@
 import React from "react";
-import { Instagram, LinkedIn } from "@mui/icons-material";
+import { InstagramLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
 
 const Footer: React.FC = () => {
   return (
@@ -54,21 +54,14 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           {/* Social Media Icons */}
           <div className="flex gap-4">
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-stone-300 hover:text-pink-500 transition"
-            >
-              <Instagram />
-            </a>
+
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-stone-300 hover:text-blue-700 transition"
+              className="text-stone-300 hover:text-[#0077b5] transition"
             >
-              <LinkedIn />
+              <LinkedinLogoIcon className="fill-current"/>
             </a>
           </div>
 

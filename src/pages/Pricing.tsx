@@ -1,26 +1,45 @@
 import React from 'react';
 import pricingPlans from '../config/PricingPlans.json';
 import FrostedGlassCard from '../components/Widgets';
+import IconWrapper from '../components/IconWrapper';
+import { FlowerLotusIcon, RocketLaunchIcon, ScalesIcon, WalletIcon } from '@phosphor-icons/react';
+import { PureContentBlock, TitleBlock } from '../components/Blocks';
 
 function Pricing() {
   return (
-    <div>
-      {/* Banner Section */}
-      <div className="bg-cyan-400 text-black py-16 text-center flex flex-col justify-center items-center gap-4 h-[400px]">
-        <h1 className="text-4xl font-stencil">Pricing Plans</h1>
-        <p className="text-lg max-w-3xl">
-          Our software is designed to help as many people as possible. Your support through donations and priced plans
-          ensures we can keep improving and serving our community.
-        </p>
+    <div className="overflow-hidden">
+      {/* Hero Section */}
+      <div className="relative flex items-center justify-center bg-black text-text-light h-[600px] overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/pricing-hero.jpg')",
+            backgroundAttachment: "fixed",
+          }}
+          role="img"
+          aria-label="Pricing background image"
+        >
+          <div className="absolute inset-0 bg-opacity-60"></div>
+        </div>
+        <div className="relative z-10 text-center max-w-3xl">
+          <h1 className="text-white text-4xl md:text-5xl font-serif mb-4">Pricing Plans</h1>
+          <p className="text-white text-lg md:text-xl">Supporting innovation for a sustainable future</p>
+        </div>
       </div>
 
       {/* Pricing Plans Section */}
-      <div className="bg-stone-100 dark:bg-stone-900 py-16 px-4">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold mb-2 dark:text-white">Pricing</h2>
-          <p className="text-stone-700 dark:text-white">Explore our competitive pricing plans tailored to your needs.</p>
+      <div className="bg-stone-300 dark:bg-stone-900 py-16 px-8">
+        <div className="mb-8">
+          <TitleBlock
+            title="Our Plans"
+            icon={<WalletIcon />}
+            iconPosition="start"
+            bgColor="bg-stone-300 dark:bg-stone-900"
+            textColor="text-black dark:text-white"
+          />
+        <PureContentBlock bgColor="bg-transparent" textColor="text-black dark:text-white" content="Choose the plan that best fits your needs. Whether you're just starting out or need advanced features for large-scale monitoring, we have a solution for you." />
         </div>
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {pricingPlans.map((plan, index) => (
             <div key={index} className="flex-1 min-w-[300px] max-w-[400px]">
               <FrostedGlassCard
@@ -36,7 +55,7 @@ function Pricing() {
       </div>
 
       {/* Our Mission */}
-      <div className="py-16 px-4 bg-stone-900">
+      <div className="py-16 px-8 bg-stone-300 dark:bg-stone-900">
         <div className="container mx-auto flex flex-col md:flex-row gap-8 items-center">
           <div className="flex-1">
             <img
@@ -46,8 +65,14 @@ function Pricing() {
             />
           </div>
           <div className="flex-1">
-            <h3 className="text-2xl font-bold mb-4 text-white">Our Mission</h3>
-            <p className="text-white">
+            <TitleBlock
+              title="Our Mission"
+              icon={<RocketLaunchIcon />}
+              iconPosition="start"
+              bgColor="bg-stone-300 dark:bg-stone-900"
+              textColor="text-black dark:text-white"
+            />
+            <p className="text-base text-stone-700 dark:text-white">
               At GreenLens, our mission is to protect ecosystems through precision-driven, AI-powered environmental
               monitoring. We equip conservationists, landowners, and policymakers with cutting-edge tools to detect and
               combat invasive species efficiently — saving time, resources, and habitats.
@@ -57,18 +82,22 @@ function Pricing() {
       </div>
 
       {/* Donations Section */}
-      <div className="bg-gradient-to-b from-green-400 to-green-700 text-white py-16 text-center">
-        <h3 className="text-3xl font-bold mb-4">Support Us with a Donation</h3>
-        <p className="text-lg max-w-3xl mx-auto mb-8">
-          Your donations help us continue to improve and provide this software to as many people as possible. Every
-          contribution, big or small, makes a difference.
-        </p>
-        <a
-          href="/donate"
-          className="inline-block bg-white text-green-700 py-3 px-6 rounded-lg font-semibold hover:bg-stone-200 ease-in-out duration-300"
-        >
-          Donate Now
-        </a>
+      <div className="bg-stone-900 py-16">
+        <div className="p-6 rounded-2xl shadow-lg container mx-auto px-4 w-3/5 bg-green-500 z-2">
+          <h5 className="text-2xl font-semibold mb-4 text-black z-10">
+            <IconWrapper icon={<ScalesIcon />} bgColor={'bg-stone-900'} color={'text-green-600'} /> Support Us
+          </h5>
+          <p className="text-base text-text-dark mb-8">
+            Your donations help us continue to improve and provide this software to as many people as possible. Every
+            contribution, big or small, makes a difference.
+          </p>
+          <a
+            href="/donate"
+            className="inline-block bg-white text-green-700 py-3 px-6 rounded-lg font-semibold hover:bg-stone-200 ease-in-out duration-300"
+          >
+            Donate Now
+          </a>
+        </div>
       </div>
     </div>
   );

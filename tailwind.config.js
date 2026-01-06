@@ -7,18 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
+        'dark-primary': 'var(--color-dark-primary)',
         'primary': 'var(--color-primary)',
-        'secondary': 'var(--color-secondary)',
-        'primary-light': 'var(--color-primary-light)',
+        'light-primary': 'var(--color-light-primary)',
         'tertiary': 'var(--color-tertiary)',
-        'primary-bg': 'var(--color-primary-background)',
-        'secondary-bg': 'var(--color-secondary-background)',
-        'vibrant-bg': 'var(--color-vibrant-background)',
-        'dull-bg': 'var(--color-dull-background)',
-        'text-light': 'var(--color-text-light)',
-        'text-dark': 'var(--color-text-dark)',
-        'dark': 'var(--color-dark)',
-        'frosted-glass': 'var(--color-frosted-glass)',
+        'secondary': 'var(--color-secondary)',
       },
       animation: {
         'fade-in-down': 'fadeInDown 0.3s ease-out',

@@ -1,17 +1,14 @@
-import ShieldIcon from '@mui/icons-material/Shield';
-import FrostedGlassCard from '../components/Widgets';
+import { ShieldIcon, MapPinIcon, GlobeIcon, GlobeHemisphereWestIcon, LeafIcon, FlowerLotusIcon, TreeIcon, PlantIcon, WarningIcon, FlowerTulipIcon, FlashlightIcon} from '@phosphor-icons/react';
 import IconWrapper from '../components/IconWrapper';
-import { RocketLaunch, Payments, AdjustRounded, Compost } from '@mui/icons-material';
-import pricingPlans from '../config/PricingPlans.json';
-import Button from '../components/Button'; 
-
-const ECO_LYTIX_PRICE = pricingPlans.find(plan => plan.title === 'Professional')?.price || 0;
+import { PureContentBlock, TitleBlock } from '../components/Blocks';
+import RhododendronMap from '../components/RhododendronMap';
+import SpectrumGraphic from '../components/SpectrumGraphic';
 
 function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative flex items-center justify-between bg-black text-white h-screen overflow-hidden px-8 py-24">
+      <div className="relative flex items-center justify-between bg-black text-white h-screen overflow-hidden py-24">
         <div
           className="absolute top-0 right-0 bottom-0 w-full bg-cover bg-center z-2"
           style={{
@@ -35,41 +32,44 @@ function Home() {
             }}
           ></div>
         </div>
-        <div className="flex z-30 ml-8 max-w-2/3 flex-row items-center gap-2">
-          <div className="flex flex-col md:flex-row items-center">
-            <IconWrapper
-              icon={<ShieldIcon />}
-              color="text-white"
-              bgColor="bg-amber-500"
-            />
-            <h1 className="text-5xl ml-4 font-serif font-light text-stone-700 dark:text-stone-400 text-center md:text-left">
-              Turning data into<br/><span className="font-regular text-pink-500 dark:text-white">defense against invasive species</span>
+        <div className="flex z-30 max-w-2/3 flex-row items-center gap-2">
+          <div className="flex flex-col pl-16 md:flex-row items-center py-8 pr-12 bg-stone-400 rounded-r-full">
+            <h1 className="text-5xl ml-4 font-serif font-light text-stone-700 text-center md:text-left">
+              Turning data into<br/><span className="font-regular text-rose-600 mr-8">defense against invasive species.</span>
             </h1>
+            <IconWrapper
+            icon={<ShieldIcon />}
+            color="text-white"
+            bgColor="bg-secondary"
+            />
           </div>
         </div>
       </div>
 
       {/* Our Dream Section */}
-      <div className="bg-gradient-to-t from-stone-200 to-stone-300 dark:to-black dark:from-stone-900 p-16 overflow-hidden relative">
-        <div className="flex flex-col lg:flex-row items-center text-center mb-16 px-8 gap-8">
+      <div className="bg-stone-300 dark:bg-gradient-to-t dark:to-black dark:bg-stone-900 py-16 px-8 overflow-hidden relative text-black dark:text-white">
+        <div className="flex flex-col lg:flex-row items-center text-center gap-8">
           <div>
-          <h2 className="text-4xl font-bold mb-4 text-black dark:text-white">Our Dream</h2>
-          <p className="text-lg max-w-3xl text-black dark:text-white">
+          <TitleBlock 
+            title="Our Dream"
+            bgColor="transparent"
+            textColor="text-black dark:text-sky-400"
+          />
+          <p className="text-base max-w-3xl text-justify">
             At Windhover, we envision a future where nature thrives - untouched, undisturbed, understood. Our mission is to empower conservation efforts through cutting-edge technology, enabling swift action against invasive species and fostering harmony between humanity and the environment.
           </p>
           </div>
           <div
-            className="flex flex-col md:grid md:grid-cols-2 md:grid-rows-4 gap-8 md:gap-4 mx-4 lg:ml-16 relative text-black dark:text-white"
+            className="flex flex-col md:grid md:grid-cols-2 md:grid-rows-4 gap-8 md:gap-4 mx-4 lg:ml-16 relative"
             style={{backgroundImage: "url('/TopographicImages/topo-2.png')"
               , backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center"
             }}
           >
             {/* Top-left box */}
             <div
-              className="bg-cyan-400 bg-opacity-40 pb-15 p-8 rounded-lg z row-span-2 row-start-2"
-              style={{ backdropFilter: 'blur(10px)', backgroundColor: 'rgba(0, 255, 255, 0.2)' }}
+              className="bg-cyan-400/10 bg-opacity-80 pb-15 p-8 rounded-md z row-span-2 row-start-2 backdrop-blur-sm"
             >
-              <h6 className="text-lg font-semibold mb-2">In House Models</h6>
+              <h6 className="text-lg font-semibold font-mono ld mb-2">In House Models</h6>
               <p className="text-sm">
               Leveraging cutting-edge machine learning techniques to deliver
               unparalleled insights and efficiency.
@@ -78,10 +78,9 @@ function Home() {
 
             {/* Middle-right box */}
             <div
-              className="bg-sky-400 bg-opacity-40 pb-15 p-8 rounded-lg col-start-2 row-start-1 row-span-2"
-              style={{ backdropFilter: 'blur(10px)', backgroundColor: 'rgba(135, 206, 235, 0.2)' }}
+              className="bg-sky-400/15 bg-opacity-80 pb-15 p-8 rounded-md col-start-2 row-start-1 row-span-2 backdrop-blur-sm"
             >
-              <h6 className="text-lg font-semibold mb-2">Sustainability at its Core</h6>
+              <h6 className="text-lg font-semibold font-mono mb-2">Sustainability at its Core</h6>
               <p className="text-sm">
               Our solutions are designed to minimise environmental impact while
               maximising efficiency and results.
@@ -90,10 +89,9 @@ function Home() {
 
             {/* Bottom-left box */}
             <div
-              className="bg-blue-400 bg-opacity-80 pb-15 p-8 rounded-lg col-start-2 row-start-3 row-span-2"
-              style={{ backdropFilter: 'blur(10px)', backgroundColor: 'rgba(0, 0, 255, 0.2)' }}
+              className="bg-blue-400/20 bg-opacity-80 pb-15 p-8 rounded-md col-start-2 row-start-3 row-span-2 backdrop-blur-sm"
             >
-              <h6 className="text-lg font-semibold mb-2">Empowering Communities</h6>
+              <h6 className="text-lg font-semibold font-mono mb-2">Empowering Communities</h6>
               <p className="text-sm">
               Harnessing the power of technology to enable communities to
               protect their local ecosystems.
@@ -102,84 +100,82 @@ function Home() {
           </div>
         </div>
       </div>
-
-      {/* RhodoLens Section */}
-      <div className="bg-stone-200 dark:bg-stone-900 dark:text-white p-16 flex items-center justify-around md:flex-row flex-col">
-        <div className="md:max-w-[45%]">
-          <h4 className="text-2xl font-bold mb-4">RhodoLens</h4>
-          <h6 className="text-lg font-semibold mb-4 text-stone-700 dark:text-sky-500">
-            Revolutionising Environmental Intelligence
-          </h6>
-          <p className="text-base mb-4">
-            RhodoLens is more than a tool — it's your strategic partner in the
-            battle against invasive species. Designed for precision, speed, and
-            scalability, our software empowers land managers, ecologists, and
-            environmental agencies to make data-driven decisions faster than
-            ever before.
-          </p>
-          <p className="text-base">
-            Harness the power of machine learning to reduce operational
-            overheads, optimise site visits, and eliminate guesswork. Whether
-            you're safeguarding biodiversity or ensuring regulatory compliance,
-            RhodoLens delivers measurable results.
-          </p>
-        </div>
-
-        {/* To Go */}
-        <FrostedGlassCard
-          title="Buy RhodoLens"
-          description="Experience precision-led, cost-effective environmental monitoring."
-          price={`From ${ECO_LYTIX_PRICE}`}
-          buttonText="Explore Pricing"
-          buttonLink="/pricing"
+      
+      {/* Value Proposition*/}
+      <div className="bg-stone-400 dark:bg-stone-900 py-16 px-8">
+        <TitleBlock
+          title="Why Windhover?"
+          bgColor="bg-transparent"
+          textColor="text-black dark:text-sky-400"
+          icon={<LeafIcon />}
         />
-      </div>
-
-      {/* Why Choose RhodoLens */}
-      <div className="bg-stone-900 text-white py-24 -gap-5 px-8">
-        <div className="w-1/2 mx-auto flex items-center flex-col">
-          {/* Text Content */}
-          <div className="space-y-6 bg-stone-800 p-16 rounded-xl pr-30 z-2">
-            <h2 className="text-4xl font-bold">Why Choose RhodoLens?</h2>
-            <p className="text-lg text-justify">
-              RhodoLens is your trusted partner in environmental intelligence. Designed to deliver precision, speed, and cost-effectiveness, it empowers you to make data-driven decisions that protect ecosystems and reduce operational costs.
-            </p>
-            <ul className="space-y-4">
-              <li className="flex items-center">
-                <RocketLaunch className="h-6 w-6 text-primary mr-4" />
-                <span>
-                  <strong className="text-sky-300">Faster:</strong> Instant analysis at scale with no bottlenecks or lag.
-                </span>
-              </li>
-              <li className="flex items-center">
-                <Payments className="h-6 w-6 text-primary mr-4" />
-                <span>
-                  <strong className="text-sky-400">Cheaper:</strong> Reduce monitoring and labor costs by up to 60%.
-                </span>
-              </li>
-              <li className="flex items-center">
-                <AdjustRounded className="h-6 w-6 text-primary mr-4" />
-                <span>
-                  <strong className="text-sky-500">Smarter:</strong> Hyper-precise detection algorithms for pinpoint accuracy.
-                </span>
-              </li>
-              <li className="flex items-center">
-                <Compost className="h-6 w-6 text-primary mr-4" />
-                <span>
-                  <strong className="text-sky-600">Greener:</strong> Make informed decisions that protect biodiversity.
-                </span>
-              </li>
-            </ul>
-            <Button text="Learn more" link="/rhodolens" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 md:gap-y-16 mt-8 px-16 mx-auto">
+          <div className="row-start-1">
+            <p className="text-black dark:text-white px-8"><span className="text-sky-500 font-mono">Advanced AI-Powered Detection:</span> Our proprietary machine learning algorithms analyse vast datasets to identify invasive species with unparalleled accuracy and speed.</p>
           </div>
-          <div className="mt-16 lg:-mt-4 bg-black p-8 w-4/5 rounded-xl lg:pt-12">
-            <div className="flex justify-center flex-col items-center gap-4">
-              <h2 className="text-5xl font-serif">Buy Now</h2>
-              <Button text="Explore Pricing" link="/pricing" />
+          <div className="row-start-2 md:row-start-1 bg-stone-800 rounded-xl">
+            <div className="grid grid-flow-col place-content-around content-center h-full">
+              <FlashlightIcon size="48px" color="var(--color-sky-500)" className="my-auto rotate-90" />
+              <div className="h-2 w-20 sm:w-30 md:w-40 lg:w-60 xl:w-80 rounded-full bg-gradient-to-r mt-5.25 from-sky-500 to-green-500" />
+              <PlantIcon size="48px" color="var(--color-green-500)" />
+            </div>
+          </div>
+          <div className="row-start-3 md:row-start-2 md:col-start-2">
+            <p className="text-black dark:text-white px-8"><span className="text-amber-500 font-mono">Real-Time Monitoring and Alerts:</span> Stay ahead of invasive threats with our real-time monitoring system that provides instant alerts, enabling swift action to protect native ecosystems.</p>
+          </div>
+          <div className="row-start-4 md:row-start-2 bg-stone-800 rounded-xl">
+            <div className="grid grid-flow-col place-content-around content-center h-full">
+              <PlantIcon size="48px" color="var(--color-green-500)" />
+              <div className="h-2 w-20 sm:w-30 md:w-40 lg:w-60 xl:w-80 rounded-full bg-gradient-to-r mt-5.25 from-green-500 to-amber-500" />
+              <WarningIcon size="48px" color="var(--color-amber-500)" />
+            </div>
+            
+          </div>
+          <div className="row-start-5 md:row-start-3">
+            <p className="text-black dark:text-white px-8"><span className="text-rose-500 font-mono">Comprehensive Data Visualization: </span>Our intuitive dashboards and mapping tools transform complex data into actionable insights, empowering conservationists and policymakers to make informed decisions.</p>
+          </div>
+          <div className="row-start-6 md:row-start-3 rounded-xl bg-stone-800">
+            <div className="flex flex-col justify-center h-full">
+              <div className="grid grid-flow-col place-content-around content-end">
+                <PlantIcon size="36px" color="var(--color-rose-500)" className="mt-9" />
+                <TreeIcon size="72px" color="var(--color-green-500)" />
+              </div>
+              <div className="h-2 rounded-full bg-gradient-to-r from-rose-500 to-green-500" />
             </div>
           </div>
         </div>
       </div>
+
+      <div className="bg-stone-300 dark:bg-stone-900 py-16 px-8 text-center">
+        <SpectrumGraphic className="w-4/5 m-auto" />
+        <p className="text-center text-stone-700 dark:text-white font-mono mt-2" >Frequency</p>
+      </div>
+
+      {/* Rhododendron Map Section */}
+      <div className="bg-stone-300 dark:bg-stone-900 py-16 px-8">
+        <div className="flex mx-auto space-around items-center">
+          <div className="bg-stone-700 flex-1 p-6 pr-10 rounded-lg shadow-lg -mr-4">
+          <TitleBlock
+            title="Rhododendron Spread"
+            bgColor="bg-transparent"
+            textColor="text-white dark:text-sky-400"
+            icon={<GlobeHemisphereWestIcon />}
+          />
+          <PureContentBlock
+            content="Rhododendron ponticum, an invasive species in Ireland, poses significant threats to native biodiversity and ecosystem health. Our map visualizes its spread, aiding conservation efforts to manage and mitigate its impact."
+            textColor="text-white"
+            bgColor='bg-transparent'
+          />
+          <p className="text-sm text-center mt-4 text-gray-300 dark:text-gray-600">
+            This map shows the spread of rhododendron across Ireland. Data visualized using custom overlays.
+          </p>
+          </div>
+          <div className="mt-8 flex-2">
+            <RhododendronMap />
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }

@@ -27,7 +27,7 @@ export default Button;
 
 export const ButtonStyled: React.FC<ButtonProps> = ({ text, link }) => {
   return (
-    <a href={link} className="ButtonStyled" role="button">
+    <a href={link} className="button-86" role="button">
       {text}
     </a>
   );
