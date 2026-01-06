@@ -9,6 +9,8 @@ const mobileBreakpoint = 768;
 export function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [hoverActive, setHoverActive] = useState(false); // State for hover activation
+    const [isVisible, setIsVisible] = useState(true);
+    const lastScrollY = useRef(0);
     const menuRef = useRef<HTMLDivElement>(null);
     const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -101,6 +103,23 @@ export function Navbar() {
     };
 
     useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
+                setIsVisible(false); // Hide navbar when scrolling down
+            } else {
+                setIsVisible(true); // Show navbar when scrolling up
+            }
+            lastScrollY.current = currentScrollY;
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
                 setMenuOpen(false);
@@ -143,7 +162,9 @@ export function Navbar() {
 
 
     return (
-        <nav className="bg-stone-300/20 text-text-dark rounded-full md:shadow-md w-[90vw] mx-auto mt-4 p-1 fixed top-4 left-[5vw] right-[5vw] z-1000 md:flex">
+        <nav
+            className={`bg-stone-300/20 text-text-dark rounded-full md:shadow-md w-[90vw] mx-auto mt-4 p-1 fixed top-4 left-[5vw] right-[5vw] z-1000 md:flex transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-18'}`}
+        >
             <div className="flex flex-col sb:flex-row justify-between items-center w-full max-h-10">
                 <div className="flex flex-row justify-between w-full px-4 bg-stone-300 rounded-full">
                     <a href="/" className="flex items-center text-text-dark no-underline">

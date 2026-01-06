@@ -14,13 +14,18 @@ function SpectrumGraphic({ className = '' }: SpectrumGraphicProps) {
     return Array.from({ length: width / patternSize }, (_, j) => {
       const x = j * patternSize;
       const radius = maxRadius * Math.abs(1 - ( y / height ) * 1.1 - (Math.random() * 0.15) - ((0.005*(x**4) -10*(x**3) +6100*(x**2) -1100000*x + 7050000)*0.000000002)); // Vary radius based on y position
+    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const fillColor = isDarkMode || document.documentElement.classList.contains('dark')
+      ? 'var(--color-stone-900)'
+      : 'var(--color-stone-300)';
+
     return (
       <circle
         key={`${i}-${j}`}
         cx={x}
         cy={y}
         r={radius}
-        fill={window.matchMedia('(prefers-color-scheme: dark)').matches ? 'var(--color-stone-900)' : 'var(--color-stone-300)'}
+        fill={fillColor}
       />
     );
     });
