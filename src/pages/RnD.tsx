@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
-import { ApertureIcon, CaretUpDownIcon, BrainIcon } from '@phosphor-icons/react';
+import { ApertureIcon, CaretUpDownIcon, BrainIcon, DroneIcon, ArrowDownIcon } from '@phosphor-icons/react';
 import IconWrapper from '../components/IconWrapper';
 import { TitleBlock, PureContentBlock } from '../components/Blocks';
 import Button from '../components/Button';
@@ -63,10 +63,11 @@ function RnD() {
           <h1 className="text-5xl md:text-7xl font-serif mb-4 drop-shadow-lg">
             Research & Development
           </h1>
-          <p className="text-lg md:text-2xl mb-6">
+          <p className="text-lg md:text-2xl font-mono mb-6">
             Innovating for a Sustainable Future
           </p>
-          <Button text="Explore Our Work" link="#technology" />
+          <p>Explore our work</p>
+          <ArrowDownIcon className="mx-auto" />
         </div>
       </div>
 
@@ -75,18 +76,16 @@ function RnD() {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-start md:items-center -gap-8">
             {/* Text Content on the Left */}
-            <div className="w-full md:w-1/2 mt-6 md:mt-0 md:grow-1 bg-white dark:bg-stone-800 rounded-lg shadow-lg p-6">
+            <div className="w-full md:w-1/2 mt-6 md:mt-0 md:grow-1 bg-white dark:bg-stone-800 rounded-lg shadow-lg p-6 -mr-2">
               <TitleBlock
               title='Technology'
               icon={<ApertureIcon/>}
               bgColor= 'bg-transparent'
               textColor='text-black dark:text-white'
               />
-              <PureContentBlock
-              content='Using advanced multispectral sensors, we capture data beyond the visible spectrum to identify invasive species and monitor ecosystems.'
-              bgColor= 'bg-transparent'
-              textColor='text-black dark:text-white'              />
-              
+              <p>
+                Using advanced multispectral sensors, we capture data beyond the visible spectrum to identify invasive species and monitor ecosystems.
+              </p>
             </div>
             {/* Image Slider on the Right */}
             <div className="w-full md:grow-2 pr-0 md:pr-6">
@@ -138,9 +137,9 @@ function RnD() {
             <div className="relative w-auto mx-auto my-auto max-w-[50vw] h-[400px] bg-gradient-to-r from-stone-800 to-stone-700 rounded-lg shadow-lg overflow-hidden">
               {/* Sankey Paths */}
               <svg
-                viewBox="0 0 800 500"
+                viewBox="0 0 800 400"
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-full h-full"
+                className="w-full h-full rotate-90 lg:rotate-0"
               >
                 <rect x="50" y="50" width="100" height="300" fill="#E53E3E" />
                 <text transform={`rotate(270 100,${textHeight})`} x="100" y={textHeight} fill="white" fontSize="16" fontWeight="bold">Raw Data</text>
@@ -190,29 +189,32 @@ function RnD() {
 
       {/* Drones Section */}
       <div className="py-8 px-4 dark:text-white bg-stone-100 dark:bg-stone-900">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-8">Drones</h2>
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            {/* Text Content */}
-            <div className="w-full md:w-1/2">
-              <p className="text-lg mb-6">
-                Leveraging drone technology, we collect high-resolution data from hard-to-reach areas, enabling precise monitoring and analysis.
-              </p>
-              <ul className="list-disc list-inside space-y-2">
-                <li>High-resolution imaging</li>
-                <li>Access to remote areas</li>
-                <li>Efficient data collection</li>
-              </ul>
-            </div>
+        <div className="flex flex-col md:flex-row items-start md:items-center">
+          {/* Text Content */}
+          <div className="w-full md:w-1/2 mt-6 md:mt-0 md:grow-1 bg-white dark:bg-stone-800 rounded-lg shadow-lg p-6 -mr-2">
+            <TitleBlock
+            title='Drones'
+            icon={<DroneIcon/>}
+            bgColor= 'bg-transparent'
+            textColor='text-black dark:text-white'
+            />
+            <p className="text-lg mb-6">
+              Leveraging drone technology, we collect high-resolution data from hard-to-reach areas, enabling precise monitoring and analysis.
+            </p>
+            <ul className="list-disc list-inside space-y-2">
+              <li>High-resolution imaging</li>
+              <li>Access to remote areas</li>
+              <li>Efficient data collection</li>
+            </ul>
+          </div>
 
-            {/* Drone Image */}
-            <div className="w-full md:w-1/2">
-              <img
-                src="/Drone-shot.webp"
-                alt="Drone in action"
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
-            </div>
+          {/* Drone Image */}
+          <div className="w-full md:w-1/2">
+            <img
+              src="/Drone-shot.webp"
+              alt="Drone in action"
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
           </div>
         </div>
       </div>
