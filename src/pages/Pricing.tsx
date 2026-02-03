@@ -39,9 +39,9 @@ function Pricing() {
           />
         <PureContentBlock bgColor="bg-transparent" textColor="text-black dark:text-white" content="Choose the plan that best fits your needs. Whether you're just starting out or need advanced features for large-scale monitoring, we have a solution for you." />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {pricingPlans.map((plan, index) => (
-            <div key={index} className="flex-1 min-w-[300px] max-w-[400px]">
+            <div key={index} className="flex-1 mx-auto min-w-[300px] max-w-[400px]">
               <FrostedGlassCard
                 title={plan.title}
                 description={plan.description}

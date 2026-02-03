@@ -1,14 +1,13 @@
-import React, { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { ApertureIcon, CaretUpDownIcon, BrainIcon, DroneIcon, ArrowDownIcon } from '@phosphor-icons/react';
 import IconWrapper from '../components/IconWrapper';
-import { TitleBlock, PureContentBlock } from '../components/Blocks';
-import Button from '../components/Button';
+import { TitleBlock } from '../components/Blocks';
+import AnalysisGraphic from '../components/AnalysisGraphic';
 
 function RnD() {
   const dragX = useMotionValue(200); // Motion value for tracking x position
   const clipPath = useTransform(dragX, (x) => `inset(0 0 0 ${x+20}px)`); // Transform x to clipPath
-  const textHeight = 250;
 
   const imageRef = useRef<HTMLImageElement>(null); // Ref to get the image element
   const [imageWidth, setImageWidth] = useState(0); // State to store the image width
@@ -115,7 +114,7 @@ function RnD() {
                   }} // Adjusted boundaries
                   style={{ x: dragX }} // Bind dragX to the draggable tab
                   whileTap={{ cursor: 'grabbing' }}
-                  className="absolute bottom-[-40px] bg-white/100 rounded-full w-auto h-10 cursor-grab shadow-md flex items-center justify-center z-40"
+                  className="absolute bottom-[-40px] w-auto h-10 cursor-grab shadow-md flex items-center justify-center z-40"
                 >
                   <IconWrapper
                   icon={<CaretUpDownIcon style={{ transform: 'rotate(90deg)' }} />}
@@ -135,35 +134,7 @@ function RnD() {
           <div className="flex flex-col md:flex-row items-center gap-8">
             {/* Sankey Diagram */}
             <div className="relative w-auto mx-auto my-auto max-w-[50vw] h-[400px] bg-gradient-to-r from-stone-800 to-stone-700 rounded-lg shadow-lg overflow-hidden">
-              {/* Sankey Paths */}
-              <svg
-                viewBox="0 0 800 400"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-full h-full rotate-90 lg:rotate-0"
-              >
-                <rect x="50" y="50" width="100" height="300" fill="#E53E3E" />
-                <text transform={`rotate(270 100,${textHeight})`} x="100" y={textHeight} fill="white" fontSize="16" fontWeight="bold">Raw Data</text>
-
-                <rect x="350" y="50" width="100" height="300" fill="#38B2AC" />
-                <text transform={`rotate(270 400,${textHeight})`} x="400" y={textHeight} fill="white" fontSize="16" fontWeight="bold">Analysis</text>
-
-                <rect x="650" y="50" width="100" height="300" fill="#3182CE" />
-                <text transform={`rotate(270 700,${textHeight})`} x="700" y={textHeight} fill="white" fontSize="16" fontWeight="bold">Insights</text>
-                {/* Gradient Pipes */}
-                <defs>
-                    <linearGradient id="pipeGradient1" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stopColor="#E53E3E80" />
-                    <stop offset="100%" stopColor="#38B2AC80" />
-                    </linearGradient>
-                  <linearGradient id="pipeGradient2" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stopColor="#38B2AC80" />
-                    <stop offset="100%" stopColor="#3182CE80" />
-                  </linearGradient>
-                </defs>
-
-                <rect x="150" y="50" width="200" height="300" fill="url(#pipeGradient1)" />
-                <rect x="450" y="50" width="200" height="300" fill="url(#pipeGradient2)" />
-              </svg>
+              <AnalysisGraphic />
             </div>
 
             {/* Text Content */}

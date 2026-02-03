@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           {/* Brand Section */}
           <div className="text-center md:text-left">
-            <h2 className="text-3xl font-stencil font-bold mb-2">Windhover</h2>
+            <h2 className="text-3xl font-mono font-bold mb-2">Windhover</h2>
             <p className="text-sm text-stone-400">
               Turning data into defense against invasive species.
             </p>

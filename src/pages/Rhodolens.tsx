@@ -8,8 +8,8 @@ function Rhodolens() {
       <div className="bg-linear-140 from-green-500 to-sky-500 text-white h-screen overflow-hidden">
         <div className="bg-linear-to-b from-transparent to-stone-900 w-screen h-screen flex items-center justify-center relative">
           <div className="container mx-auto text-center">
-            <h1 className="text-5xl font-stencil mb-4">RhodoLens</h1>
-            <p className="text-lg max-w-3xl mx-auto">
+            <h1 className="text-5xl font-serif mb-4">RhodoLens</h1>
+            <p className="text-lg font-mono max-w-3xl mx-auto">
               Revolutionising environmental intelligence with precision, speed, and scalability.
             </p>
           </div>
