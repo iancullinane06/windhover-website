@@ -8,46 +8,28 @@ function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative flex items-center justify-between bg-black text-white h-screen overflow-hidden py-24">
-        <div
-          className="absolute top-0 right-0 bottom-0 w-full bg-cover bg-center z-2"
-          style={{
-            backgroundSize: '100% 100%',
-            backgroundPosition: 'center',
-            backgroundImage: `linear-gradient(180deg, ${
-              window.matchMedia('(prefers-color-scheme: dark)').matches ? '#FFF0 0%, var(--color-black) 100%' : '#FFF0 0%, var(--color-stone-300) 90%'
-            }), linear-gradient(135deg, var(--color-green-300) 0%, var(--color-blue-700) 100%)`,
-            backgroundColor: 'var(--color-stone-200)', // Default to white
-          }}
-          role="img"
-          aria-label="Forest background image with gradients"
-        >
-          <div className="absolute inset-0 z-3"></div>
-          <div
-            className="absolute inset-0 z-4 pointer-events-none dark:bg-transparent"
-            style={{
-              backgroundImage: "url('/grain-texture.jpg')",
-              opacity: 0.2,
-              mixBlendMode: 'overlay',
-            }}
-          ></div>
+      <div className="relative flex items-center justify-around bg-stone-900 text-white h-screen overflow-hidden py-24 px-8">
+        <div className="items-center">
+          <h1 className="text-3xl md:text-5xl font-serif font-light lg:text-stone-300 dark:lg:text-stone-300 text-stone-700 dark:text-stone-300 text-center lg:text-left">
+            Turn your data into<br/><span className="font-regular text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-amber-500 mr-8">defense against invasive species.</span>
+          </h1>
         </div>
-        <div className="flex z-30 lg:max-w-2/3 flex-row items-center gap-2">
-          <div className="flex flex-col-reverse pl-16 lg:flex-row items-center py-8 pr-12 lg:bg-stone-800/20 lg:backdrop-blur-xl rounded-r-full">
-            <h1 className="text-3xl md:text-5xl ml-4 font-serif font-light lg:text-stone-300 dark:lg:text-stone-300 text-stone-700 dark:text-stone-300 text-center lg:text-left">
-              Turning data into<br/><span className="font-regular text-rose-600 mr-8">defense against invasive species.</span>
-            </h1>
-            <IconWrapper
-            icon={<ShieldIcon />}
-            color="text-white"
-            bgColor="bg-secondary"
-            />
+        <div
+        className='rounded-xl w-4/5 md:w-2/5 h-96 p-4 bg-cover shadow-xl bg-center'
+          style={{
+          backgroundSize: '100% 100%',
+          backgroundPosition: 'center',
+          backgroundImage: `linear-gradient(135deg, var(--color-green-300) 0%, var(--color-blue-700) 100%)`,
+          backgroundColor: 'var(--color-stone-200)', // Default to white
+        }}>
+          <div className="bg-stone-800 rounded-xl h-full">
+
           </div>
         </div>
       </div>
 
       {/* Our Dream Section */}
-      <div className="bg-stone-300 dark:bg-gradient-to-t dark:to-black dark:bg-stone-900 py-16 px-8 overflow-hidden relative text-black dark:text-white">
+      <div className="bg-stone-300 dark:bg-gradient-to-t dark:bg-stone-900 py-16 px-8 overflow-hidden relative text-black dark:text-white">
         <div className="flex flex-col lg:flex-row items-center text-center gap-8">
           <div>
           <TitleBlock 
@@ -102,7 +84,7 @@ function Home() {
       </div>
       
       {/* Value Proposition*/}
-      <div className="bg-stone-400 dark:bg-stone-900 py-16 px-8">
+      <div className="bg-stone-300 dark:bg-stone-900 py-16 px-8">
         <TitleBlock
           title="Why Windhover?"
           bgColor="bg-transparent"
@@ -111,7 +93,7 @@ function Home() {
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 md:gap-y-16 mt-8 px-4md:px-16 mx-auto text-justify">
           <div className="row-start-1 md:text-right md:px-8">
-            <p className="text-sky-500 font-mono mb-2">Advanced AI-Powered Detection</p>
+            <p className="text-sky-500 font-mono font-bold text-xl mb-2">Advanced AI-Powered Detection</p>
             <p className="text-black dark:text-white">Our proprietary machine learning algorithms analyse vast datasets to identify invasive species with unparalleled accuracy and speed.</p>
           </div>
           <div className="row-start-2 md:row-start-1 bg-stone-800 rounded-xl">
@@ -122,7 +104,7 @@ function Home() {
             </div>
           </div>
           <div className="row-start-3 md:row-start-2 md:col-start-2 md:px-8">
-            <p className="text-amber-500 font-mono mb-2">Real-Time Monitoring and Alerts</p>
+            <p className="text-amber-500 font-mono font-bold text-xl text-shadow-2xl mb-2">Real-Time Monitoring and Alerts</p>
             <p className="text-black dark:text-white">Stay ahead of invasive threats with our real-time monitoring system that provides instant alerts, enabling swift action to protect native ecosystems.</p>
           </div>
           <div className="row-start-4 md:row-start-2 bg-stone-800 rounded-xl">
@@ -133,7 +115,7 @@ function Home() {
             </div>
           </div>
           <div className="row-start-5 md:row-start-3 md:text-right md:px-8">
-            <p className="text-rose-500 font-mono mb-2">Comprehensive Data Visualisation</p>
+            <p className="text-rose-500 font-mono font-bold text-xl mb-2">Comprehensive Data Visualisation</p>
             <p className="text-black dark:text-white">Our intuitive dashboards and mapping tools transform complex data into actionable insights, empowering conservationists and policymakers to make informed decisions.</p>
           </div>
           <div className="row-start-6 md:row-start-3 rounded-xl bg-stone-800">

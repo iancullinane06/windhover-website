@@ -9,21 +9,26 @@ function Pricing() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <div className="relative flex items-center justify-center bg-black text-text-light h-[600px] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/pricing-hero.jpg')",
-            backgroundAttachment: "fixed",
-          }}
-          role="img"
-          aria-label="Pricing background image"
-        >
-          <div className="absolute inset-0 bg-opacity-60"></div>
+      <div className="relative flex flex-col md:flex-row items-center justify-around bg-stone-900 text-white h-screen overflow-hidden py-24 px-8">
+        <div className="items-center">
+          <h1 className="text-3xl md:text-5xl font-serif font-light lg:text-stone-300 dark:lg:text-stone-300 text-stone-700 dark:text-stone-300 text-center lg:text-left">
+            Explore our <br/><span className="font-regular text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-amber-500 mr-8">versatile range of pricing plans.</span>
+          </h1>
         </div>
-        <div className="relative z-10 text-center max-w-3xl">
-          <h1 className="text-white text-4xl md:text-5xl font-serif mb-4">Pricing Plans</h1>
-          <p className="text-white text-lg md:text-xl">Supporting innovation for a sustainable future</p>
+        <div
+        className='rounded-xl w-4/5 md:w-2/5 -mr-52 md:mr-0 h-96 p-4 bg-cover shadow-xl bg-center'
+          style={{
+          backgroundSize: '100% 100%',
+          backgroundPosition: 'center',
+          backgroundImage: `linear-gradient(135deg, var(--color-green-300) 0%, var(--color-blue-700) 100%)`,
+          backgroundColor: 'var(--color-stone-200)', // Default to white
+        }}>
+          <div className="bg-stone-800 rounded-xl h-full bg-cover"
+            style={{
+              backgroundImage: "url('/pricing-hero.jpg')"
+              }}>
+
+          </div>
         </div>
       </div>
 

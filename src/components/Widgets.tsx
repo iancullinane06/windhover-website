@@ -20,12 +20,10 @@ const FrostedGlassCard: React.FC<FrostedGlassCardProps> = ({
 }) => {
   return (
     <div className="relative w-fit m-8">
-      {/* Background Rectangle */}
-      <div className="absolute inset-0 -mx-5 bg-gradient-to-r from-sky-300 to-green-300 rounded-lg blur-lg mb-6"></div>
-
+      
       {/* Frosted Glass Card */}
-      <div className="relative rounded-xl pt-4 bg-gradient-to-r from-sky-300 to-green-300">
-        <div className="bg-stone-600/80 dark:bg-stone-800/80 rounded-lg p-8 -mx-4 shadow-lg max-w-sm text-white text-shadow-lg backdrop-blur-sm">
+      <div className="relative rounded-xl p-2 bg-gradient-to-r from-sky-300 to-green-300">
+        <div className="bg-stone-600/80 dark:bg-stone-800/80 rounded-lg p-8 shadow-lg max-w-sm text-white text-shadow-lg backdrop-blur-sm">
           <h3 className="text-2xl font-bold mb-4">{title}</h3>
           <p className="text-base mb-4">{description}</p>
           <p className="text-lg font-semibold mb-6">{price}</p>

@@ -45,28 +45,25 @@ function RnD() {
   }, [imageRef]);
 
   return (
-    <div>
+    <>
       {/* Hero Section */}
-      <div className="relative flex items-center justify-center h-[600px] bg-black text-white overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center z-10"
-          style={{
-            backgroundImage: 'url(/coding.jpg)',
-          }}
-          role="img"
-          aria-label="R&D background image"
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/30 z-20"></div>
-        </div>
-        <div className="relative z-30 text-center max-w-3xl">
-          <h1 className="text-5xl md:text-7xl font-serif mb-4 drop-shadow-lg">
-            Research & Development
+      <div className="relative flex items-center justify-around bg-stone-900 text-white h-screen overflow-hidden py-24 px-8">
+        <div className="items-center">
+          <h1 className="text-3xl md:text-5xl font-serif font-light lg:text-stone-300 dark:lg:text-stone-300 text-stone-700 dark:text-stone-300 text-center lg:text-left">
+            Innovation for a <br/><span className="font-regular text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-amber-500 mr-8">sustainable future.</span>
           </h1>
-          <p className="text-lg md:text-2xl font-mono mb-6">
-            Innovating for a Sustainable Future
-          </p>
-          <p>Explore our work</p>
-          <ArrowDownIcon className="mx-auto" />
+        </div>
+        <div
+          className='rounded-xl w-4/5 md:w-2/5 h-96 p-4 bg-cover shadow-xl bg-center'
+          style={{
+            backgroundSize: '100% 100%',
+            backgroundPosition: 'center',
+            backgroundImage: `linear-gradient(135deg, var(--color-rose-300) 0%, var(--color-indigo-700) 100%)`,
+            backgroundColor: 'var(--color-stone-200)', // Default to white
+          }}>
+          <div className="bg-stone-800 rounded-xl h-full">
+            <img src="/coding.jpg" alt="Coding" className="rounded-xl h-full w-full object-cover" />
+          </div>
         </div>
       </div>
 
@@ -189,7 +186,7 @@ function RnD() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

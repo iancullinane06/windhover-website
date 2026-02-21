@@ -11,32 +11,32 @@ function Products() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="bg-dark text-white py-24 px-8 flex items-center justify-between relative overflow-hidden h-[600px]">
-        <div className="z-30 max-w-[50%] ml-8">
-          <h1 className="text-4xl font-stencil font-bold mb-4">Products</h1>
-          <p className="text-lg mb-6">
-            Our software is designed to help as many people as possible. Your support through donations and priced plans ensures we can keep improving and serving our community.
-          </p>
-          <Button text="Explore Pricing" link="/pricing" /> {/* Use Button component */}
+      <div className="relative flex items-center justify-around bg-stone-900 text-white h-screen overflow-hidden py-24 px-8">
+        <div className="items-center">
+          <h1 className="text-3xl md:text-5xl font-serif font-light lg:text-stone-300 dark:lg:text-stone-300 text-stone-700 dark:text-stone-300 text-center lg:text-left">
+            Explore our <br/><span className="font-regular text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-amber-500 mr-8">versatile range of products.</span>
+          </h1>
         </div>
         <div
-          className="absolute top-0 right-0 bottom-0 w-[80%] bg-cover bg-center z-10"
+        className='rounded-xl w-4/5 md:w-2/5 h-96 p-4 bg-cover shadow-xl bg-center'
           style={{
-            backgroundImage: "url(/forest.jpg)",
-          }}
-          role="img"
-          aria-label="Forest background image"
-        >
-          <div className="absolute inset-0 bg-gradient-hero z-3"></div>
+          backgroundSize: '100% 100%',
+          backgroundPosition: 'center',
+          backgroundImage: `linear-gradient(135deg, var(--color-green-300) 0%, var(--color-blue-700) 100%)`,
+          backgroundColor: 'var(--color-stone-200)', // Default to white
+        }}>
+          <div className="bg-stone-800 rounded-xl h-full">
+
+          </div>
         </div>
       </div>
 
       {/* Our Technology Section */}
-      <div className="py-16 px-8 to-bg-stone-200 bg-gradient-to-b from-bg-black to-stone-300 dark:to-stone-900 text-black dark:text-white">
+      <div className="py-16 px-8 bg-stone-300 dark:bg-stone-900 text-black dark:text-white">
         <div className="grid grid-cols-1 md:grid-cols-6 grid-rows-4 md:grid-rows-2 gap-8"
               style={{backgroundImage: "url('/TopographicImages/topo-3.png')", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "right"
         }}>
-          <div className="md:col-span-4 md:col-start-3 row-span-1 text-white">
+          <div className="md:col-span-4 md:col-start-3 row-span-1">
             <h2 className="text-4xl font-bold text-center mb-8">Our Technology</h2>
             <p className="text-base text-center mb-8 max-w-3xl mx-auto">
               Powered by machine learning and advanced image processing, our platform identifies invasive species, classifies risk zones, and generates actionable insights in real time.
@@ -53,26 +53,29 @@ function Products() {
               icon: <IconWrapper icon={<LineSegmentsIcon />} bgColor="bg-sky-200" color="text-sky-600" />,
               stat: '12x',
               description: 'Faster than manual surveying',
-              grid: 'md:col-start-1 md:row-start-2 col-span-3',
+              grid: 'md:col-start-2 md:row-start-2 col-span-2',
             },
             {
               icon: <IconWrapper icon={<RocketLaunchIcon />} bgColor="bg-blue-200" color="text-blue-600" />,
               stat: '1.2M+',
               description: 'Acres scanned to date',
-              grid: 'md:col-start-4 md:row-start-2 col-span-3',
+              grid: 'md:col-start-4 md:row-start-2 col-span-2',
             },
           ].map((item, index) => (
             <div
               key={index}
-              className={`bg-white/30 dark:bg-stone-800/60 p-6 rounded-lg backdrop-blur-sm shadow-lg text-center ${item.grid}`}
+              className={`bg-white/30 dark:bg-stone-800/60 rounded-xl flex flex-row justify-center md:justify-start items-center gap-4 backdrop-blur-sm shadow-lg text-center ${item.grid}`}
             >
-              <h3 className="text-4xl font-bold text-primary mb-2">{item.stat}</h3>
-              <div className="mb-4 scale-125">{item.icon}</div>
+              <div className="flex flex-col items-center -mt-16 sm:ml-4 lg:ml-12 xl:ml-16">
+                <div className="mb-4 scale-125">{item.icon}</div>
+                <h3 className="text-4xl font-bold text-primary mb-2">{item.stat}</h3>
+              </div>
               <p className="text-base text-black dark:text-white">{item.description}</p>
             </div>
           ))}
         </div>
       </div>
+
       {/* RhodoLens Section */}
       <div className="bg-stone-300 dark:bg-stone-900 dark:text-white py-16 px-8 flex items-center justify-between md:flex-row flex-col">
         <div className="md:max-w-[45%]">

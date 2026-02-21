@@ -9,23 +9,26 @@ function AboutUs() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <div className="relative flex items-center justify-center bg-black text-text-light h-[600px] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/coding.jpg')",
-            backgroundAttachment: "fixed",
-          }}
-          role="img"
-          aria-label="Forest background image"
-        >
-          <div className="absolute inset-0 bg-opacity-60"></div>
+      <div className="relative flex items-center justify-around bg-stone-900 text-white h-screen overflow-hidden py-24 px-8">
+        <div className="items-center">
+          <h1 className="text-3xl md:text-5xl font-serif font-light lg:text-stone-300 dark:lg:text-stone-300 text-stone-700 dark:text-stone-300 text-center lg:text-left">
+            Merging Ecology and AI <br/><span className="font-regular text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-rose-500 mr-8">to Protect Natural Habitats.</span>
+          </h1>
         </div>
-        <div className="relative z-10 text-center max-w-3xl">
-          <h1 className="text-white text-4xl md:text-5xl font-serif mb-4">About Us</h1>
-          <p className="text-white text-lg md:text-xl">Merging Ecology and AI to Protect Natural Habitats</p>
+        <div
+          className='rounded-xl w-4/5 md:w-2/5 h-96 p-4 bg-cover shadow-xl bg-center'
+          style={{
+            backgroundSize: '100% 100%',
+            backgroundPosition: 'center',
+            backgroundImage: `linear-gradient(135deg, var(--color-teal-300) 0%, var(--color-sky-700) 100%)`,
+            backgroundColor: 'var(--color-stone-200)', // Default to white
+          }}>
+          <div className="bg-stone-800 rounded-xl h-full">
+            <img src="/coding.jpg" alt="Coding" className="rounded-xl h-full w-full object-cover" />
+          </div>
         </div>
       </div>
+      
       {/* Our Name */}
       <div className="flex justify-center py-16 px-4 bg-stone-300 dark:bg-stone-900">
         <div className="py-16 bg-stone-700 dark:bg-stone-300 dark:text-white px-8 w-5/6 lg:w-1/2 rounded-2xl relative shadow-lg">
@@ -235,7 +238,7 @@ function AboutUs() {
       </div>
 
       {/* Looking Ahead */}
-      <div className="bg-gradient-to-t from-stone-300 to-stone-900 py-16">
+      <div className="bg-stone-300 dark:bg-stone-900 py-16">
         <div className="p-6 rounded-2xl shadow-lg container mx-auto px-4 w-3/5 bg-green-200 z-2">
           <h5 className="text-2xl font-semibold mb-4 text-black z-10">
             <IconWrapper icon={<RocketLaunchIcon />} bgColor={'bg-stone-900'} color={'text-amber-200'} /> Looking Ahead
