@@ -2,7 +2,7 @@ import { ChartPolarIcon, LineSegmentsIcon, RecycleIcon, RocketLaunchIcon, Wallet
 import IconWrapper from '../components/IconWrapper';
 import FrostedGlassCard from '../components/Widgets';
 import Button from '../components/Button';
-import { TitleBlock } from '../components/Blocks';
+import { TitleBlock, HeroBlock } from '../components/Blocks';
 import pricingPlans from '../config/PricingPlans.json';
 
 const ECO_LYTIX_PRICE = pricingPlans.find(plan => plan.title === 'Professional')?.price || 0;
@@ -11,25 +11,15 @@ function Products() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative flex items-center justify-around bg-stone-900 text-white h-screen overflow-hidden py-24 px-8">
-        <div className="items-center">
-          <h1 className="text-3xl md:text-5xl font-serif font-light lg:text-stone-300 dark:lg:text-stone-300 text-stone-700 dark:text-stone-300 text-center lg:text-left">
-            Explore our <br/><span className="font-regular text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-amber-500 mr-8">versatile range of products.</span>
-          </h1>
-        </div>
-        <div
-        className='rounded-xl w-4/5 md:w-2/5 h-96 p-4 bg-cover shadow-xl bg-center'
-          style={{
-          backgroundSize: '100% 100%',
-          backgroundPosition: 'center',
-          backgroundImage: `linear-gradient(135deg, var(--color-green-300) 0%, var(--color-blue-700) 100%)`,
-          backgroundColor: 'var(--color-stone-200)', // Default to white
-        }}>
-          <div className="bg-stone-800 rounded-xl h-full">
-
-          </div>
-        </div>
-      </div>
+      <HeroBlock
+        title="Explore our"
+        content="versatile range of products."
+        contentColor1="lime-400"
+        contentColor2="amber-500"
+        bgColor1="green-300"
+        bgColor2="blue-700"
+        imageSrc="/IrImage.png"
+      />
 
       {/* Our Technology Section */}
       <div className="py-16 px-8 bg-stone-300 dark:bg-stone-900 text-black dark:text-white">

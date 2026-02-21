@@ -41,7 +41,7 @@ export function Navbar() {
         visible: {
             opacity: 1,
             y: '0px',
-            width: window.innerWidth >= mobileBreakpoint ? '330px' : 'auto', // Expand to fit content only when not on mobile
+            width: window.innerWidth >= 968 ? '330px' : 'auto', // Expand to fit content only when not on mobile
             x: 0,
             transition: {
                 type: "spring" as const, // Use spring animation
@@ -182,7 +182,7 @@ export function Navbar() {
                     ref={menuRef}
                     className={`${
                         menuOpen ? 'block' : 'hidden'
-                    } sb:flex items-center space-x-4 flex flex-col sb:flex-row sb:space-x-4 space-y-4 sb:space-y-0 w-full sb:w-auto rounded-b-2xl bg-stone-700 sb:bg-transparent`}
+                    } sb:flex items-center space-x-4 flex flex-col min-[968px]:flex-row sb:space-x-4 space-y-4 sb:space-y-0 w-full sb:w-auto rounded-b-2xl bg-stone-700 sb:bg-transparent`}
                     initial="hidden"
                     animate={menuOpen || window.innerWidth >= mobileBreakpoint ? 'visible' : 'hidden'}
                     variants={mobileMenuVariants}
@@ -207,10 +207,10 @@ export function Navbar() {
                             animate={hoverActive || dropdownOpen ? 'visible' : 'hidden'}
                             ref={dropdownRef}
                             className="-md:ml-5"
-                            variants={window.innerWidth >= mobileBreakpoint ? horizontalVariants : dropdownVariants}
+                            variants={window.innerWidth >= 968 ? horizontalVariants : dropdownVariants}
                         >
                             <div
-                                className="flex flex-col md:flex-row items-center md:space-x-4 space-y-4 md:space-y-0 transition-all"
+                                className="flex flex-col min-[968px]:flex-row items-center md:space-x-4 space-y-4 md:space-y-0 transition-all"
                             >
                             {['About Us', 'RnD', 'Contact Us'].map((link, index) => (
                                 <motion.a

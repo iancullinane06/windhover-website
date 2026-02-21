@@ -3,31 +3,21 @@ import { LeafIcon, RocketLaunchIcon, ScalesIcon, FlowerLotusIcon, LineSegmentsIc
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { TitleBlock, PureContentBlock } from '../components/Blocks';
+import { TitleBlock, PureContentBlock, HeroBlock } from '../components/Blocks';
 
 function AboutUs() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <div className="relative flex items-center justify-around bg-stone-900 text-white h-screen overflow-hidden py-24 px-8">
-        <div className="items-center">
-          <h1 className="text-3xl md:text-5xl font-serif font-light lg:text-stone-300 dark:lg:text-stone-300 text-stone-700 dark:text-stone-300 text-center lg:text-left">
-            Merging Ecology and AI <br/><span className="font-regular text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-rose-500 mr-8">to Protect Natural Habitats.</span>
-          </h1>
-        </div>
-        <div
-          className='rounded-xl w-4/5 md:w-2/5 h-96 p-4 bg-cover shadow-xl bg-center'
-          style={{
-            backgroundSize: '100% 100%',
-            backgroundPosition: 'center',
-            backgroundImage: `linear-gradient(135deg, var(--color-teal-300) 0%, var(--color-sky-700) 100%)`,
-            backgroundColor: 'var(--color-stone-200)', // Default to white
-          }}>
-          <div className="bg-stone-800 rounded-xl h-full">
-            <img src="/coding.jpg" alt="Coding" className="rounded-xl h-full w-full object-cover" />
-          </div>
-        </div>
-      </div>
+      <HeroBlock
+        title="Merging Ecology and AI"
+        content="to Protect Natural Habitats."
+        contentColor1="indigo-400"
+        contentColor2="rose-500"
+        bgColor1="teal-300"
+        bgColor2="sky-700"
+        imageSrc="/coding.jpg"
+      />
       
       {/* Our Name */}
       <div className="flex justify-center py-16 px-4 bg-stone-300 dark:bg-stone-900">

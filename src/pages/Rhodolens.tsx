@@ -1,20 +1,20 @@
 import { RocketLaunch, Payments, AdjustRounded, Compost } from '@mui/icons-material';
 import React from 'react';
+import { HeroBlock } from '../components/Blocks';
 
 function Rhodolens() {
   return (
     <div className="bg-stone-100 dark:bg-stone-900 text-black dark:text-white">
       {/* Hero Section */}
-      <div className="bg-linear-140 from-green-500 to-sky-500 text-white h-screen overflow-hidden">
-        <div className="bg-linear-to-b from-transparent to-stone-900 w-screen h-screen flex items-center justify-center relative">
-          <div className="container mx-auto text-center">
-            <h1 className="text-5xl font-serif mb-4">RhodoLens</h1>
-            <p className="text-lg font-mono max-w-3xl mx-auto">
-              Revolutionising environmental intelligence with precision, speed, and scalability.
-            </p>
-          </div>
-        </div>
-      </div>
+      <HeroBlock
+        title="RhodoLens"
+        content="Revolutionising environmental intelligence with precision, speed, and scalability."
+        contentColor1="green-500"
+        contentColor2="sky-500"
+        bgColor1="transparent"
+        bgColor2="stone-900"
+        imageSrc="/coding.jpg"
+      />
 
       {/* Features Section */}
       <div className="py-16 px-8">

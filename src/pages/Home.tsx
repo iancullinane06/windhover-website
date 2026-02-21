@@ -1,6 +1,6 @@
 import { ShieldIcon, MapPinIcon, GlobeIcon, GlobeHemisphereWestIcon, LeafIcon, FlowerLotusIcon, TreeIcon, PlantIcon, WarningIcon, FlowerTulipIcon, FlashlightIcon, CopyrightIcon} from '@phosphor-icons/react';
 import IconWrapper from '../components/IconWrapper';
-import { PureContentBlock, TitleBlock } from '../components/Blocks';
+import { PureContentBlock, TitleBlock, HeroBlock } from '../components/Blocks';
 import RhododendronMap from '../components/RhododendronMap';
 import SpectrumGraphic from '../components/SpectrumGraphic';
 
@@ -8,25 +8,15 @@ function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative flex items-center justify-around bg-stone-900 text-white h-screen overflow-hidden py-24 px-8">
-        <div className="items-center">
-          <h1 className="text-3xl md:text-5xl font-serif font-light lg:text-stone-300 dark:lg:text-stone-300 text-stone-700 dark:text-stone-300 text-center lg:text-left">
-            Turn your data into<br/><span className="font-regular text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-amber-500 mr-8">defense against invasive species.</span>
-          </h1>
-        </div>
-        <div
-        className='rounded-xl w-4/5 md:w-2/5 h-96 p-4 bg-cover shadow-xl bg-center'
-          style={{
-          backgroundSize: '100% 100%',
-          backgroundPosition: 'center',
-          backgroundImage: `linear-gradient(135deg, var(--color-green-300) 0%, var(--color-blue-700) 100%)`,
-          backgroundColor: 'var(--color-stone-200)', // Default to white
-        }}>
-          <div className="bg-stone-800 rounded-xl h-full">
-
-          </div>
-        </div>
-      </div>
+      <HeroBlock
+        title="Turn your data into"
+        content="defense against invasive species."
+        contentColor1="lime-400"
+        contentColor2="amber-500"
+        bgColor1="green-300"
+        bgColor2="blue-700"
+        imageSrc="/forest.jpg"
+      />
 
       {/* Our Dream Section */}
       <div className="bg-stone-300 dark:bg-gradient-to-t dark:bg-stone-900 py-16 px-8 overflow-hidden relative text-black dark:text-white">
@@ -82,7 +72,7 @@ function Home() {
           </div>
         </div>
       </div>
-      
+
       {/* Value Proposition*/}
       <div className="bg-stone-300 dark:bg-stone-900 py-16 px-8">
         <TitleBlock

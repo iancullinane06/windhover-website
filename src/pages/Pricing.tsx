@@ -3,34 +3,21 @@ import pricingPlans from '../config/PricingPlans.json';
 import FrostedGlassCard from '../components/Widgets';
 import IconWrapper from '../components/IconWrapper';
 import { FlowerLotusIcon, RocketLaunchIcon, ScalesIcon, WalletIcon } from '@phosphor-icons/react';
-import { PureContentBlock, TitleBlock } from '../components/Blocks';
+import { PureContentBlock, TitleBlock, HeroBlock } from '../components/Blocks';
 
 function Pricing() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <div className="relative flex flex-col md:flex-row items-center justify-around bg-stone-900 text-white h-screen overflow-hidden py-24 px-8">
-        <div className="items-center">
-          <h1 className="text-3xl md:text-5xl font-serif font-light lg:text-stone-300 dark:lg:text-stone-300 text-stone-700 dark:text-stone-300 text-center lg:text-left">
-            Explore our <br/><span className="font-regular text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-amber-500 mr-8">versatile range of pricing plans.</span>
-          </h1>
-        </div>
-        <div
-        className='rounded-xl w-4/5 md:w-2/5 -mr-52 md:mr-0 h-96 p-4 bg-cover shadow-xl bg-center'
-          style={{
-          backgroundSize: '100% 100%',
-          backgroundPosition: 'center',
-          backgroundImage: `linear-gradient(135deg, var(--color-green-300) 0%, var(--color-blue-700) 100%)`,
-          backgroundColor: 'var(--color-stone-200)', // Default to white
-        }}>
-          <div className="bg-stone-800 rounded-xl h-full bg-cover"
-            style={{
-              backgroundImage: "url('/pricing-hero.jpg')"
-              }}>
-
-          </div>
-        </div>
-      </div>
+      <HeroBlock
+        title="Explore our"
+        content="versatile range of pricing plans."
+        contentColor1="lime-400"
+        contentColor2="amber-500"
+        bgColor1="green-300"
+        bgColor2="blue-700"
+        imageSrc="/pricing-hero.jpg"
+      />
 
       {/* Pricing Plans Section */}
       <div className="bg-stone-300 dark:bg-stone-900 py-16 px-8">

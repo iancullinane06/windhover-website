@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { ApertureIcon, CaretUpDownIcon, BrainIcon, DroneIcon, ArrowDownIcon } from '@phosphor-icons/react';
 import IconWrapper from '../components/IconWrapper';
-import { TitleBlock } from '../components/Blocks';
+import { TitleBlock, HeroBlock } from '../components/Blocks';
 import AnalysisGraphic from '../components/AnalysisGraphic';
 
 function RnD() {
@@ -47,25 +47,15 @@ function RnD() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative flex items-center justify-around bg-stone-900 text-white h-screen overflow-hidden py-24 px-8">
-        <div className="items-center">
-          <h1 className="text-3xl md:text-5xl font-serif font-light lg:text-stone-300 dark:lg:text-stone-300 text-stone-700 dark:text-stone-300 text-center lg:text-left">
-            Innovation for a <br/><span className="font-regular text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-amber-500 mr-8">sustainable future.</span>
-          </h1>
-        </div>
-        <div
-          className='rounded-xl w-4/5 md:w-2/5 h-96 p-4 bg-cover shadow-xl bg-center'
-          style={{
-            backgroundSize: '100% 100%',
-            backgroundPosition: 'center',
-            backgroundImage: `linear-gradient(135deg, var(--color-rose-300) 0%, var(--color-indigo-700) 100%)`,
-            backgroundColor: 'var(--color-stone-200)', // Default to white
-          }}>
-          <div className="bg-stone-800 rounded-xl h-full">
-            <img src="/coding.jpg" alt="Coding" className="rounded-xl h-full w-full object-cover" />
-          </div>
-        </div>
-      </div>
+      <HeroBlock
+        title="Innovation for a"
+        content="sustainable future."
+        contentColor1="lime-400"
+        contentColor2="amber-500"
+        bgColor1="rose-300"
+        bgColor2="indigo-700"
+        imageSrc="/coding.jpg"
+      />
 
       {/* Technology Section */}
       <div className="py-8 px-4 dark:text-white bg-stone-100 dark:bg-stone-900">

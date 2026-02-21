@@ -23,6 +23,17 @@ type PureContentBlockProps = {
   textColor?: string;
 };
 
+type HeroBlockProps = {
+  title: string;
+  content: string;
+  titleColor1?: string;
+  contentColor1?: string;
+  contentColor2?: string;
+  bgColor1?: string;
+  bgColor2?: string;
+  imageSrc: string;
+};
+
 export function TitleBlock({
   title,
   icon,
@@ -85,6 +96,45 @@ export function PureContentBlock({
   return (
     <div className={clsx('p-6 rounded-lg text-justify', bgColor)}>
       <p className={clsx('text-base', textColor)}>{content}</p>
+    </div>
+  );
+}
+
+export function HeroBlock({
+  title,
+  content,
+  contentColor1 = 'sky-300',
+  contentColor2 = 'teal-900',
+  bgColor1 = 'sky-300',
+  bgColor2 = 'teal-900',
+  imageSrc,
+}: HeroBlockProps) {
+  return (
+    <div className="relative flex flex-col md:flex-row items-center justify-around bg-stone-300 dark:bg-stone-900 text-white h-screen overflow-hidden py-24 px-8">
+      <div className="items-center">
+        <h1 className="text-3xl md:text-5xl font-serif font-light text-stone-700 dark:text-stone-300 text-center lg:text-left">
+          {title}<br />
+          <span className={`font-regular text-transparent bg-clip-text bg-gradient-to-r from-${contentColor1} to-${contentColor2} mr-8`}>
+            {content}
+          </span>
+        </h1>
+      </div>
+      <div
+        className="rounded-xl w-4/5 md:w-2/5 h-96 p-4 bg-cover shadow-xl bg-center"
+        style={{
+          backgroundSize: '100% 100%',
+          backgroundPosition: 'center',
+          backgroundImage: `linear-gradient(135deg, var(--color-${bgColor1}) 0%, var(--color-${bgColor2}) 100%)`,
+          backgroundColor: `var(--color-${bgColor1})`, // Default to white
+        }}
+      >
+        <div className="bg-stone-800 rounded-xl h-full bg-cover"
+            style={{
+              backgroundImage: `url('${imageSrc}')`
+              }}>
+
+          </div>
+      </div>
     </div>
   );
 }
