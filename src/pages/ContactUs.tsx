@@ -21,6 +21,7 @@ function ContactUs() {
             name: formData.name,
             time: new Date().toLocaleString(),
             message: formData.message,
+            email: formData.email,
             reply_to: formData.email,
         };
 
