@@ -12,8 +12,8 @@ function Pricing() {
       <HeroBlock
         title="Explore our"
         content="versatile range of pricing plans."
-        contentColor1="lime-400"
-        contentColor2="amber-500"
+        contentColor1="green-500"
+        contentColor2="sky-500"
         bgColor1="green-300"
         bgColor2="blue-700"
         imageSrc="/pricing-hero.jpg"

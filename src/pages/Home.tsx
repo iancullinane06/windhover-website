@@ -11,7 +11,7 @@ function Home() {
       <HeroBlock
         title="Turn your data into"
         content="defense against invasive species."
-        contentColor1="lime-400"
+        contentColor1="green-500"
         contentColor2="amber-500"
         bgColor1="green-300"
         bgColor2="blue-700"

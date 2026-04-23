@@ -14,8 +14,8 @@ function Products() {
       <HeroBlock
         title="Explore our"
         content="versatile range of products."
-        contentColor1="lime-400"
-        contentColor2="amber-500"
+        contentColor1="sky-500"
+        contentColor2="green-500"
         bgColor1="green-300"
         bgColor2="blue-700"
         imageSrc="/IrImage.png"

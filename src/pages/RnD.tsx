@@ -1,9 +1,8 @@
 import { useRef, useEffect, useState } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
-import { ApertureIcon, CaretUpDownIcon, BrainIcon, DroneIcon, ArrowDownIcon } from '@phosphor-icons/react';
+import { ApertureIcon, CaretUpDownIcon, BrainIcon, DroneIcon, PlantIcon } from '@phosphor-icons/react';
 import IconWrapper from '../components/IconWrapper';
 import { TitleBlock, HeroBlock } from '../components/Blocks';
-import AnalysisGraphic from '../components/AnalysisGraphic';
 
 function RnD() {
   const dragX = useMotionValue(200); // Motion value for tracking x position
@@ -114,14 +113,16 @@ function RnD() {
           </div>
         </div>
       </div>
-
+N
       {/* Machine Learning Section */}
       <div className="py-8 px-4 dark:text-white bg-stone-100 dark:bg-stone-900">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-8">
             {/* Sankey Diagram */}
-            <div className="relative w-auto mx-auto my-auto max-w-[50vw] h-[400px] bg-gradient-to-r from-stone-800 to-stone-700 rounded-lg shadow-lg overflow-hidden">
-              <AnalysisGraphic />
+            <div className="relative mx-auto my-auto w-2/5 h-[400px] bg-stone-700 rounded-lg shadow-lg">
+              <div className="w-100 h-100 rounded-full bg-stone-100 dark:bg-stone-900 -ml-50 mt-25 flex items-center justify-center">
+                <PlantIcon color="var(--color-red-500)" size={48}/>
+              </div>
             </div>
 
             {/* Text Content */}
@@ -166,13 +167,10 @@ function RnD() {
             </ul>
           </div>
 
-          {/* Drone Image */}
           <div className="w-full md:w-1/2">
-            <img
-              src="/Drone-shot.webp"
-              alt="Drone in action"
-              className="w-full h-auto rounded-lg shadow-lg"
-            />
+          {/* Trapezoid */}
+            <div className="relative w-full shadow-lg border-b-400 border-x-50 border-x-transparent border-b-stone-700 z-5" />
+            <div className="w-25 border-b-100 border-x-25 border-x-transparent border-b-green-500 mx-auto -my-20 z-10"/>
           </div>
         </div>
       </div>
