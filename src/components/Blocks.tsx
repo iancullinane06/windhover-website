@@ -204,7 +204,7 @@ export function HeroBlock({
   const panelGradient = `linear-gradient(135deg, ${resolveHeroColor(bgColor1)} 0%, ${resolveHeroColor(bgColor2)} 100%)`;
 
   return (
-    <div className="relative flex flex-col md:flex-row items-center justify-around bg-stone-300 dark:bg-stone-900 text-white h-screen overflow-hidden py-24 px-8">
+    <div className="relative flex flex-col lg:flex-row items-center justify-center gap-16 bg-stone-300 dark:bg-stone-900 text-white h-screen overflow-hidden py-24 px-8">
       <div className="items-center">
         <h1 className="text-3xl md:text-5xl font-serif font-light text-stone-700 dark:text-stone-300 text-center lg:text-left">
           {title}<br />
@@ -217,7 +217,7 @@ export function HeroBlock({
         </h1>
       </div>
       <div
-        className="rounded-xl w-4/5 md:w-2/5 h-96 p-4 bg-cover shadow-xl bg-center"
+        className="rounded-xl w-full lg:w-2/5 h-64 md:h-96 p-4 bg-cover shadow-xl bg-center"
         style={{
           backgroundSize: '100% 100%',
           backgroundPosition: 'center',

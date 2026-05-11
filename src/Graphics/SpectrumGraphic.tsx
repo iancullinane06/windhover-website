@@ -24,7 +24,7 @@ function SpectrumGraphic({ className = '' }: SpectrumGraphicProps) {
   // Responsive sizing via two media-query breakpoints.
   const isSmallScreen = window.matchMedia && window.matchMedia('(max-width: 640px)').matches;
   const isMediumScreen = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
-  const labelFontSize = isSmallScreen ? 32 : isMediumScreen ? 17 : 16;
+  const labelFontSize = isSmallScreen ? 36 : isMediumScreen ? 24 : 16;
   const lineStrokeWidth = isSmallScreen ? 2.5 : isMediumScreen ? 2.25 : 2;
 
   // Generate circles programmatically

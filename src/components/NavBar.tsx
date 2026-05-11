@@ -163,10 +163,10 @@ export function Navbar() {
 
     return (
         <nav
-            className={`bg-stone-300/20 backdrop-blur-sm text-text-dark rounded-full md:shadow-md w-[90vw] mx-auto mt-4 p-1 fixed top-4 left-[5vw] right-[5vw] z-1000 md:flex transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-18'}`}
+            className={`bg-stone-400/20 backdrop-blur-sm text-text-dark rounded-full md:shadow-md w-[90vw] mx-auto mt-4 p-2 fixed top-4 left-[5vw] right-[5vw] z-1000 md:flex transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-18'}`}
         >
             <div className="flex flex-col sb:flex-row justify-between items-center w-full max-h-10">
-                <div className="flex flex-row justify-between w-full px-4 bg-stone-300 rounded-full">
+                <div className="flex flex-row justify-between w-full px-4 bg-stone-400 rounded-full">
                     <a href="/" className="flex items-center text-text-dark no-underline">
                         <img src="/Windhover.png" alt="Windhover Logo" className="h-10 mx-2" />
                         <span className={`${textStyle} !bg-transparent font-serif  !text-black shadow-none pl-0`}>Windhover</span>
