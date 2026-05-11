@@ -1,6 +1,6 @@
-import { ShieldIcon, MapPinIcon, GlobeIcon, GlobeHemisphereWestIcon, LeafIcon, FlowerLotusIcon, TreeIcon, PlantIcon, WarningIcon, FlowerTulipIcon, FlashlightIcon, CopyrightIcon, DroneIcon, MicroscopeIcon} from '@phosphor-icons/react';
+import { ShieldIcon, MapPinIcon, GlobeIcon, GlobeHemisphereWestIcon, LeafIcon, FlowerLotusIcon, TreeIcon, PlantIcon, WarningIcon, FlowerTulipIcon, FlashlightIcon, CopyrightIcon, DroneIcon, MicroscopeIcon, PaperclipIcon } from '@phosphor-icons/react';
 import IconWrapper from '../components/IconWrapper';
-import { PureContentBlock, TitleBlock, HeroBlock } from '../components/Blocks';
+import { PureContentBlock, TitleBlock, HeroBlock, SpeciesInfoBlock } from '../components/Blocks';
 import RhododendronMap from '../Graphics/RhododendronMap';
 import SpectrumGraphic from '../Graphics/SpectrumGraphic';
 
@@ -94,6 +94,36 @@ function Home() {
         <SpectrumGraphic className="w-4/5 m-auto" />
         <p className="text-center text-stone-700 dark:text-white font-mono mt-2" >Frequency</p>
       </div>
+
+      {/* What is Rhododendron Section */}
+      <div className="relative bg-stone-300 dark:bg-stone-900 py-16 px-8 pb-36 md:pb-24">
+        <SpeciesInfoBlock
+          className="w-5/6 lg:w-1/2 mx-auto"
+          title="Rhododendron"
+          icon={<IconWrapper icon={<FlowerLotusIcon size={48} />} color="text-pink-400" bgColor="transparent" borderColour="border-pink-400"/>}
+          pronunciation="/ˌroʊdə'dɛndrən/"
+          scientificName="Rhododendron ponticum"
+          description="Rhododendron ponticum is an evergreen shrub with broad dark-green leaves and clusters of purple flowers. In many woodlands it spreads aggressively, forming dense shade that prevents native plants from growing, degrades habitat for wildlife, and can alter soil conditions over time. Rhododendron also poisons the soil beneath it, making it difficult for native species to re-establish even after removal. It is a major threat to biodiversity in affected areas and a key target for conservation efforts."
+        />
+
+        <div className="absolute -bottom-12 right-6 md:right-12 lg:right-48 z-20">
+          <div className="relative w-36 sm:w-40 md:w-44 rotate-[30deg] rounded-[6px] border border-stone-200 bg-white p-2 pb-7 shadow-2xl dark:border-stone-500 dark:bg-stone-100">
+            <img
+              src="/Rhododendron-headshot.png"
+              alt="Rhododendron infestation in woodland"
+              className="w-full h-24 sm:h-28 md:h-32 rounded-[3px] object-cover"
+            />
+            <p className="mt-2 text-[10px] sm:text-xs font-mono text-stone-700">
+              Rhododendron ponticum
+            </p>
+          </div>
+
+          <div className="absolute -top-5 right-8 rotate-[-16deg] text-stone-500 dark:text-stone-300">
+            <PaperclipIcon size={50} weight="duotone" color="var(--color-stone-600)" />
+          </div>
+        </div>
+      </div>
+      
 
       {/* Rhododendron Map Section */}
       <div className="bg-stone-300 dark:bg-stone-900 py-16 px-8">

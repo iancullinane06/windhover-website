@@ -3,7 +3,7 @@ import { LeafIcon, RocketLaunchIcon, ScalesIcon, FlowerLotusIcon, LineSegmentsIc
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { TitleBlock, PureContentBlock, HeroBlock } from '../components/Blocks';
+import { TitleBlock, PureContentBlock, HeroBlock, SpeciesInfoBlock } from '../components/Blocks';
 
 function AboutUs() {
   return (
@@ -21,39 +21,20 @@ function AboutUs() {
       
       {/* Our Name */}
       <div className="flex justify-center py-16 px-4 bg-stone-300 dark:bg-stone-900">
-        <div className="py-16 bg-stone-700 dark:bg-stone-300 dark:text-white px-8 w-5/6 lg:w-1/2 rounded-2xl relative shadow-lg">
-          {/* Punchcard Holes */}
-          <div className="absolute top-0 left-[-5px] h-full flex flex-col justify-between">
-            {Array.from({ length: 10 }).map((_, i) => (
-              <div key={i} className="w-4 h-4 bg-stone-300 dark:bg-stone-900 rounded-full"></div>
-            ))}
-          </div>
-
-            <div className="container mx-auto">
-              <TitleBlock
-              title="Windhover"
-              icon={
-                <img
-                src="/svg/falcon.png"
-                alt="Windhover Falcon"
-                className="w-12 h-12"
-                />
-              }
-              iconPosition="start"
-              bgColor="bg-stone-700 dark:bg-stone-300"
-              textColor="text-white dark:text-black"
-              />
-              <div className="dark:bg-stone-300 text-white dark:text-black">
-              <p className="italic text-lg mb-2">/ˈwɪndˌhʌvər/</p>
-              <p className="text-sm mb-4">
-                <span className="italic">Falco tinnunculus</span>
-              </p>
-              <p>
-                The Windhover, or Common Kestrel, is a bird renowned for its precision and agility in flight. Just as the kestrel hovers effortlessly while scanning the ground for prey, our platform hovers over vast landscapes, utilising cutting-edge AI to detect and manage invasive species with pinpoint accuracy.
-              </p>
-              </div>
-            </div>
-        </div>
+        <SpeciesInfoBlock
+          className="w-5/6 lg:w-1/2"
+          title="Windhover"
+          icon={
+            <img
+              src="/svg/falcon.png"
+              alt="Windhover Falcon"
+              className="w-12 h-12"
+            />
+          }
+          pronunciation="/'wɪndˌhɒvər/"
+          scientificName="Falco tinnunculus"
+          description="The Windhover, or Common Kestrel, is a bird renowned for its precision and agility in flight. Just as the kestrel hovers effortlessly while scanning the ground for prey, our platform hovers over vast landscapes, utilising cutting-edge AI to detect and manage invasive species with pinpoint accuracy."
+        />
       </div>
 
       {/* Our Values */}

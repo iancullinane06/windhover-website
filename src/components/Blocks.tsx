@@ -23,6 +23,18 @@ type PureContentBlockProps = {
   textColor?: string;
 };
 
+type SpeciesInfoBlockProps = {
+  title: string;
+  pronunciation: string;
+  scientificName: string;
+  description: string;
+  icon?: JSX.Element;
+  className?: string;
+  showPunchHoles?: boolean;
+  holesCount?: number;
+  holeColorClassName?: string;
+};
+
 type HeroBlockProps = {
   title: string;
   content: string;
@@ -131,6 +143,50 @@ export function PureContentBlock({
   return (
     <div className={clsx('p-6 rounded-lg text-justify', bgColor)}>
       <p className={clsx('text-base', textColor)}>{content}</p>
+    </div>
+  );
+}
+
+export function SpeciesInfoBlock({
+  title,
+  pronunciation,
+  scientificName,
+  description,
+  icon,
+  className,
+  showPunchHoles = true,
+  holesCount = 10,
+  holeColorClassName = 'bg-stone-300 dark:bg-stone-900',
+}: SpeciesInfoBlockProps) {
+  return (
+    <div
+      className={clsx(
+        'py-16 bg-stone-700 dark:bg-stone-300 text-white dark:text-black px-8 rounded-2xl relative shadow-lg',
+        className
+      )}
+    >
+      {showPunchHoles && (
+        <div className="absolute top-0 left-[-5px] h-full flex flex-col justify-between">
+          {Array.from({ length: holesCount }).map((_, i) => (
+            <div key={i} className={clsx('w-4 h-4 rounded-full', holeColorClassName)}></div>
+          ))}
+        </div>
+      )}
+
+      <div className="container mx-auto">
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-4 mb-4">
+          {icon && <div className="shrink-0">{icon}</div>}
+          <h2 className="text-3xl font-serif font-light italic text-center md:text-left pt-2.5">{title}</h2>
+        </div>
+
+        <div>
+          <p className="italic text-lg mb-2">{pronunciation}</p>
+          <p className="text-sm mb-4">
+            <span className="italic">{scientificName}</span>
+          </p>
+          <p>{description}</p>
+        </div>
+      </div>
     </div>
   );
 }
