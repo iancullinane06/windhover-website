@@ -98,7 +98,7 @@ function Home() {
       {/* What is Rhododendron Section */}
       <div className="relative bg-stone-300 dark:bg-stone-900 py-16 px-8 pb-36 md:pb-24">
         <SpeciesInfoBlock
-          className="w-5/6 lg:w-1/2 mx-auto"
+          className="w-full md:w-4/5 lg:w-1/2 md:mx-auto"
           title="Rhododendron"
           icon={<IconWrapper icon={<FlowerLotusIcon size={48} />} color="text-pink-400" bgColor="transparent" borderColour="border-pink-400"/>}
           pronunciation="/ˌroʊdə'dɛndrən/"
@@ -106,7 +106,7 @@ function Home() {
           description="Rhododendron ponticum is an evergreen shrub with broad dark-green leaves and clusters of purple flowers. In many woodlands it spreads aggressively, forming dense shade that prevents native plants from growing, degrades habitat for wildlife, and can alter soil conditions over time. Rhododendron also poisons the soil beneath it, making it difficult for native species to re-establish even after removal. It is a major threat to biodiversity in affected areas and a key target for conservation efforts."
         />
 
-        <div className="absolute -bottom-12 right-6 md:right-12 lg:right-48 z-20">
+        <div className="absolute bottom-0 right-2 md:right-0 lg:right-48 xl:right-64 z-20">
           <div className="relative w-36 sm:w-40 md:w-44 rotate-[30deg] rounded-[6px] border border-stone-200 bg-white p-2 pb-7 shadow-2xl dark:border-stone-500 dark:bg-stone-100">
             <img
               src="/Rhododendron-headshot.png"
