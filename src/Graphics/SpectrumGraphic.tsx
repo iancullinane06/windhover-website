@@ -8,21 +8,31 @@ function SpectrumGraphic({ className = '' }: SpectrumGraphicProps) {
   const height = 400; // SVG height
   const width = 1000; // SVG width
 
+  // Explicit theme detection
+  const userPreference = localStorage.getItem('theme');
+  const systemPreference = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isDarkMode = userPreference === 'dark' || (!userPreference && systemPreference);
+
+  const fillColor = isDarkMode
+    ? 'var(--color-stone-900)'
+    : 'var(--color-stone-300)';
+
+  const textColor = isDarkMode
+    ? 'var(--color-white)'
+    : 'var(--color-stone-900)';
+
+  // Responsive sizing via two media-query breakpoints.
+  const isSmallScreen = window.matchMedia && window.matchMedia('(max-width: 640px)').matches;
+  const isMediumScreen = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
+  const labelFontSize = isSmallScreen ? 32 : isMediumScreen ? 17 : 16;
+  const lineStrokeWidth = isSmallScreen ? 2.5 : isMediumScreen ? 2.25 : 2;
+
   // Generate circles programmatically
   const circles = Array.from({ length: height / patternSize }, (_, i) => {
     const y = i * patternSize;
     return Array.from({ length: width / patternSize }, (_, j) => {
       const x = j * patternSize;
       const radius = maxRadius * Math.abs(1 - (y / height) * 1.1 - (Math.random() * 0.15) - ((0.005 * (x ** 4) - 10 * (x ** 3) + 6100 * (x ** 2) - 1100000 * x + 7050000) * 0.000000002)); // Vary radius based on y position
-
-    // Explicit theme detection
-    const userPreference = localStorage.getItem('theme');
-    const systemPreference = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isDarkMode = userPreference === 'dark' || (!userPreference && systemPreference);
-
-    const fillColor = isDarkMode
-      ? 'var(--color-stone-900)'
-      : 'var(--color-stone-300)';
 
     return (
       <circle
@@ -49,8 +59,8 @@ function SpectrumGraphic({ className = '' }: SpectrumGraphicProps) {
       y1={line.y1}
       x2={line.x2}
       y2={line.y2}
-      stroke="white"
-      strokeWidth="2"
+      stroke={textColor}
+      strokeWidth={lineStrokeWidth}
     />
   ));
 
@@ -100,22 +110,22 @@ function SpectrumGraphic({ className = '' }: SpectrumGraphicProps) {
             L995,400
             L5,400
             Z"
-        fill="white"
+        fill={textColor}
       />
       <circle 
         cx="5"
         cy="395"
         r="5"
-        fill="white"
+        fill={textColor}
       />
       <circle 
         cx="995"
         cy="395"
         r="5"
-        fill="white"
+        fill={textColor}
       />
-      <text x="350" y="80" fill="white" fontSize="16" textAnchor="middle" fontFamily='IBM Plex Mono'>What you see</text>
-      <text x="800" y="80" fill="white" fontSize="16" textAnchor="middle" fontFamily='IBM Plex Mono'>What we see</text>
+      <text x="350" y="80" fill={textColor} fontSize={labelFontSize} textAnchor="middle" className="font-mono">What you see</text>
+      <text x="800" y="80" fill={textColor} fontSize={labelFontSize} textAnchor="middle" className="font-mono">What we see</text>
       {lines}
     </svg>
   );
