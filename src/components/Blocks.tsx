@@ -52,6 +52,7 @@ const HERO_COLOR_MAP: Record<string, string> = {
   'rose-500': '#f43f5e',
   'indigo-400': '#818cf8',
   'indigo-700': '#4338ca',
+  'teal-400': '#2dd4bf',
 };
 
 const resolveHeroColor = (color: string) => {

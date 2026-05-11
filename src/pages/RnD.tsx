@@ -59,7 +59,7 @@ function RnD() {
       {/* Technology Section */}
       <div className="py-8 px-4 dark:text-white bg-stone-100 dark:bg-stone-900">
         <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row items-start md:items-center -gap-8">
+          <div className="flex flex-col gap-8 md:flex-row items-start md:items-center md:gap-0">
             {/* Text Content on the Left */}
             <div className="w-full md:w-1/2 mt-6 md:mt-0 md:grow-1 bg-white dark:bg-stone-800 rounded-lg shadow-lg p-6 -mr-2">
               <TitleBlock
@@ -74,7 +74,8 @@ function RnD() {
             </div>
             {/* Image Slider on the Right */}
             <div className="w-full md:grow-2 pr-0 md:pr-6">
-              <div className="relative h-[400px] w-full rounded-lg bg-black">
+              <div className="w-4/5 h-16 mx-auto z-1 bg-gradient-to-r  from-sky-400 to-red-400 rounded-t-3xl flex justify-between content-center px-8 font-mono text-stone-700 font-bold"><p className="content-center">Visible</p><p className="content-center">Infra-Red</p></div>
+              <div className="relative h-[400px] w-full z-2 rounded-lg bg-black">
                 {/* First Image */}
                 <motion.img
                   ref={imageRef} // Attach ref to the first image
@@ -113,12 +114,12 @@ function RnD() {
           </div>
         </div>
       </div>
-N
+
       {/* Machine Learning Section */}
       <div className="py-8 px-4 dark:text-white bg-stone-100 dark:bg-stone-900">
         <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            {/* Sankey Diagram */}
+          <div className="flex flex-col md:flex-row items-center md:gap-0">
+            {/* Invasive Diagram */}
             <div className="relative mx-auto my-auto w-2/5 h-[400px] bg-stone-700 rounded-lg shadow-lg">
               <div className="w-100 h-100 rounded-full bg-stone-100 dark:bg-stone-900 -ml-50 mt-25 flex items-center justify-center">
                 <PlantIcon color="var(--color-red-500)" size={48}/>
@@ -126,7 +127,7 @@ N
             </div>
 
             {/* Text Content */}
-            <div className="w-full md:w-1/2 rounded-lg shadow-lg bg-white dark:bg-stone-800 dark:text-black p-6 md:pl-20 md:-ml-20">
+            <div className="w-full md:w-1/2 z-20 rounded-lg shadow-lg bg-white dark:bg-stone-800 dark:text-black p-6 md:pl-20">
             <TitleBlock
             title='Machine Learning'
             bgColor='bg-transparent'

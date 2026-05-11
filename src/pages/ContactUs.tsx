@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { HeroBlock, TitleBlock, PureContentBlock } from '../components/Blocks';
-import { MapPinIcon } from '@phosphor-icons/react';
+import { HeroBlock } from '../components/Blocks';
+import { MailboxIcon } from '@phosphor-icons/react';
 
 function ContactUs() {
     const [formData, setFormData] = useState({
@@ -46,26 +46,33 @@ function ContactUs() {
             <HeroBlock
                 title="Contact Us"
                 content="Have questions or need assistance? We'd love to hear from you!"
-                contentColor1="sky-300"
-                contentColor2="teal-900"
+                contentColor1="lime-400"
+                contentColor2="teal-400"
                 bgColor1="sky-300"
                 bgColor2="teal-900"
                 imageSrc="/forest.jpg"
             />
 
-            <div className="py-16 px-8">
-                <div className="max-w-2xl mx-auto bg-white dark:bg-stone-800 shadow-lg rounded-lg p-8">
-                    <TitleBlock
-                        title="Get in Touch"
-                        bgColor="bg-transparent"
-                        textColor="text-black dark:text-sky-400"
-                        icon={<MapPinIcon />}
-                    />
-                    <PureContentBlock
-                        content="We value your feedback and inquiries. Please fill out the form below, and our team will respond promptly."
-                        textColor="text-black dark:text-white"
-                        bgColor="bg-transparent"
-                    />
+            <div className="py-16 px-6 md:px-8">
+                <div className="relative max-w-5xl mx-auto pt-28 md:pt-14">
+                    <div className="absolute left-0 top-0 z-20 w-full md:w-[42%] bg-gradient-to-br from-amber-400 to-amber-500 text-white rounded-2xl p-6 md:p-8 shadow-xl">
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="h-11 w-11 rounded-full bg-white/20 flex items-center justify-center">
+                                <MailboxIcon size={24} weight="duotone" />
+                            </div>
+                            <h2 className="text-2xl font-semibold">We&apos;re Grateful You&apos;re Here</h2>
+                        </div>
+                        <p className="text-sm md:text-base leading-relaxed text-amber-50">
+                            We would be incredibly grateful for anyone reaching out. Whether you have feedback,
+                            partnership ideas, or just want to say hello, your message means a lot to us.
+                        </p>
+                    </div>
+
+                    <div className="relative z-10 ml-0 md:ml-36 lg:ml-52 bg-white dark:bg-stone-800 shadow-2xl rounded-2xl p-8 md:p-10">
+                        <h3 className="text-2xl font-semibold text-black dark:text-sky-400">Get in Touch</h3>
+                        <p className="mt-2 text-black dark:text-white">
+                            Please fill out the form below, and our team will respond promptly.
+                        </p>
 
                     <form onSubmit={handleSubmit} className="space-y-6 mt-8">
                         <div>
@@ -79,7 +86,7 @@ function ContactUs() {
                                 value={formData.name}
                                 onChange={handleChange}
                                 required
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm dark:text-white focus:ring-primary focus:border-primary accent-amber-500 caret-sky-500"
+                                className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm dark:text-white dark:border-stone-600 focus:ring-primary focus:border-primary accent-amber-500 caret-sky-500"
                             />
                         </div>
                         <div>
@@ -93,7 +100,7 @@ function ContactUs() {
                                 value={formData.email}
                                 onChange={handleChange}
                                 required
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm dark:text-white focus:ring-primary focus:border-primary accent-amber-500 caret-sky-500"
+                                className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm dark:text-white dark:border-stone-600 focus:ring-primary focus:border-primary accent-amber-500 caret-sky-500"
                             />
                         </div>
                         <div>
@@ -107,16 +114,17 @@ function ContactUs() {
                                 onChange={handleChange}
                                 required
                                 rows={4}
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm dark:text-white focus:ring-primary focus:border-primary accent-amber-500 caret-sky-500"
+                                className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm dark:text-white dark:border-stone-600 focus:ring-primary focus:border-primary accent-amber-500 caret-sky-500"
                             ></textarea>
                         </div>
                         <button
                             type="submit"
-                            className="w-full text-shadow-lg bg-amber-500 text-white py-3 px-6 rounded-md font-medium hover:bg-amber-700 transition"
+                            className="w-full text-shadow-lg bg-sky-500 text-white py-3 px-6 rounded-md font-medium hover:bg-sky-700 transition"
                         >
                             Submit
                         </button>
                     </form>
+                    </div>
                 </div>
             </div>
         </div>

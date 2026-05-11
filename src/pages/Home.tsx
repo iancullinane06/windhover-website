@@ -1,8 +1,8 @@
-import { ShieldIcon, MapPinIcon, GlobeIcon, GlobeHemisphereWestIcon, LeafIcon, FlowerLotusIcon, TreeIcon, PlantIcon, WarningIcon, FlowerTulipIcon, FlashlightIcon, CopyrightIcon} from '@phosphor-icons/react';
+import { ShieldIcon, MapPinIcon, GlobeIcon, GlobeHemisphereWestIcon, LeafIcon, FlowerLotusIcon, TreeIcon, PlantIcon, WarningIcon, FlowerTulipIcon, FlashlightIcon, CopyrightIcon, DroneIcon, MicroscopeIcon} from '@phosphor-icons/react';
 import IconWrapper from '../components/IconWrapper';
 import { PureContentBlock, TitleBlock, HeroBlock } from '../components/Blocks';
-import RhododendronMap from '../components/RhododendronMap';
-import SpectrumGraphic from '../components/SpectrumGraphic';
+import RhododendronMap from '../Graphics/RhododendronMap';
+import SpectrumGraphic from '../Graphics/SpectrumGraphic';
 
 function Home() {
   return (
@@ -19,56 +19,26 @@ function Home() {
       />
 
       {/* Our Dream Section */}
-      <div className="bg-stone-300 dark:bg-gradient-to-t dark:bg-stone-900 py-16 px-8 overflow-hidden relative text-black dark:text-white">
-        <div className="flex flex-col lg:flex-row items-center text-center gap-8">
-          <div>
-          <TitleBlock 
-            title="Our Dream"
-            bgColor="transparent"
-            textColor="text-black dark:text-sky-400"
+      <div className="bg-stone-300 dark:bg-gradient-to-t dark:bg-stone-900 py-16 overflow-hidden relative text-black dark:text-white">
+        <div className="flex flex-col items-start">
+          <div className="p-8 shadow-lg">
+          <TitleBlock
+            title="The Process"
+            bgColor="bg-transparent"
+            textColor="text-black dark:text-white"
+            icon={<GlobeIcon />}
           />
-          <p className="text-base max-w-3xl text-justify">
-            At Windhover, we envision a future where nature thrives - untouched, undisturbed, understood. Our mission is to empower conservation efforts through cutting-edge technology, enabling swift action against invasive species and fostering harmony between humanity and the environment.
-          </p>
           </div>
-          <div
-            className="flex flex-col md:grid md:grid-cols-2 md:grid-rows-4 gap-8 md:gap-4 mx-4 lg:ml-16 relative"
-            style={{backgroundImage: "url('/TopographicImages/topo-2.png')"
-              , backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center"
-            }}
-          >
-            {/* Top-left box */}
-            <div
-              className="bg-cyan-400/10 bg-opacity-80 pb-15 p-8 rounded-md z row-span-2 row-start-2 backdrop-blur-sm"
-            >
-              <h6 className="text-lg font-semibold font-mono ld mb-2">In House Models</h6>
-              <p className="text-sm">
-              Leveraging cutting-edge machine learning techniques to deliver
-              unparalleled insights and efficiency.
-              </p>
-            </div>
-
-            {/* Middle-right box */}
-            <div
-              className="bg-sky-400/15 bg-opacity-80 pb-15 p-8 rounded-md col-start-2 row-start-1 row-span-2 backdrop-blur-sm"
-            >
-              <h6 className="text-lg font-semibold font-mono mb-2">Sustainability at its Core</h6>
-              <p className="text-sm">
-              Our solutions are designed to minimise environmental impact while
-              maximising efficiency and results.
-              </p>
-            </div>
-
-            {/* Bottom-left box */}
-            <div
-              className="bg-blue-400/20 bg-opacity-80 pb-15 p-8 rounded-md col-start-2 row-start-3 row-span-2 backdrop-blur-sm"
-            >
-              <h6 className="text-lg font-semibold font-mono mb-2">Empowering Communities</h6>
-              <p className="text-sm">
-              Harnessing the power of technology to enable communities to
-              protect their local ecosystems.
-              </p>
-            </div>
+          <div className="w-full flex flex-col md:flex-row gap-8 text-stone-900 font-bold font-mono text-xl">
+            <div className="h-30 rounded-r-full grow-1 flex items-center justify-end bg-gradient-to-r from-pink-300 to-red-400/50 backdrop-blur-sm z-2">
+            <p className="mr-16">Detection</p><div className="mr-8"><IconWrapper icon={<MicroscopeIcon />} color="text-stone-700" bgColor="transparent" borderColour="border-stone-700"/></div></div>
+            <div className="h-30 rounded-full grow-2 flex items-center justify-center bg-gradient-to-r from-violet-300 to-sky-400 -ml-36 z-1">Management</div>
+            <div className="h-30 rounded-l-full grow-1 flex items-center justify-center bg-gradient-to-r from-green-300 to-lime-400">Eradication</div>
+          </div>
+          <div>
+            <PureContentBlock
+            content="To eradicate invasive species, first we must detect them."
+            bgColor="bg-transparent" />
           </div>
         </div>
       </div>
