@@ -28,7 +28,7 @@ function AboutUs() {
             <img
               src="/svg/falcon.png"
               alt="Windhover Falcon"
-              className="w-12 h-12 invert dark:invert-0"
+              className="w-12 h-12 invert-0 dark:invert"
             />
           }
           pronunciation="/'wɪndˌhɒvər/"

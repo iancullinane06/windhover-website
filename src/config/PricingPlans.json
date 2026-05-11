@@ -1,23 +1,45 @@
 [
   {
     "title": "Community",
-    "description": "Perfect for students individuals.",
+    "description": "For individuals, students, and early-stage field projects.",
     "price": "Free",
     "buttonText": "Get Started",
-    "buttonLink": "/signup"
+    "buttonLink": "/signup",
+    "badge": "Starter",
+    "features": [
+      "1 active survey area",
+      "Basic habitat mapping",
+      "Manual data uploads",
+      "Community support"
+    ]
   },
   {
     "title": "Professional",
-    "description": "Ideal for growing teams and businesses.",
+    "description": "For growing conservation teams running regular monitoring work.",
     "price": "€49.99/month",
     "buttonText": "Choose Plan",
-    "buttonLink": "/signup"
+    "buttonLink": "/signup",
+    "badge": "Professional",
+    "highlighted": true,
+    "features": [
+      "Unlimited survey areas",
+      "AI-assisted species detection",
+      "Multispectral map exports",
+      "Priority support"
+    ]
   },
   {
     "title": "Enterprise",
-    "description": "Custom solutions for large organizations.",
+    "description": "For public bodies, NGOs, and land managers operating at scale.",
     "price": "Contact Us",
     "buttonText": "Contact Sales",
-    "buttonLink": "/contact"
+    "buttonLink": "/contact",
+    "badge": "Enterprise",
+    "features": [
+      "Multi-team collaboration",
+      "Custom deployment support",
+      "Advanced reporting workflows",
+      "Dedicated onboarding"
+    ]
   }
 ]

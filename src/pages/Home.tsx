@@ -58,13 +58,13 @@ function Home() {
             icon={<GlobeIcon />}
           />
           </div>
-          <div className="w-full flex flex-col md:flex-row gap-8 text-stone-900 font-bold font-mono text-xl">
-            <div className="h-30 rounded-r-full grow-1 flex items-center justify-end bg-gradient-to-r from-pink-300 to-red-400 md:to-red-400/50 backdrop-blur-sm z-2">
+          <div className="w-full flex flex-col gap-8 text-xl font-bold font-mono text-stone-900 md:flex-row">
+            <div className="z-2 flex h-30 grow-1 items-center justify-end rounded-r-full bg-gradient-to-r from-pink-300 to-red-400 shadow-[0_16px_35px_rgba(244,63,94,0.18)] backdrop-blur-sm md:to-red-400/50">
             <p className="mr-16">Detection</p><div className="mr-8"><IconWrapper icon={<MicroscopeIcon />} color="text-stone-700" bgColor="transparent" borderColour="border-stone-700"/></div></div>
-            <div className="h-30 rounded-full grow-2 flex items-center justify-center bg-gradient-to-r from-violet-300 to-sky-400 -md:ml-36 z-1">Management</div>
-            <div className="h-30 rounded-l-full grow-1 flex items-center justify-center bg-gradient-to-r from-green-300 to-lime-400">Eradication</div>
+            <div className="z-1 flex h-30 grow-2 items-center justify-center rounded-full bg-gradient-to-r from-violet-300 to-sky-400 shadow-[0_16px_35px_rgba(14,165,233,0.18)]">Management</div>
+            <div className="flex h-30 grow-1 items-center justify-center rounded-l-full bg-gradient-to-r from-green-300 to-lime-400 shadow-[0_16px_35px_rgba(132,204,22,0.2)]">Eradication</div>
           </div>
-          <div>
+          <div className="max-w-2xl">
             <PureContentBlock
             content="To eradicate invasive species, first we must detect them."
             bgColor="bg-transparent" />
@@ -126,8 +126,8 @@ function Home() {
 
       {/* Rhododendron Map Section */}
       <div className="bg-stone-300 dark:bg-stone-900 py-16 px-8">
-        <div className="flex flex-col md:flex-row mx-auto space-around items-center">
-          <div className="bg-stone-700 flex-1 p-6 md:pr-10 rounded-lg shadow-lg -md:mr-4">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 md:flex-row">
+          <div className="flex-1 rounded-[2rem] border border-stone-200/70 bg-stone-800 p-6 shadow-[0_24px_60px_rgba(28,25,23,0.2)] dark:border-white/10 dark:bg-stone-800/90 md:pr-10">
             <TitleBlock
               title="Rhododendron Spread"
               bgColor="bg-transparent"
@@ -143,7 +143,7 @@ function Home() {
               <CopyrightIcon /> Data Source: National Biodiversity Data Centre
             </div>
           </div>
-          <div className="-mt-4 md:mt-8 flex-2 w-full md:w-auto">
+          <div className="w-full md:mt-8 md:w-auto flex-2">
             <RhododendronMap />
           </div>
         </div>

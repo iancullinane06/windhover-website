@@ -91,7 +91,7 @@ export function TitleBlock({
   return (
     <div
       className={clsx(
-        'flex flex-col md:flex-row items-center md:items-start justify-items-end flex-end gap-4 rounded-lg',
+        'flex flex-col md:flex-row items-center md:items-center gap-4 rounded-lg',
         bgColor
       )}
     >
@@ -104,7 +104,7 @@ export function TitleBlock({
       )}
       <h1
         className={clsx(
-          'text-3xl font-serif font-light italic text-center md:text-left pt-2.5',
+          'text-3xl font-serif font-light italic tracking-tight text-center md:text-left pt-2.5',
           textColor
         )}
       >
@@ -141,8 +141,8 @@ export function PureContentBlock({
   textColor = 'text-black dark:text-white',
 }: PureContentBlockProps) {
   return (
-    <div className={clsx('p-6 rounded-lg text-justify', bgColor)}>
-      <p className={clsx('text-base', textColor)}>{content}</p>
+    <div className={clsx('p-6 rounded-2xl', bgColor)}>
+      <p className={clsx('text-base leading-7 text-pretty', textColor)}>{content}</p>
     </div>
   );
 }
@@ -161,30 +161,32 @@ export function SpeciesInfoBlock({
   return (
     <div
       className={clsx(
-        'py-16 bg-stone-700 dark:bg-stone-300 text-white dark:text-black px-8 rounded-2xl relative shadow-lg',
+        'relative overflow-hidden rounded-[2rem] border border-stone-200/80 bg-stone-50 px-8 py-16 text-stone-900 shadow-[0_24px_60px_rgba(28,25,23,0.12)] dark:border-white/10 dark:bg-stone-800 dark:text-stone-100',
         className
       )}
     >
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(14,165,233,0.16),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(132,204,22,0.14),transparent_30%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(34,197,94,0.14),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(14,165,233,0.18),transparent_34%)]"></div>
+
       {showPunchHoles && (
-        <div className="absolute top-0 left-[-5px] h-full flex flex-col justify-between">
+        <div className="absolute top-5 left-[-7px] h-[calc(100%-2.5rem)] flex flex-col justify-between">
           {Array.from({ length: holesCount }).map((_, i) => (
-            <div key={i} className={clsx('w-4 h-4 rounded-full', holeColorClassName)}></div>
+            <div key={i} className={clsx('h-4 w-4 rounded-full shadow-inner', holeColorClassName)}></div>
           ))}
         </div>
       )}
 
-      <div className="container mx-auto">
+      <div className="relative container mx-auto">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-4 mb-4">
           {icon && <div className="shrink-0">{icon}</div>}
-          <h2 className="text-3xl font-serif font-light italic text-center md:text-left pt-2.5">{title}</h2>
+          <h2 className="pt-2.5 text-center font-serif text-3xl font-light italic tracking-tight md:text-left">{title}</h2>
         </div>
 
-        <div>
-          <p className="italic text-lg mb-2">{pronunciation}</p>
-          <p className="text-sm mb-4">
+        <div className="max-w-3xl">
+          <p className="mb-2 text-lg italic text-stone-600 dark:text-stone-300">{pronunciation}</p>
+          <p className="mb-4 text-sm uppercase tracking-[0.18em] text-stone-500 dark:text-stone-400">
             <span className="italic">{scientificName}</span>
           </p>
-          <p>{description}</p>
+          <p className="leading-7 text-pretty text-stone-700 dark:text-stone-100/90">{description}</p>
         </div>
       </div>
     </div>

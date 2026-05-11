@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { CaretDownIcon } from '@phosphor-icons/react';
 /* Text style variable */
-const textStyle = 'shadow-md text-shadow-md bg-stone-700 sb:bg-stone-400 bg-opacity-70 rounded-sm md:rounded-full py-2 px-4 m-0 md:mx-4 transition duration-300 hover:bg-stone-200 text-white sb:text-black hover:text-black transition-colors w-full md:w-auto font-mono';
+const textStyle = 'w-full rounded-xl border border-white/10 bg-stone-800/80 px-4 py-2 text-center font-mono text-white shadow-[0_8px_24px_rgba(28,25,23,0.18)] transition duration-300 hover:bg-stone-100 hover:text-stone-950 md:mx-2 md:w-auto md:rounded-full md:border-stone-300/70 md:bg-stone-100/80 md:text-stone-800';
 
 const mobileBreakpoint = 768;
 
@@ -163,16 +163,16 @@ export function Navbar() {
 
     return (
         <nav
-            className={`bg-stone-400/20 backdrop-blur-sm text-text-dark rounded-full md:shadow-md w-[90vw] mx-auto mt-4 p-2 fixed top-4 left-[5vw] right-[5vw] z-1000 md:flex transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-18'}`}
+            className={`fixed top-4 left-[5vw] right-[5vw] z-1000 mx-auto mt-4 w-[90vw] rounded-[2rem] border border-white/30 bg-stone-200/70 p-2 text-text-dark shadow-[0_18px_45px_rgba(28,25,23,0.12)] backdrop-blur-md transition-transform duration-300 dark:border-white/10 dark:bg-stone-900/70 dark:shadow-[0_18px_45px_rgba(0,0,0,0.32)] md:flex ${isVisible ? 'translate-y-0' : '-translate-y-18'}`}
         >
             <div className="flex flex-col sb:flex-row justify-between items-center w-full max-h-10">
-                <div className="flex flex-row justify-between w-full px-4 bg-stone-400 rounded-full">
+                <div className="flex w-full flex-row justify-between rounded-full bg-stone-100/90 px-4 dark:bg-stone-800/90">
                     <a href="/" className="flex items-center text-text-dark no-underline">
                         <img src="/Windhover.png" alt="Windhover Logo" className="h-10 mx-2" />
-                        <span className={`${textStyle} !bg-transparent font-serif  !text-black shadow-none pl-0`}>Windhover</span>
+                        <span className={`${textStyle} !w-auto !border-transparent !bg-transparent !px-0 font-serif !text-black !shadow-none dark:!text-stone-100`}>Windhover</span>
                     </a>
                     <button
-                        className="block sb:hidden text-bg-dark"
+                        className="block sb:hidden text-stone-800 dark:text-stone-100"
                         onClick={() => setMenuOpen(!menuOpen)}
                     >
                         ☰
@@ -182,7 +182,7 @@ export function Navbar() {
                     ref={menuRef}
                     className={`${
                         menuOpen ? 'block' : 'hidden'
-                    } sb:flex items-center space-x-4 flex flex-col min-[968px]:flex-row sb:space-x-4 space-y-4 sb:space-y-0 w-full sb:w-auto rounded-b-2xl bg-stone-700 sb:bg-transparent`}
+                    } sb:flex items-center space-x-4 flex flex-col min-[968px]:flex-row sb:space-x-4 space-y-4 sb:space-y-0 w-full sb:w-auto rounded-b-[1.5rem] !xl:bg-sky-500 bg-stone-800/95 p-3  dark:bg-stone-950/95  sb:p-0`}
                     initial="hidden"
                     animate={menuOpen || window.innerWidth >= mobileBreakpoint ? 'visible' : 'hidden'}
                     variants={mobileMenuVariants}
@@ -197,7 +197,7 @@ export function Navbar() {
                         Pricing
                     </a>
                     <div
-                        className="flex flex-col md:flex-row items-center md:space-x-4 space-y-4 md:space-y-0 group relative transition-all bg-opacity-80 bg-stone-700 sb:bg-stone-400 md:rounded-full pointer-events-auto z-5 w-full md:w-auto overflow-hidden h-auto"
+                        className="group relative z-5 flex h-auto w-full flex-col items-center overflow-hidden rounded-2xl border border-white/10 bg-stone-800/90 transition-all pointer-events-auto md:w-auto md:flex-row md:space-x-4 md:space-y-0 md:rounded-full md:border-stone-300/70 md:bg-stone-100/85 dark:md:border-white/10 dark:md:bg-stone-800/85"
                         onMouseEnter={() => setHoverActive(true)} // Activate hover
                         onMouseLeave={() => setHoverActive(false)} // Deactivate hover
                         onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -216,9 +216,9 @@ export function Navbar() {
                                 <motion.a
                                     key={link}
                                     href={`/${link.toLowerCase().replace(/ /g, '-')}`}
-                                    className={`text-stone-200 sb:text-black text-shadow-md bg-opacity-70 md:rounded-full py-2 px-4 ${
+                                    className={`bg-opacity-70 py-2 px-4 text-center text-stone-200 transition-colors hover:bg-stone-200 hover:text-black hover:bg-opacity-70 md:rounded-full md:text-stone-700 dark:md:text-stone-100 ${
                                         index === 0 ? 'md:ml-8' : 'ml-0'
-                                    } hover:bg-stone-200 hover:bg-opacity-70 text-center hover:text-black transition-colors shadow-none whitespace-nowrap`}
+                                    } whitespace-nowrap shadow-none`}
                                     custom={index}
                                     initial="hidden"
                                     animate={hoverActive || menuOpen ? 'visible' : 'hidden'}
@@ -231,7 +231,7 @@ export function Navbar() {
                         </motion.div>
 
                         <p
-                            className={`${textStyle} !mx-0 relative flex flex-row items-center text-nowrap z-10 order-first md:order-last bg-none w-full`}
+                            className={`${textStyle} !text-white !mx-0 relative z-10 order-first flex w-full flex-row items-center text-nowrap !bg-transparent !shadow-none md:order-last`}
                         >
                             <CaretDownIcon size={'20px'} className="group-hover:rotate-90 -rotate-90 h-[20px] transition transform duration-500 ease-[cubic-bezier(.25,-0.5,.6,1.6)]" />
                             <motion.span

@@ -15,7 +15,7 @@ const IconWrapper: React.FC<IconWrapperProps> = ({
 }) => {
   return (
     <div
-      className={`inline-flex items-center justify-center rounded-full border p-2 w-12 h-12 my-auto ${bgColor} ${borderColour}`}
+      className={`inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border p-2 my-auto shadow-[0_8px_20px_rgba(28,25,23,0.12)] backdrop-blur-sm ${bgColor} ${borderColour}`}
     >
       {React.cloneElement(icon, { className: 'fill-current ' + color })}
     </div>
