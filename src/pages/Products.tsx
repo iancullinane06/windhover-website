@@ -1,10 +1,11 @@
-import { ChartPolarIcon, LineSegmentsIcon, RecycleIcon, RocketLaunchIcon, WalletIcon} from '@phosphor-icons/react';
+import { CaretUpIcon, ChartPolarIcon, LineSegmentsIcon, RecycleIcon, RocketLaunchIcon, WalletIcon} from '@phosphor-icons/react';
 import IconWrapper from '../components/IconWrapper';
 import FrostedGlassCard from '../components/Widgets';
 import Button from '../components/Button';
 import { TitleBlock, HeroBlock } from '../components/Blocks';
 import pricingPlans from '../config/PricingPlans.json';
 import AnalysisGraphic from '../Graphics/AnalysisGraphic';
+import DetectionPipeline from '../Graphics/DetectionPipeline';
 
 const ECO_LYTIX_PRICE = pricingPlans.find(plan => plan.title === 'Professional')?.price || 0;
 
@@ -49,9 +50,10 @@ function Products() {
           </div>
 
           {/* Pipeline graphic */}
-          <div className="mt-16 overflow-hidden rounded-[2rem] border border-stone-200/80 bg-stone-800 p-6 shadow-[0_24px_60px_rgba(28,25,23,0.15)] dark:border-white/10">
+          <div className="mt-16 overflow-hidden rounded-[2rem] border border-stone-200/80 bg-stone-800 py-6 shadow-[0_24px_60px_rgba(28,25,23,0.15)] dark:border-white/10">
             <p className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.18em] text-stone-400">Detection pipeline</p>
-            <AnalysisGraphic />
+            <DetectionPipeline />
+            <CaretUpIcon size={24} className="ml-32 lg:ml-52 mt-6 animate-bounce text-stone-400 hidden lg:block" />
           </div>
         </div>
       </div>

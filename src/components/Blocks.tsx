@@ -165,7 +165,7 @@ export function SpeciesInfoBlock({
         className
       )}
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(14,165,233,0.16),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(132,204,22,0.14),transparent_30%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(34,197,94,0.14),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(14,165,233,0.18),transparent_34%)]"></div>
+      <div className="pointer-events-none absolute inset-0"></div>
 
       {showPunchHoles && (
         <div className="absolute top-5 left-[-7px] h-[calc(100%-2.5rem)] flex flex-col justify-between">

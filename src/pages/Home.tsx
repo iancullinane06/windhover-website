@@ -3,6 +3,7 @@ import IconWrapper from '../components/IconWrapper';
 import { PureContentBlock, TitleBlock, HeroBlock, SpeciesInfoBlock } from '../components/Blocks';
 import RhododendronMap from '../Graphics/RhododendronMap';
 import SpectrumGraphic from '../Graphics/SpectrumGraphic';
+import DetectionPipeline from '../Graphics/DetectionPipeline';
 
 function Home() {
   return (
@@ -58,12 +59,7 @@ function Home() {
             icon={<GlobeIcon />}
           />
           </div>
-          <div className="w-full flex flex-col gap-8 text-xl font-bold font-mono text-stone-900 md:flex-row">
-            <div className="z-2 flex h-30 grow-1 items-center justify-end rounded-r-full bg-gradient-to-r from-pink-300 to-red-400 shadow-[0_16px_35px_rgba(244,63,94,0.18)] backdrop-blur-sm md:to-red-400/50">
-            <p className="mr-16">Detection</p><div className="mr-8"><IconWrapper icon={<MicroscopeIcon />} color="text-stone-700" bgColor="transparent" borderColour="border-stone-700"/></div></div>
-            <div className="z-1 flex h-30 grow-2 items-center justify-center rounded-full bg-gradient-to-r from-violet-300 to-sky-400 shadow-[0_16px_35px_rgba(14,165,233,0.18)]">Management</div>
-            <div className="flex h-30 grow-1 items-center justify-center rounded-l-full bg-gradient-to-r from-green-300 to-lime-400 shadow-[0_16px_35px_rgba(132,204,22,0.2)]">Eradication</div>
-          </div>
+          <DetectionPipeline />
           <div className="max-w-2xl">
             <PureContentBlock
             content="To eradicate invasive species, first we must detect them."
@@ -85,7 +81,7 @@ function Home() {
             <p className="text-sky-500 font-mono font-bold text-xl mb-2">Advanced AI-Powered Detection</p>
             <p className="text-black dark:text-white text-justify">Our proprietary machine learning algorithms analyse vast datasets to identify invasive species with unparalleled accuracy and speed.</p>
           </div>
-          <div className="row-start-2 md:row-start-1 bg-stone-800 rounded-xl">
+          <div className="row-start-2 md:row-start-1 bg-stone-800 rounded-xl widget-shadow">
             <div className="grid grid-flow-col place-content-around content-center h-full">
               <FlashlightIcon size="48px" color="var(--color-sky-500)" className="my-auto rotate-90" />
               <div className="h-2 w-20 sm:w-60 md:w-40 lg:w-60 xl:w-80 rounded-full bg-gradient-to-r mt-5.25 from-sky-500 to-green-500" />
@@ -96,7 +92,7 @@ function Home() {
             <p className="text-amber-500 font-mono font-bold text-xl text-shadow-2xl mb-2">Real-Time Monitoring and Alerts</p>
             <p className="text-black dark:text-white text-justify">Stay ahead of invasive threats with our real-time monitoring system that provides instant alerts, enabling swift action to protect native ecosystems.</p>
           </div>
-          <div className="row-start-4 md:row-start-2 bg-stone-800 rounded-xl">
+          <div className="row-start-4 md:row-start-2 bg-stone-800 rounded-xl widget-shadow">
             <div className="grid grid-flow-col place-content-around content-center h-full">
               <PlantIcon size="48px" color="var(--color-green-500)" />
               <div className="h-2 w-20 sm:w-60 md:w-40 lg:w-60 xl:w-80 rounded-full bg-gradient-to-r mt-5.25 from-green-500 to-amber-500" />
