@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { CaretDownIcon } from '@phosphor-icons/react';
 /* Text style variable */
-const textStyle = 'w-full rounded-xl border border-white/10 bg-stone-800/80 px-4 py-2 text-center font-mono text-white shadow-[0_8px_24px_rgba(28,25,23,0.18)] transition duration-300 hover:bg-stone-100 hover:text-stone-950 mx-2 md:w-auto md:rounded-full md:border-stone-300/70 md:bg-stone-100/80 md:text-stone-800';
+const textStyle = 'w-full rounded-xl border border-white/10 bg-stone-800/80 px-4 py-2 text-center font-mono text-white shadow-[0_8px_24px_rgba(28,25,23,0.18)] transition duration-300 hover:bg-stone-100 hover:text-stone-950 mx-2 lg:w-auto lg:rounded-full lg:border-stone-300/70 lg:bg-stone-100/80 lg:text-stone-800';
 
-const mobileBreakpoint = 768;
+const mobileBreakpoint = 968;
 
 export function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -163,7 +163,7 @@ export function Navbar() {
 
     return (
         <nav
-            className={`fixed top-4 left-[5vw] right-[5vw] z-1000 mx-auto mt-4 w-[90vw] rounded-[2rem] border border-white/30 bg-stone-200/70 p-2 text-text-dark shadow-[0_18px_45px_rgba(28,25,23,0.12)] backdrop-blur-md transition-transform duration-300 dark:border-white/10 dark:bg-stone-900/70 dark:shadow-[0_18px_45px_rgba(0,0,0,0.32)] md:flex ${isVisible ? 'translate-y-0' : '-translate-y-18'}`}
+            className={`fixed top-4 left-[5vw] right-[5vw] z-1000 mx-auto mt-4 w-[90vw] rounded-[2rem] border border-white/30 bg-stone-200/70 p-2 text-text-dark shadow-[0_18px_45px_rgba(28,25,23,0.12)] backdrop-blur-md transition-transform duration-300 dark:border-white/10 dark:bg-stone-900/70 dark:shadow-[0_18px_45px_rgba(0,0,0,0.32)] lg:flex ${isVisible ? 'translate-y-0' : '-translate-y-18'}`}
         >
             <div className="flex flex-col sb:flex-row justify-between items-center w-full max-h-10">
                 <div className="flex w-full flex-row justify-between rounded-full bg-stone-100/90 px-4 dark:bg-stone-800/90">
@@ -182,22 +182,22 @@ export function Navbar() {
                     ref={menuRef}
                     className={`${
                         menuOpen ? 'block' : 'hidden'
-                    } sb:flex items-center space-x-4 flex flex-col min-[968px]:flex-row sb:space-x-4 space-y-4 sb:space-y-0 w-full sb:w-auto rounded-b-[1.5rem] bg-stone-800/95 p-3 dark:bg-stone-950/95 sb:bg-stone-800/0 sb:dark:bg-stone-800/0 sb:p-0`}
+                    } sb:flex items-center space-x-4 flex flex-col lg:flex-row sb:space-x-4 space-y-4 sb:space-y-0 w-full sb:w-auto rounded-b-[1.5rem] bg-stone-800/95 p-3 dark:bg-stone-950/95 sb:bg-stone-800/0 sb:dark:bg-stone-800/0 sb:p-0`}
                     initial="hidden"
                     animate={menuOpen || window.innerWidth >= mobileBreakpoint ? 'visible' : 'hidden'}
                     variants={mobileMenuVariants}
                 >
-                    <a href="/" className={textStyle}>
+                    <a href="/" className={`${textStyle} mb-2 lg:my-auto`}>
                         Home
                     </a>
-                    <a href="/products" className={textStyle}>
+                    <a href="/products" className={`${textStyle} mb-2 lg:my-auto`}>
                         Products
                     </a>
-                    <a href="/pricing" className={textStyle}>
+                    <a href="/pricing" className={`${textStyle} mb-2 lg:my-auto`}>
                         Pricing
                     </a>
                     <div
-                        className="group relative z-5 flex h-auto w-full flex-col items-center overflow-hidden rounded-2xl border border-white/10 bg-stone-800/90 transition-all pointer-events-auto md:w-auto md:flex-row md:space-x-4 md:space-y-0 md:rounded-full md:border-stone-300/70 md:bg-stone-100/85 dark:md:border-white/10 dark:md:bg-stone-800/85"
+                        className="group relative z-5 flex h-auto w-full flex-col items-center overflow-hidden rounded-2xl border border-white/10 bg-stone-800/90 transition-all pointer-events-auto lg:w-auto lg:flex-row lg:space-x-4 lg:space-y-0 lg:rounded-full lg:border-stone-300/70 lg:bg-stone-100/85 dark:lg:border-white/10 dark:lg:bg-stone-800/85"
                         onMouseEnter={() => setHoverActive(true)} // Activate hover
                         onMouseLeave={() => setHoverActive(false)} // Deactivate hover
                         onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -206,17 +206,17 @@ export function Navbar() {
                             initial="hidden"
                             animate={hoverActive || dropdownOpen ? 'visible' : 'hidden'}
                             ref={dropdownRef}
-                            className="-md:ml-5"
-                            variants={window.innerWidth >= 968 ? horizontalVariants : dropdownVariants}
+                            className="-lg:ml-5"
+                            variants={window.innerWidth >= 1024 ? horizontalVariants : dropdownVariants}
                         >
                             <div
-                                className="flex flex-col min-[968px]:flex-row items-center md:space-x-4 space-y-4 md:space-y-0 transition-all"
+                                className="flex flex-col lg:flex-row items-center lg:space-x-4 space-y-4 lg:space-y-0 transition-all"
                             >
                             {['About Us', 'RnD', 'Contact Us'].map((link, index) => (
                                 <motion.a
                                     key={link}
                                     href={`/${link.toLowerCase().replace(/ /g, '-')}`}
-                                    className={`bg-opacity-70 py-2 px-4 text-center text-stone-200 transition-colors hover:bg-stone-200 hover:text-black hover:bg-opacity-70 md:rounded-full md:text-stone-700 dark:md:text-stone-100 ${
+                                    className={`bg-opacity-70 py-2 px-4 text-center text-stone-200 transition-colors hover:bg-stone-200 hover:text-black hover:bg-opacity-70 lg:rounded-full lg:text-stone-700 dark:lg:text-stone-100 ${
                                         index === 0 ? 'ml-8' : 'sb:ml-0'
                                     } whitespace-nowrap shadow-none`}
                                     custom={index}
@@ -231,7 +231,7 @@ export function Navbar() {
                         </motion.div>
 
                         <p
-                            className={`!text-black dark:!text-white  ${textStyle} !mx-0 relative z-10 order-first flex w-full flex-row items-center text-nowrap !bg-transparent !shadow-none md:order-last`}
+                            className={`!text-black dark:!text-white  ${textStyle} !mx-0 relative z-10 order-first flex w-full flex-row items-center text-nowrap !bg-transparent !shadow-none lg:order-last`}
                         >
                             <CaretDownIcon size={'20px'} className="group-hover:rotate-90 -rotate-90 h-[20px] transition transform duration-500 ease-[cubic-bezier(.25,-0.5,.6,1.6)]" />
                             <motion.span

@@ -103,7 +103,7 @@ function Home() {
             <p className="text-rose-500 font-mono font-bold text-xl mb-2">Comprehensive Data Visualisation</p>
             <p className="text-black dark:text-white text-justify">Our intuitive dashboards and mapping tools transform complex data into actionable insights, empowering conservationists and policymakers to make informed decisions.</p>
           </div>
-          <div className="row-start-6 md:row-start-3 rounded-xl bg-stone-800">
+          <div className="row-start-6 md:row-start-3 rounded-xl bg-stone-800 widget-shadow">
             <div className="flex flex-col justify-center h-full">
               <div className="grid grid-flow-col place-content-around content-end">
                 <PlantIcon size="36px" color="var(--color-rose-500)" className="mt-9" />

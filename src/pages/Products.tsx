@@ -24,7 +24,7 @@ function Products() {
       />
 
       {/* Our Technology Section */}
-      <div className="overflow-hidden bg-stone-300 px-8 py-20 text-black dark:bg-stone-900 dark:text-white">
+      <div className="overflow-hidden bg-stone-300 px-8 py-20 text-black dark:bg-gradient-to-b dark:from-stone-900 dark:to-stone-950 dark:text-white">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
             <h2 className="font-serif text-4xl font-light italic tracking-tight">Our Technology</h2>

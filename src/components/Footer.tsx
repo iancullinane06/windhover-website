@@ -3,7 +3,7 @@ import { LinkedinLogoIcon } from "@phosphor-icons/react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[linear-gradient(180deg,#292524_0%,#1c1917_58%,#0c0a09_100%)] text-white py-12">
+    <footer className="bg-stone-900 text-white py-12">
       <div className="container mx-auto px-4">
         {/* Top Section */}
         <div className="rounded-[2rem] border border-white/10 bg-white/4 px-6 py-8 shadow-[0_20px_45px_rgba(0,0,0,0.24)] backdrop-blur-sm">
