@@ -193,8 +193,8 @@ export function Navbar() {
                     <a href="/products" className={`${textStyle} mb-2 lg:my-auto`}>
                         Products
                     </a>
-                    <a href="/pricing" className={`${textStyle} mb-2 lg:my-auto`}>
-                        Pricing
+                    <a href="/download" className={`${textStyle} mb-2 lg:my-auto`}>
+                        Download
                     </a>
                     <div
                         className="group relative z-5 flex h-auto w-full flex-col items-center overflow-hidden rounded-2xl border border-white/10 bg-stone-800/90 transition-all pointer-events-auto lg:w-auto lg:flex-row lg:space-x-4 lg:space-y-0 lg:rounded-full lg:border-stone-300/70 lg:bg-stone-100/85 dark:lg:border-white/10 dark:lg:bg-stone-800/85"

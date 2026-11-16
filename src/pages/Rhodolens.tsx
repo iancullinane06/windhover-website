@@ -90,7 +90,7 @@ function Rhodolens() {
             href="/pricing"
             className="inline-block bg-white text-green-500 py-3 px-6 rounded-lg text-lg font-semibold"
           >
-            Explore Pricing
+            Download RhodoLens
           </a>
         </div>
       </div>

@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
               href="/pricing"
               className="rounded-full border border-white/10 px-4 py-2 text-stone-300 transition hover:border-sky-400/40 hover:text-sky-300"
             >
-              Pricing
+              Download
             </a>
             <a
               href="/about-us"

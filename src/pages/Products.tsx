@@ -3,11 +3,8 @@ import IconWrapper from '../components/IconWrapper';
 import FrostedGlassCard from '../components/Widgets';
 import Button from '../components/Button';
 import { TitleBlock, HeroBlock } from '../components/Blocks';
-import pricingPlans from '../config/PricingPlans.json';
 import AnalysisGraphic from '../Graphics/AnalysisGraphic';
 import DetectionPipeline from '../Graphics/DetectionPipeline';
-
-const ECO_LYTIX_PRICE = pricingPlans.find(plan => plan.title === 'Professional')?.price || 0;
 
 function Products() {
   return (
@@ -101,10 +98,10 @@ function Products() {
                   </p>
                 </div>
                 <FrostedGlassCard
-                  title="Buy RhodoLens"
-                  description="Experience precision-led, cost-effective environmental monitoring."
-                  price={`From ${ECO_LYTIX_PRICE}`}
-                  buttonText="Explore Pricing"
+                  title="RhodoLens"
+                  description="Free and open-source environmental monitoring software."
+                  price="Free"
+                  buttonText="Download details"
                   buttonLink="/pricing"
                 />
               </div>
@@ -149,7 +146,7 @@ function Products() {
           <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Button text="Learn more" link="/rhodolens" />
             <a href="/pricing" className="rounded-full bg-sky-500 px-8 py-3 text-sm font-semibold text-white shadow-[0_12px_28px_rgba(14,165,233,0.30)] transition hover:bg-sky-400">
-              Explore Pricing
+              Download RhodoLens
             </a>
           </div>
         </div>
